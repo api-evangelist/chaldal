@@ -1,0 +1,37 @@
+generated: '2026-07-18'
+method: searched
+source: https://gogobangla.com/static/api-docs/
+docs: https://gogobangla.com/static/api-docs/
+note: >-
+  The Egg Transport (Gogo Bangla) API uses header-based API-key authentication. Two secret
+  values must be sent on every request: the API key as X-Egg-ApiKey and the User Id as
+  X-Egg-UserId. The OpenAPI document itself declares no securitySchemes, so this profile is
+  captured from the published API reference rather than derived from the spec. Credentials are
+  issued on request by contacting tech@chaldal.com.
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+  oauth2_flows: []
+schemes:
+- name: X-Egg-ApiKey
+  type: apiKey
+  in: header
+  parameter_name: X-Egg-ApiKey
+  description: Secret API key issued to the organization.
+  sources:
+  - https://gogobangla.com/static/api-docs/
+- name: X-Egg-UserId
+  type: apiKey
+  in: header
+  parameter_name: X-Egg-UserId
+  description: User Id paired with the API key.
+  sources:
+  - https://gogobangla.com/static/api-docs/
+example: >-
+  curl 'https://eggtransport.chaldal.com/api/Organization/GetOrgPickupPoints'
+  -H 'Accept: application/json'
+  -H 'X-Egg-ApiKey: 00000000-0000-0000-0000-000000000000'
+  -H 'X-Egg-UserId: 00000000-0000-0000-0000-000000000000'
+credentials_contact: tech@chaldal.com
