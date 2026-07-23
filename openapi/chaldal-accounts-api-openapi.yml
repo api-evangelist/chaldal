@@ -1,0 +1,374 @@
+swagger: '2.0'
+info:
+  title: My Title Accounts API
+  version: 1.0.0
+host: eggtransport.chaldal.com
+schemes:
+- https
+tags:
+- name: Accounts
+paths:
+  /api/Accounts/GetCurrentOrgAccountingTransactionsForDateRange:
+    get:
+      tags:
+      - Accounts
+      operationId: Accounts_GetCurrentOrgAccountingTransactionsForDateRange
+      produces:
+      - text/plain
+      - text/csv
+      - application/json
+      - text/json
+      parameters:
+      - type: string
+        name: startTime
+        in: query
+        format: date-time
+        x-nullable: false
+      - type: string
+        name: endTime
+        in: query
+        format: date-time
+        x-nullable: false
+      responses:
+        '200':
+          x-nullable: false
+          description: ''
+          schema:
+            $ref: '#/definitions/AccountDto'
+  /api/Accounts/GetPaymentHistoryForMyOrg:
+    get:
+      tags:
+      - Accounts
+      operationId: Accounts_GetPaymentHistoryForMyOrg
+      produces:
+      - text/plain
+      - text/csv
+      - application/json
+      - text/json
+      parameters:
+      - type: string
+        name: startTime
+        in: query
+        format: date-time
+        x-nullable: false
+      - type: string
+        name: endTime
+        in: query
+        format: date-time
+        x-nullable: false
+      - type: integer
+        name: pageNum
+        in: query
+        x-nullable: false
+      - type: integer
+        name: pageSize
+        in: query
+        x-nullable: false
+      responses:
+        '200':
+          x-nullable: false
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/BillDto'
+  /api/Accounts/GetBillsForMyOrg:
+    get:
+      tags:
+      - Accounts
+      operationId: Accounts_GetBillsForMyOrg
+      produces:
+      - text/plain
+      - text/csv
+      - application/json
+      - text/json
+      parameters:
+      - type: string
+        name: startTime
+        in: query
+        format: date-time
+        x-nullable: false
+      - type: string
+        name: endTime
+        in: query
+        format: date-time
+        x-nullable: false
+      - type: integer
+        name: pageNum
+        in: query
+        x-nullable: false
+      - type: integer
+        name: pageSize
+        in: query
+        x-nullable: false
+      responses:
+        '200':
+          x-nullable: false
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/BillDto'
+  /api/Accounts/GetBillItemsForMyBill:
+    get:
+      tags:
+      - Accounts
+      operationId: Accounts_GetBillItemsForMyBill
+      produces:
+      - text/plain
+      - text/csv
+      - application/json
+      - text/json
+      parameters:
+      - type: integer
+        name: billId
+        in: query
+        x-nullable: false
+      - type: integer
+        name: pageNum
+        in: query
+        x-nullable: false
+      - type: integer
+        name: pageSize
+        in: query
+        x-nullable: false
+      responses:
+        '200':
+          x-nullable: false
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/BillItemDto'
+definitions:
+  FSharpOptionOfString:
+    type: object
+  FSharpOptionOfDateTimeOffset:
+    type: object
+  TaskDto:
+    type: object
+    required:
+    - cashToCollect
+    - stockValue
+    properties:
+      trackingRef:
+        type: string
+      merchantRef:
+        type: string
+      physique:
+        $ref: '#/definitions/PhysiqueDto'
+      addressInfo:
+        $ref: '#/definitions/AddressInfoDto'
+      slotStart:
+        $ref: '#/definitions/FSharpOptionOfDateTimeOffset'
+      slotEnd:
+        $ref: '#/definitions/FSharpOptionOfDateTimeOffset'
+      cashToCollect:
+        type: number
+        format: decimal
+      stockValue:
+        type: number
+        format: decimal
+      weight:
+        type: string
+      status:
+        type: string
+      taskType:
+        type: string
+      merchantHub:
+        $ref: '#/definitions/FSharpOptionOfString'
+      notes:
+        type: array
+        items:
+          $ref: '#/definitions/TaskNoteDto'
+  AddressIdDto:
+    type: object
+  FSharpOptionOfGeoLocationDto:
+    type: object
+  TaskNoteDto:
+    type: object
+    required:
+    - noteId
+    - createdOn
+    - createdBy
+    properties:
+      noteId:
+        type: string
+        format: guid
+      createdOn:
+        type: string
+        format: date-time
+      createdBy:
+        type: string
+        format: guid
+      note:
+        type: string
+  DeliveryAreaIdDto:
+    type: object
+  BillDto:
+    type: object
+    required:
+    - billId
+    - createdOn
+    - total
+    - lastActionOn
+    properties:
+      billId:
+        type: integer
+      createdOn:
+        type: string
+        format: date-time
+      status:
+        type: string
+      settlementMemo:
+        $ref: '#/definitions/FSharpOptionOfString'
+      settlementImageUri:
+        $ref: '#/definitions/FSharpOptionOfString'
+      total:
+        type: number
+        format: decimal
+      billItems:
+        type: array
+        items:
+          $ref: '#/definitions/BillItemDto'
+      lastActionOn:
+        type: string
+        format: date-time
+  BillItemDto:
+    type: object
+    required:
+    - deliveryCharge
+    - cashCollected
+    - serviceCharge
+    - stockValueCompensated
+    properties:
+      description:
+        type: string
+      task:
+        $ref: '#/definitions/TaskDto'
+      deliveryCharge:
+        type: number
+        format: decimal
+      cashCollected:
+        type: number
+        format: decimal
+      serviceCharge:
+        type: number
+        format: decimal
+      stockValueCompensated:
+        type: number
+        format: decimal
+      customerHub:
+        type: string
+      deliveryArea:
+        type: string
+  ConfidenceLevelDto:
+    type: object
+  AccountDto:
+    type: object
+    properties:
+      accountPeriodSummaryDto:
+        $ref: '#/definitions/AccountPeriodSummaryDto'
+      transactions:
+        type: array
+        items:
+          $ref: '#/definitions/TxnDto'
+  AddressInfoDto:
+    type: object
+    required:
+    - identity
+    properties:
+      address:
+        $ref: '#/definitions/AddressIdDto'
+      identity:
+        type: string
+        format: guid
+      fullName:
+        type: string
+      streetAddress:
+        type: string
+      phoneNumber:
+        type: string
+      deliveryArea:
+        $ref: '#/definitions/DeliveryAreaDto'
+      customerHub:
+        type: string
+      geoLocation:
+        $ref: '#/definitions/FSharpOptionOfGeoLocationDto'
+      confidenceLevel:
+        $ref: '#/definitions/ConfidenceLevelDto'
+  PhysiqueDto:
+    type: object
+    x-abstract: true
+  AccountPeriodSummaryDto:
+    type: object
+    required:
+    - earliestTxnDate
+    - moneyBalance
+    - stockBalance
+    - holdBalance
+    - availableBalance
+    - periodOpeningBalance
+    - periodClosingBalance
+    properties:
+      earliestTxnDate:
+        type: string
+        format: date-time
+      moneyBalance:
+        type: number
+        format: decimal
+      stockBalance:
+        type: number
+        format: decimal
+      holdBalance:
+        type: number
+        format: decimal
+      availableBalance:
+        type: number
+        format: decimal
+      periodOpeningBalance:
+        type: number
+        format: decimal
+      periodClosingBalance:
+        type: number
+        format: decimal
+  DeliveryAreaDto:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/DeliveryAreaIdDto'
+      name:
+        type: string
+  TxnDto:
+    type: object
+    required:
+    - 'on'
+    - amount
+    - stockValue
+    - moneyBalance
+    - stockBalance
+    - sequenceNum
+    properties:
+      'on':
+        type: string
+        format: date-time
+      amount:
+        type: number
+        format: decimal
+      stockValue:
+        type: number
+        format: decimal
+      moneyBalance:
+        type: number
+        format: decimal
+      stockBalance:
+        type: number
+        format: decimal
+      sequenceNum:
+        type: integer
+        format: int32
+      memo:
+        type: string
+      category:
+        type: string
+x-generator: NSwag v13.10.8.0 (NJsonSchema v10.3.11.0 (Newtonsoft.Json v13.0.0.0))
