@@ -1,0 +1,25 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/chaldal-eggtransport-openapi-original.json
+note: >-
+  Lifecycle posture for the Egg Transport (Gogo Bangla) API. Derived from the OpenAPI plus a
+  search of Chaldal's public surface; no dedicated versioning policy, deprecation policy, SLA,
+  or status page was found published for this API as of this run.
+versioning:
+  scheme: none-documented
+  current: '1.0.0'
+  docs: https://gogobangla.com/static/api-docs/
+deprecation:
+  policy_url: null
+  sunset_header: false
+  deprecated_operations: []
+sla:
+  url: null
+  uptime_target: null
+status_page: null
+health:
+  endpoints:
+  - operationId: Heartbeat_Ping
+    path: /api/Heartbeat/Ping
+  - operationId: Heartbeat_Smoketest
+    path: /api/Heartbeat/Smoketest

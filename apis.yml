@@ -1,27 +1,235 @@
 aid: chaldal
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/chaldal.png
 name: Chaldal
-description: Chaldal is a company surfaced as a portfolio company of 500-global, y-combinator and added
-  to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  Chaldal is Bangladesh's largest online grocery delivery platform, founded in 2013 in Dhaka. It
+  pioneered the "dark store" micro-warehouse model to deliver fresh food, groceries, personal care,
+  and baby products within one hour across Dhaka, Narayanganj, Chittagong, Jashore, Khulna, Sylhet,
+  and Rajshahi. Beyond retail grocery, Chaldal has built out supply-chain, agriculture, and
+  logistics technology, including its Gogo Bangla / "Egg Transport" third-party-logistics arm, which
+  exposes a public B2B delivery API. Backed by Y Combinator and 500 Global, Chaldal partners with
+  the UN World Food Programme, UNDP, USAID, and the World Bank. Its engineering stack is F#/.NET
+  Core, Scala, Python, and React/React Native. This profile was enriched by the API Evangelist
+  pipeline from Chaldal's public developer surface.
 url: https://raw.githubusercontent.com/api-evangelist/chaldal/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - 500-global
 - y-combinator
-x-tier: stub
+x-tier: enriched
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
-apis: []
+- Grocery
+- Delivery
+- Logistics
+- Third Party Logistics
+- Ecommerce
+- Supply Chain
+- Bangladesh
+apis:
+- aid: chaldal:chaldal-accounts-api
+  name: Chaldal Accounts API
+  description: The Accounts API from Chaldal — 4 operation(s) for accounts.
+  humanURL: https://gogobangla.com/static/api-docs/
+  baseURL: https://eggtransport.chaldal.com/api
+  tags:
+  - Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/chaldal-accounts-api-openapi.yml
+  - type: Swagger
+    url: https://eggtransport.chaldal.com/swagger/v1/swagger.json
+  - type: DeveloperPortal
+    url: https://eggtransport.chaldal.com/swagger
+  - type: Documentation
+    url: https://gogobangla.com/static/api-docs/
+  - type: APIReference
+    url: https://gogobangla.com/static/api-docs/
+  - type: Authentication
+    url: authentication/chaldal-authentication.yml
+  - type: Conventions
+    url: conventions/chaldal-conventions.yml
+  - type: ErrorCatalog
+    url: errors/chaldal-problem-types.yml
+  - type: DataModel
+    url: data-model/chaldal-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/chaldal-lifecycle.yml
+  - type: Conformance
+    url: conformance/chaldal-conformance.yml
+  - type: LLMsTxt
+    url: llms/chaldal-llms.txt
+- aid: chaldal:chaldal-heartbeat-api
+  name: Chaldal Heartbeat API
+  description: The Heartbeat API from Chaldal — 2 operation(s) for heartbeat.
+  humanURL: https://gogobangla.com/static/api-docs/
+  baseURL: https://eggtransport.chaldal.com/api
+  tags:
+  - Heartbeat
+  properties:
+  - type: OpenAPI
+    url: openapi/chaldal-heartbeat-api-openapi.yml
+  - type: Swagger
+    url: https://eggtransport.chaldal.com/swagger/v1/swagger.json
+  - type: DeveloperPortal
+    url: https://eggtransport.chaldal.com/swagger
+  - type: Documentation
+    url: https://gogobangla.com/static/api-docs/
+  - type: APIReference
+    url: https://gogobangla.com/static/api-docs/
+  - type: Authentication
+    url: authentication/chaldal-authentication.yml
+  - type: Conventions
+    url: conventions/chaldal-conventions.yml
+  - type: ErrorCatalog
+    url: errors/chaldal-problem-types.yml
+  - type: DataModel
+    url: data-model/chaldal-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/chaldal-lifecycle.yml
+  - type: Conformance
+    url: conformance/chaldal-conformance.yml
+  - type: LLMsTxt
+    url: llms/chaldal-llms.txt
+- aid: chaldal:chaldal-identity-api
+  name: Chaldal Identity API
+  description: The Identity API from Chaldal — 4 operation(s) for identity.
+  humanURL: https://gogobangla.com/static/api-docs/
+  baseURL: https://eggtransport.chaldal.com/api
+  tags:
+  - Identity
+  properties:
+  - type: OpenAPI
+    url: openapi/chaldal-identity-api-openapi.yml
+  - type: Swagger
+    url: https://eggtransport.chaldal.com/swagger/v1/swagger.json
+  - type: DeveloperPortal
+    url: https://eggtransport.chaldal.com/swagger
+  - type: Documentation
+    url: https://gogobangla.com/static/api-docs/
+  - type: APIReference
+    url: https://gogobangla.com/static/api-docs/
+  - type: Authentication
+    url: authentication/chaldal-authentication.yml
+  - type: Conventions
+    url: conventions/chaldal-conventions.yml
+  - type: ErrorCatalog
+    url: errors/chaldal-problem-types.yml
+  - type: DataModel
+    url: data-model/chaldal-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/chaldal-lifecycle.yml
+  - type: Conformance
+    url: conformance/chaldal-conformance.yml
+  - type: LLMsTxt
+    url: llms/chaldal-llms.txt
+- aid: chaldal:chaldal-organization-api
+  name: Chaldal Organization API
+  description: The Organization API from Chaldal — 5 operation(s) for organization.
+  humanURL: https://gogobangla.com/static/api-docs/
+  baseURL: https://eggtransport.chaldal.com/api
+  tags:
+  - Organization
+  properties:
+  - type: OpenAPI
+    url: openapi/chaldal-organization-api-openapi.yml
+  - type: Swagger
+    url: https://eggtransport.chaldal.com/swagger/v1/swagger.json
+  - type: DeveloperPortal
+    url: https://eggtransport.chaldal.com/swagger
+  - type: Documentation
+    url: https://gogobangla.com/static/api-docs/
+  - type: APIReference
+    url: https://gogobangla.com/static/api-docs/
+  - type: Authentication
+    url: authentication/chaldal-authentication.yml
+  - type: Conventions
+    url: conventions/chaldal-conventions.yml
+  - type: ErrorCatalog
+    url: errors/chaldal-problem-types.yml
+  - type: DataModel
+    url: data-model/chaldal-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/chaldal-lifecycle.yml
+  - type: Conformance
+    url: conformance/chaldal-conformance.yml
+  - type: LLMsTxt
+    url: llms/chaldal-llms.txt
+- aid: chaldal:chaldal-task-api
+  name: Chaldal Task API
+  description: The Task API from Chaldal — 20 operation(s) for task.
+  humanURL: https://gogobangla.com/static/api-docs/
+  baseURL: https://eggtransport.chaldal.com/api
+  tags:
+  - Task
+  properties:
+  - type: OpenAPI
+    url: openapi/chaldal-task-api-openapi.yml
+  - type: Swagger
+    url: https://eggtransport.chaldal.com/swagger/v1/swagger.json
+  - type: DeveloperPortal
+    url: https://eggtransport.chaldal.com/swagger
+  - type: Documentation
+    url: https://gogobangla.com/static/api-docs/
+  - type: APIReference
+    url: https://gogobangla.com/static/api-docs/
+  - type: Authentication
+    url: authentication/chaldal-authentication.yml
+  - type: Conventions
+    url: conventions/chaldal-conventions.yml
+  - type: ErrorCatalog
+    url: errors/chaldal-problem-types.yml
+  - type: DataModel
+    url: data-model/chaldal-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/chaldal-lifecycle.yml
+  - type: Conformance
+    url: conformance/chaldal-conformance.yml
+  - type: LLMsTxt
+    url: llms/chaldal-llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: AgenticAccess
+  url: agentic-access/chaldal-agentic-access.yml
+- type: DomainSecurity
+  url: security/chaldal-domain-security.yml
+- type: Authentication
+  url: authentication/chaldal-authentication.yml
 - type: Website
   url: https://chaldal.com
+- type: GitHubOrganization
+  url: https://github.com/chaldal
+- type: Blog
+  url: https://chaldal.tech/
+- type: Support
+  url: https://chaldal.com/t/Help
+- type: Documentation
+  url: https://gogobangla.com/static/api-docs/
+- type: APIReference
+  url: https://gogobangla.com/static/api-docs/
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

@@ -1,0 +1,23 @@
+generated: '2026-07-18'
+method: generated
+source: openapi/chaldal-eggtransport-openapi-original.json
+skills:
+- file: chaldal-create-and-track-delivery.md
+  name: Create and track a third-party delivery
+  api: openapi/chaldal-eggtransport-openapi-original.json
+  operations:
+  - Identity_GetDeliveryAreas
+  - Task_CreateThirdPartyDeliveryTask
+  - Task_GetTaskStatus
+  - Task_GetLabelsPdf
+  - Task_GetTaskAuditTrail
+  - Task_OrgCancelTask
+- file: chaldal-consolidate-consignment.md
+  name: Consolidate tasks into a consignment
+  api: openapi/chaldal-eggtransport-openapi-original.json
+  operations:
+  - Task_GetUnconsolidatedTasksForMyOrg
+  - Task_ConsolidateTasksForMyOrg
+  - Task_GetConsignmentsForMyOrg
+  - Task_GetConsolidatedTasksForConsignmentInMyOrg
+  - Task_GetLabelsPdf

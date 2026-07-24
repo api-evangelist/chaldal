@@ -1,0 +1,33 @@
+# Chaldal
+
+> Chaldal is Bangladesh's largest online grocery delivery platform (founded 2013, Dhaka), operating a dark-store micro-warehouse network for one-hour grocery delivery. Its logistics arm, Gogo Bangla / "Egg Transport", exposes a public B2B third-party-logistics API that lets partner organizations create delivery, pickup, and exchange tasks, consolidate them into consignments, track status, print labels, and reconcile bills.
+
+## APIs
+
+- [Egg Transport (Gogo Bangla) API — Swagger UI](https://eggtransport.chaldal.com/swagger): Interactive Swagger 2.0 explorer for the delivery/logistics API (35 operations across Task, Consignment, Organization, Identity, Accounts).
+- [Egg Transport (Gogo Bangla) API Reference](https://gogobangla.com/static/api-docs/): Human-readable API reference with authentication and examples.
+
+## Specs
+
+- [OpenAPI (Swagger 2.0)](https://eggtransport.chaldal.com/swagger/v1/swagger.json): The machine-readable specification.
+
+## Authentication
+
+- Header API-key auth: send `X-Egg-ApiKey` and `X-Egg-UserId` on every request. Request credentials from tech@chaldal.com. No OAuth, no idempotency key, no documented pagination or rate-limit headers.
+
+## Artifacts (API Evangelist enrichment)
+
+- [Authentication profile](authentication/chaldal-authentication.yml)
+- [Conventions](conventions/chaldal-conventions.yml)
+- [Error catalog](errors/chaldal-problem-types.yml)
+- [Data model](data-model/chaldal-data-model.yml)
+- [Lifecycle](lifecycle/chaldal-lifecycle.yml)
+- [MCP candidate tools](mcp/chaldal-mcp.yml)
+- [Agent Skills](skills/_index.yml)
+- [Agentic access contracts](agentic-access/chaldal-agentic-access.yml)
+
+## Company
+
+- [Chaldal](https://chaldal.com): Online grocery shopping and delivery in Bangladesh.
+- [Chaldal Engineering](https://chaldal.tech/): "Code for Impact" — F#/.NET, React/React Native.
+- [GitHub](https://github.com/chaldal): Open-source repos (subject, reactxp, Fleece.Choicer).

@@ -1,0 +1,462 @@
+generated: '2026-07-18'
+method: generated
+source: openapi/chaldal-eggtransport-openapi-original.json
+description: Recommended x-agentic-access execution contracts, classified heuristically from
+  the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
+  audience per deployment. See research/curity/agentic-governance/.
+summary:
+  operations: 35
+  by_action_class:
+    acting: 16
+    connected: 19
+  by_consequence:
+    write: 16
+    read: 19
+  human_in_the_loop_required: 0
+operations:
+- path: /api/Heartbeat/Smoketest
+  method: post
+  operationId: Heartbeat_Smoketest
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/Heartbeat/Ping
+  method: get
+  operationId: Heartbeat_Ping
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/Accounts/GetCurrentOrgAccountingTransactionsForDateRange
+  method: get
+  operationId: Accounts_GetCurrentOrgAccountingTransactionsForDateRange
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/Accounts/GetPaymentHistoryForMyOrg
+  method: get
+  operationId: Accounts_GetPaymentHistoryForMyOrg
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/Accounts/GetBillsForMyOrg
+  method: get
+  operationId: Accounts_GetBillsForMyOrg
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/Accounts/GetBillItemsForMyBill
+  method: get
+  operationId: Accounts_GetBillItemsForMyBill
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/Task/GetQrCodeBinary
+  method: get
+  operationId: Task_GetQrCodeBinary
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/Task/GetTaskStatus
+  method: get
+  operationId: Task_GetTaskStatus
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/Task/GetTasks
+  method: post
+  operationId: Task_GetTasks
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/Task/GetTasksStatuses
+  method: post
+  operationId: Task_GetTasksStatuses
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/Task/CreateThirdPartyDeliveryTask
+  method: post
+  operationId: Task_CreateThirdPartyDeliveryTask
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/Task/CreateThirdPartyPickUpTask
+  method: post
+  operationId: Task_CreateThirdPartyPickUpTask
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/Task/CreateThirdPartyExchangeTask
+  method: post
+  operationId: Task_CreateThirdPartyExchangeTask
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/Task/SearchTasksForMyOrg
+  method: get
+  operationId: Task_SearchTasksForMyOrg
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/Task/OrgCancelTask
+  method: post
+  operationId: Task_OrgCancelTask
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/Task/ValidateTaskImportCsv
+  method: post
+  operationId: Task_ValidateTaskImportCsv
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/Task/ImportTasksToMyOrg
+  method: post
+  operationId: Task_ImportTasksToMyOrg
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/Task/GetUnconsolidatedTasksForMyOrg
+  method: get
+  operationId: Task_GetUnconsolidatedTasksForMyOrg
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/Task/GetTasksWithFailureAlertsForMyOrg
+  method: get
+  operationId: Task_GetTasksWithFailureAlertsForMyOrg
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/Task/ConsolidateTasksForMyOrg
+  method: post
+  operationId: Task_ConsolidateTasksForMyOrg
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/Task/CancelTasksForMyOrg
+  method: post
+  operationId: Task_CancelTasksForMyOrg
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/Task/GetConsignmentsForMyOrg
+  method: get
+  operationId: Task_GetConsignmentsForMyOrg
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/Task/GetConsolidatedTasksForConsignmentInMyOrg
+  method: get
+  operationId: Task_GetConsolidatedTasksForConsignmentInMyOrg
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/Task/UpdateInstructionsForFailureAlertInMyOrg
+  method: post
+  operationId: Task_UpdateInstructionsForFailureAlertInMyOrg
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/Task/GetLabelsPdf
+  method: get
+  operationId: Task_GetLabelsPdf
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/Task/GetTaskAuditTrail
+  method: get
+  operationId: Task_GetTaskAuditTrail
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/Identity/GetDeliveryAreas
+  method: get
+  operationId: Identity_GetDeliveryAreas
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/Identity/SearchForIdentityInMyOrg
+  method: post
+  operationId: Identity_SearchForIdentityInMyOrg
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/Identity/GetAddressInfoFromAddressIdInMyOrg
+  method: get
+  operationId: Identity_GetAddressInfoFromAddressIdInMyOrg
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/Identity/GetAddressInfoListFromAddressIdListInMyOrg
+  method: get
+  operationId: Identity_GetAddressInfoListFromAddressIdListInMyOrg
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/Organization/CreateOrganization
+  method: post
+  operationId: Organization_CreateOrganization
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/Organization/GetOrgStatus
+  method: post
+  operationId: Organization_GetOrgStatus
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/Organization/AddOrgPickupPoint
+  method: post
+  operationId: Organization_AddOrgPickupPoint
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/Organization/GetOrgPickupPoints
+  method: get
+  operationId: Organization_GetOrgPickupPoints
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/Organization/GetOrgPickupPointByTrackingRef
+  method: get
+  operationId: Organization_GetOrgPickupPointByTrackingRef
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none

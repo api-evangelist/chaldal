@@ -1,0 +1,2337 @@
+{
+  "x-generator": "NSwag v13.10.8.0 (NJsonSchema v10.3.11.0 (Newtonsoft.Json v13.0.0.0))",
+  "swagger": "2.0",
+  "info": {
+    "title": "My Title",
+    "version": "1.0.0"
+  },
+  "host": "eggtransport.chaldal.com",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/api/Heartbeat/Smoketest": {
+      "post": {
+        "tags": [
+          "Heartbeat"
+        ],
+        "operationId": "Heartbeat_Smoketest",
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/Heartbeat/Ping": {
+      "get": {
+        "tags": [
+          "Heartbeat"
+        ],
+        "operationId": "Heartbeat_Ping",
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/api/Accounts/GetCurrentOrgAccountingTransactionsForDateRange": {
+      "get": {
+        "tags": [
+          "Accounts"
+        ],
+        "operationId": "Accounts_GetCurrentOrgAccountingTransactionsForDateRange",
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "startTime",
+            "in": "query",
+            "format": "date-time",
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "endTime",
+            "in": "query",
+            "format": "date-time",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/AccountDto"
+            }
+          }
+        }
+      }
+    },
+    "/api/Accounts/GetPaymentHistoryForMyOrg": {
+      "get": {
+        "tags": [
+          "Accounts"
+        ],
+        "operationId": "Accounts_GetPaymentHistoryForMyOrg",
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "startTime",
+            "in": "query",
+            "format": "date-time",
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "endTime",
+            "in": "query",
+            "format": "date-time",
+            "x-nullable": false
+          },
+          {
+            "type": "integer",
+            "name": "pageNum",
+            "in": "query",
+            "x-nullable": false
+          },
+          {
+            "type": "integer",
+            "name": "pageSize",
+            "in": "query",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BillDto"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Accounts/GetBillsForMyOrg": {
+      "get": {
+        "tags": [
+          "Accounts"
+        ],
+        "operationId": "Accounts_GetBillsForMyOrg",
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "startTime",
+            "in": "query",
+            "format": "date-time",
+            "x-nullable": false
+          },
+          {
+            "type": "string",
+            "name": "endTime",
+            "in": "query",
+            "format": "date-time",
+            "x-nullable": false
+          },
+          {
+            "type": "integer",
+            "name": "pageNum",
+            "in": "query",
+            "x-nullable": false
+          },
+          {
+            "type": "integer",
+            "name": "pageSize",
+            "in": "query",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BillDto"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Accounts/GetBillItemsForMyBill": {
+      "get": {
+        "tags": [
+          "Accounts"
+        ],
+        "operationId": "Accounts_GetBillItemsForMyBill",
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "billId",
+            "in": "query",
+            "x-nullable": false
+          },
+          {
+            "type": "integer",
+            "name": "pageNum",
+            "in": "query",
+            "x-nullable": false
+          },
+          {
+            "type": "integer",
+            "name": "pageSize",
+            "in": "query",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BillItemDto"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Task/GetQrCodeBinary": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "operationId": "Task_GetQrCodeBinary",
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "trackingRef",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "integer",
+            "name": "side",
+            "in": "query",
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "Binary PNG Image",
+            "schema": {
+              "type": "string",
+              "format": "byte"
+            }
+          },
+          "401": {
+            "description": "Not logged in"
+          },
+          "404": {
+            "description": "Invalid TrackingRef"
+          },
+          "400": {
+            "description": "Invalid Dimensions"
+          }
+        }
+      }
+    },
+    "/api/Task/GetTaskStatus": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "operationId": "Task_GetTaskStatus",
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "trackingRef",
+            "in": "query",
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "Simplified Task Status",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "description": "Invalid TrackingRef"
+          }
+        }
+      }
+    },
+    "/api/Task/GetTasks": {
+      "post": {
+        "tags": [
+          "Task"
+        ],
+        "operationId": "Task_GetTasks",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "trackingRefs",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "Tasks By Tracking Ref",
+            "schema": {
+              "$ref": "#/definitions/FSharpMapOfStringAndTaskDto"
+            }
+          },
+          "401": {
+            "description": "Not logged in"
+          },
+          "403": {
+            "description": "No access to task"
+          }
+        }
+      }
+    },
+    "/api/Task/GetTasksStatuses": {
+      "post": {
+        "tags": [
+          "Task"
+        ],
+        "operationId": "Task_GetTasksStatuses",
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "trackingRefsCsv",
+            "in": "query",
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "Task status by tracking ref",
+            "schema": {
+              "$ref": "#/definitions/FSharpMapOfStringAndString"
+            }
+          },
+          "400": {
+            "description": "No tracking refs specified"
+          }
+        }
+      }
+    },
+    "/api/Task/CreateThirdPartyDeliveryTask": {
+      "post": {
+        "tags": [
+          "Task"
+        ],
+        "operationId": "Task_CreateThirdPartyDeliveryTask",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "dto",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TaskCreateDto"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "Task Tracking Ref",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "400": {
+            "description": ""
+          },
+          "401": {
+            "description": "Not logged in"
+          },
+          "403": {
+            "description": "Not authorized to Create shipments for Org"
+          }
+        }
+      }
+    },
+    "/api/Task/CreateThirdPartyPickUpTask": {
+      "post": {
+        "tags": [
+          "Task"
+        ],
+        "operationId": "Task_CreateThirdPartyPickUpTask",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "dto",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TaskCreateDto"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "Task Tracking Ref",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "400": {
+            "description": ""
+          },
+          "401": {
+            "description": "Not logged in"
+          },
+          "403": {
+            "description": "Not authorized to Create shipments for Org"
+          }
+        }
+      }
+    },
+    "/api/Task/CreateThirdPartyExchangeTask": {
+      "post": {
+        "tags": [
+          "Task"
+        ],
+        "operationId": "Task_CreateThirdPartyExchangeTask",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "dto",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ExchangeTaskCreateDto"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "Task Tracking Refs",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "400": {
+            "description": ""
+          },
+          "401": {
+            "description": "Not logged in"
+          },
+          "403": {
+            "description": "Not authorized to Create shipments for Org"
+          }
+        }
+      }
+    },
+    "/api/Task/SearchTasksForMyOrg": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "operationId": "Task_SearchTasksForMyOrg",
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "searchText",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "taskType",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "fromDate",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "toDate",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "highLevelStatus",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "integer",
+            "name": "pageNum",
+            "in": "query",
+            "x-nullable": false
+          },
+          {
+            "type": "integer",
+            "name": "pageSize",
+            "in": "query",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "Paginated Results",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TaskDto"
+              }
+            }
+          },
+          "401": {
+            "description": "Not logged in"
+          }
+        }
+      }
+    },
+    "/api/Task/OrgCancelTask": {
+      "post": {
+        "tags": [
+          "Task"
+        ],
+        "operationId": "Task_OrgCancelTask",
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "trackingRef",
+            "in": "query",
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "Cancelled Task",
+            "schema": {
+              "$ref": "#/definitions/TaskDto"
+            }
+          },
+          "404": {
+            "description": "Invalid TrackingRef"
+          },
+          "412": {
+            "description": "Task's current state does not allow this action"
+          },
+          "400": {
+            "description": "Invalid request params"
+          },
+          "401": {
+            "description": "Not logged in"
+          },
+          "403": {
+            "description": "Not allowed to perform this action"
+          },
+          "409": {
+            "description": "Concurrent modification"
+          }
+        }
+      }
+    },
+    "/api/Task/ValidateTaskImportCsv": {
+      "post": {
+        "tags": [
+          "Task"
+        ],
+        "operationId": "Task_ValidateTaskImportCsv",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "csv",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "`ValidatedRow`s",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ValidatedRow"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Task/ImportTasksToMyOrg": {
+      "post": {
+        "tags": [
+          "Task"
+        ],
+        "operationId": "Task_ImportTasksToMyOrg",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "name": "bulk",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BulkTaskUploadDto"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "400": {
+            "x-nullable": false,
+            "description": "When CSV has validation errors (if CSV is parsable, ValidatedRows are returned)",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ValidatedRow"
+              }
+            }
+          },
+          "401": {
+            "description": "When unauthenticated"
+          },
+          "403": {
+            "description": "When not authorized"
+          }
+        }
+      }
+    },
+    "/api/Task/GetUnconsolidatedTasksForMyOrg": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "operationId": "Task_GetUnconsolidatedTasksForMyOrg",
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "pageNum",
+            "in": "query",
+            "x-nullable": false
+          },
+          {
+            "type": "integer",
+            "name": "pageSize",
+            "in": "query",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "Paginated Tasks",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TaskDto"
+              }
+            }
+          },
+          "401": {
+            "description": "Not logged in"
+          },
+          "403": {
+            "description": "Not authorized"
+          }
+        }
+      }
+    },
+    "/api/Task/GetTasksWithFailureAlertsForMyOrg": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "operationId": "Task_GetTasksWithFailureAlertsForMyOrg",
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "pageNum",
+            "in": "query",
+            "x-nullable": false
+          },
+          {
+            "type": "integer",
+            "name": "pageSize",
+            "in": "query",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "Paginated List of FailureAlertDtos",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/FailureAlertDto"
+              }
+            }
+          },
+          "401": {
+            "description": "Not logged in"
+          },
+          "403": {
+            "description": "Not authorized"
+          }
+        }
+      }
+    },
+    "/api/Task/ConsolidateTasksForMyOrg": {
+      "post": {
+        "tags": [
+          "Task"
+        ],
+        "operationId": "Task_ConsolidateTasksForMyOrg",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "name": "trackingRefs",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Not logged in"
+          },
+          "403": {
+            "description": "Not authorized"
+          },
+          "404": {
+            "description": "If one or more tracking refs is invalid"
+          },
+          "204": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/api/Task/CancelTasksForMyOrg": {
+      "post": {
+        "tags": [
+          "Task"
+        ],
+        "operationId": "Task_CancelTasksForMyOrg",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "name": "trackingRefs",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Not logged in"
+          },
+          "403": {
+            "description": "Not authorized"
+          },
+          "404": {
+            "description": "If one or more tracking refs is invalid"
+          },
+          "204": {
+            "description": "Ok"
+          }
+        }
+      }
+    },
+    "/api/Task/GetConsignmentsForMyOrg": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "operationId": "Task_GetConsignmentsForMyOrg",
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "List of pending Consignments",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ConsignmentDto"
+              }
+            }
+          },
+          "401": {
+            "description": "Not logged in"
+          },
+          "403": {
+            "description": "Not authorized"
+          }
+        }
+      }
+    },
+    "/api/Task/GetConsolidatedTasksForConsignmentInMyOrg": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "operationId": "Task_GetConsolidatedTasksForConsignmentInMyOrg",
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "consignmentId",
+            "in": "query",
+            "format": "guid",
+            "x-nullable": false
+          },
+          {
+            "type": "integer",
+            "name": "pageNum",
+            "in": "query",
+            "x-nullable": false
+          },
+          {
+            "type": "integer",
+            "name": "pageSize",
+            "in": "query",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "Paginated Tasks in Consignment",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TaskDto"
+              }
+            }
+          },
+          "401": {
+            "description": "Not logged in"
+          },
+          "403": {
+            "description": "Not authorized"
+          }
+        }
+      }
+    },
+    "/api/Task/UpdateInstructionsForFailureAlertInMyOrg": {
+      "post": {
+        "tags": [
+          "Task"
+        ],
+        "operationId": "Task_UpdateInstructionsForFailureAlertInMyOrg",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "trackingRef",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "name": "instructions",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "Updated Task",
+            "schema": {
+              "$ref": "#/definitions/TaskDto"
+            }
+          },
+          "404": {
+            "description": "Invalid TrackingRef"
+          },
+          "412": {
+            "description": "Task's current state does not allow this action"
+          },
+          "400": {
+            "description": "Invalid request params"
+          },
+          "401": {
+            "description": "Not logged in"
+          },
+          "403": {
+            "description": "Not allowed to perform this action"
+          },
+          "409": {
+            "description": "Concurrent modification"
+          }
+        }
+      }
+    },
+    "/api/Task/GetLabelsPdf": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "operationId": "Task_GetLabelsPdf",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "trackingRefsCsv",
+            "in": "query",
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "PDF Bytes",
+            "schema": {
+              "type": "string",
+              "format": "byte"
+            }
+          },
+          "404": {
+            "description": "Invalid TrackingRef"
+          },
+          "400": {
+            "description": "Invalid request params"
+          }
+        }
+      }
+    },
+    "/api/Task/GetTaskAuditTrail": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "operationId": "Task_GetTaskAuditTrail",
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "trackingRef",
+            "in": "query",
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "Audit Trail",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TaskAuditTrail"
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid TrackingRef"
+          },
+          "401": {
+            "description": "Not logged in"
+          },
+          "403": {
+            "description": "No access"
+          }
+        }
+      }
+    },
+    "/api/Identity/GetDeliveryAreas": {
+      "get": {
+        "tags": [
+          "Identity"
+        ],
+        "operationId": "Identity_GetDeliveryAreas",
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DeliveryArea"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Identity/SearchForIdentityInMyOrg": {
+      "post": {
+        "tags": [
+          "Identity"
+        ],
+        "operationId": "Identity_SearchForIdentityInMyOrg",
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "phoneNumber",
+            "in": "query",
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "Possibly Profile and Addresses",
+            "schema": {
+              "$ref": "#/definitions/FSharpOptionOfTupleOfIdentityProfileAndIEnumerableOfAddressInfoDto"
+            }
+          },
+          "403": {
+            "description": "Not authorized to view customers for Org"
+          },
+          "401": {
+            "description": "Not logged in"
+          }
+        }
+      }
+    },
+    "/api/Identity/GetAddressInfoFromAddressIdInMyOrg": {
+      "get": {
+        "tags": [
+          "Identity"
+        ],
+        "operationId": "Identity_GetAddressInfoFromAddressIdInMyOrg",
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "addressId",
+            "in": "query",
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "Address Info",
+            "schema": {
+              "$ref": "#/definitions/AddressInfoDto"
+            }
+          },
+          "401": {
+            "description": "Not logged in"
+          },
+          "403": {
+            "description": "Not authorized to view customer Info"
+          }
+        }
+      }
+    },
+    "/api/Identity/GetAddressInfoListFromAddressIdListInMyOrg": {
+      "get": {
+        "tags": [
+          "Identity"
+        ],
+        "operationId": "Identity_GetAddressInfoListFromAddressIdListInMyOrg",
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "addressIdList",
+            "in": "query",
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "Address Infos",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AddressInfoDto"
+              }
+            }
+          },
+          "401": {
+            "description": "Not logged in"
+          },
+          "403": {
+            "description": "Not authorized to view customer Info"
+          }
+        }
+      }
+    },
+    "/api/Organization/CreateOrganization": {
+      "post": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "Organization_CreateOrganization",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "orgDetails",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OrganizationDto"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "Creates a new Organization and assigns a manager to the organization",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "401": {
+            "description": "Not logged in"
+          },
+          "500": {
+            "description": "Insert Organization operation failed"
+          }
+        }
+      }
+    },
+    "/api/Organization/GetOrgStatus": {
+      "post": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "Organization_GetOrgStatus",
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "Retrives Organization status",
+            "schema": {
+              "$ref": "#/definitions/FSharpOptionOfOrgVerificationStatusDto"
+            }
+          },
+          "401": {
+            "description": "Not logged in"
+          },
+          "400": {
+            "description": "OrgId does not exist"
+          }
+        }
+      }
+    },
+    "/api/Organization/AddOrgPickupPoint": {
+      "post": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "Organization_AddOrgPickupPoint",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "addressDetails",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OrgPickupPointDto"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "Creates a new Address and assigns it to an organization",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "401": {
+            "description": "Not logged in"
+          },
+          "500": {
+            "description": "Insert Address operation failed"
+          }
+        }
+      }
+    },
+    "/api/Organization/GetOrgPickupPoints": {
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "Organization_GetOrgPickupPoints",
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "Fetches addresses of an organization",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "401": {
+            "description": "Not logged in"
+          }
+        }
+      }
+    },
+    "/api/Organization/GetOrgPickupPointByTrackingRef": {
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "operationId": "Organization_GetOrgPickupPointByTrackingRef",
+        "produces": [
+          "text/plain",
+          "text/csv",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "trackingRef",
+            "in": "query",
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "Fetches address by tracking ref",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "401": {
+            "description": "Not logged in"
+          },
+          "404": {
+            "description": "No address found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "AccountDto": {
+      "type": "object",
+      "properties": {
+        "accountPeriodSummaryDto": {
+          "$ref": "#/definitions/AccountPeriodSummaryDto"
+        },
+        "transactions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TxnDto"
+          }
+        }
+      }
+    },
+    "AccountPeriodSummaryDto": {
+      "type": "object",
+      "required": [
+        "earliestTxnDate",
+        "moneyBalance",
+        "stockBalance",
+        "holdBalance",
+        "availableBalance",
+        "periodOpeningBalance",
+        "periodClosingBalance"
+      ],
+      "properties": {
+        "earliestTxnDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "moneyBalance": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "stockBalance": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "holdBalance": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "availableBalance": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "periodOpeningBalance": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "periodClosingBalance": {
+          "type": "number",
+          "format": "decimal"
+        }
+      }
+    },
+    "TxnDto": {
+      "type": "object",
+      "required": [
+        "on",
+        "amount",
+        "stockValue",
+        "moneyBalance",
+        "stockBalance",
+        "sequenceNum"
+      ],
+      "properties": {
+        "on": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "amount": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "stockValue": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "moneyBalance": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "stockBalance": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "sequenceNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "memo": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        }
+      }
+    },
+    "BillDto": {
+      "type": "object",
+      "required": [
+        "billId",
+        "createdOn",
+        "total",
+        "lastActionOn"
+      ],
+      "properties": {
+        "billId": {
+          "type": "integer"
+        },
+        "createdOn": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status": {
+          "type": "string"
+        },
+        "settlementMemo": {
+          "$ref": "#/definitions/FSharpOptionOfString"
+        },
+        "settlementImageUri": {
+          "$ref": "#/definitions/FSharpOptionOfString"
+        },
+        "total": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "billItems": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BillItemDto"
+          }
+        },
+        "lastActionOn": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "FSharpOptionOfString": {
+      "type": "object"
+    },
+    "BillItemDto": {
+      "type": "object",
+      "required": [
+        "deliveryCharge",
+        "cashCollected",
+        "serviceCharge",
+        "stockValueCompensated"
+      ],
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "task": {
+          "$ref": "#/definitions/TaskDto"
+        },
+        "deliveryCharge": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "cashCollected": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "serviceCharge": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "stockValueCompensated": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "customerHub": {
+          "type": "string"
+        },
+        "deliveryArea": {
+          "type": "string"
+        }
+      }
+    },
+    "TaskDto": {
+      "type": "object",
+      "required": [
+        "cashToCollect",
+        "stockValue"
+      ],
+      "properties": {
+        "trackingRef": {
+          "type": "string"
+        },
+        "merchantRef": {
+          "type": "string"
+        },
+        "physique": {
+          "$ref": "#/definitions/PhysiqueDto"
+        },
+        "addressInfo": {
+          "$ref": "#/definitions/AddressInfoDto"
+        },
+        "slotStart": {
+          "$ref": "#/definitions/FSharpOptionOfDateTimeOffset"
+        },
+        "slotEnd": {
+          "$ref": "#/definitions/FSharpOptionOfDateTimeOffset"
+        },
+        "cashToCollect": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "stockValue": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "weight": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "taskType": {
+          "type": "string"
+        },
+        "merchantHub": {
+          "$ref": "#/definitions/FSharpOptionOfString"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TaskNoteDto"
+          }
+        }
+      }
+    },
+    "PhysiqueDto": {
+      "type": "object",
+      "x-abstract": true
+    },
+    "AddressInfoDto": {
+      "type": "object",
+      "required": [
+        "identity"
+      ],
+      "properties": {
+        "address": {
+          "$ref": "#/definitions/AddressIdDto"
+        },
+        "identity": {
+          "type": "string",
+          "format": "guid"
+        },
+        "fullName": {
+          "type": "string"
+        },
+        "streetAddress": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "deliveryArea": {
+          "$ref": "#/definitions/DeliveryAreaDto"
+        },
+        "customerHub": {
+          "type": "string"
+        },
+        "geoLocation": {
+          "$ref": "#/definitions/FSharpOptionOfGeoLocationDto"
+        },
+        "confidenceLevel": {
+          "$ref": "#/definitions/ConfidenceLevelDto"
+        }
+      }
+    },
+    "AddressIdDto": {
+      "type": "object"
+    },
+    "DeliveryAreaDto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/DeliveryAreaIdDto"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "DeliveryAreaIdDto": {
+      "type": "object"
+    },
+    "FSharpOptionOfGeoLocationDto": {
+      "type": "object"
+    },
+    "ConfidenceLevelDto": {
+      "type": "object"
+    },
+    "FSharpOptionOfDateTimeOffset": {
+      "type": "object"
+    },
+    "TaskNoteDto": {
+      "type": "object",
+      "required": [
+        "noteId",
+        "createdOn",
+        "createdBy"
+      ],
+      "properties": {
+        "noteId": {
+          "type": "string",
+          "format": "guid"
+        },
+        "createdOn": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "createdBy": {
+          "type": "string",
+          "format": "guid"
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "FSharpMapOfStringAndTaskDto": {
+      "type": "object",
+      "required": [
+        "IsEmpty",
+        "Count"
+      ],
+      "properties": {
+        "comparer@686": {
+          "$ref": "#/definitions/IComparerOfString"
+        },
+        "tree@690": {
+          "$ref": "#/definitions/MapTreeOfStringAndTaskDto"
+        },
+        "serializedData": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/KeyValuePairOfStringAndTaskDto"
+          }
+        },
+        "Comparer": {
+          "$ref": "#/definitions/IComparerOfString"
+        },
+        "Tree": {
+          "$ref": "#/definitions/MapTreeOfStringAndTaskDto"
+        },
+        "IsEmpty": {
+          "type": "boolean"
+        },
+        "Item": {
+          "$ref": "#/definitions/TaskDto"
+        },
+        "Count": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Keys": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Values": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TaskDto"
+          }
+        },
+        "MinKeyValue": {
+          "$ref": "#/definitions/TupleOfStringAndTaskDto"
+        },
+        "MaxKeyValue": {
+          "$ref": "#/definitions/TupleOfStringAndTaskDto"
+        }
+      }
+    },
+    "IComparerOfString": {
+      "type": "object",
+      "x-abstract": true
+    },
+    "MapTreeOfStringAndTaskDto": {
+      "type": "object"
+    },
+    "KeyValuePairOfStringAndTaskDto": {
+      "type": "object",
+      "required": [
+        "key",
+        "value"
+      ],
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "value": {
+          "$ref": "#/definitions/TaskDto"
+        }
+      }
+    },
+    "TupleOfStringAndTaskDto": {
+      "type": "object",
+      "required": [
+        "item1",
+        "item2"
+      ],
+      "properties": {
+        "item1": {
+          "type": "string"
+        },
+        "item2": {
+          "$ref": "#/definitions/TaskDto"
+        }
+      }
+    },
+    "FSharpMapOfStringAndString": {
+      "type": "object",
+      "required": [
+        "IsEmpty",
+        "Count"
+      ],
+      "properties": {
+        "comparer@686": {
+          "$ref": "#/definitions/IComparerOfString"
+        },
+        "tree@690": {
+          "$ref": "#/definitions/MapTreeOfStringAndString"
+        },
+        "serializedData": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/KeyValuePairOfStringAndString"
+          }
+        },
+        "Comparer": {
+          "$ref": "#/definitions/IComparerOfString"
+        },
+        "Tree": {
+          "$ref": "#/definitions/MapTreeOfStringAndString"
+        },
+        "IsEmpty": {
+          "type": "boolean"
+        },
+        "Item": {
+          "type": "string"
+        },
+        "Count": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Keys": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Values": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "MinKeyValue": {
+          "$ref": "#/definitions/TupleOfStringAndString"
+        },
+        "MaxKeyValue": {
+          "$ref": "#/definitions/TupleOfStringAndString"
+        }
+      }
+    },
+    "MapTreeOfStringAndString": {
+      "type": "object"
+    },
+    "KeyValuePairOfStringAndString": {
+      "type": "object",
+      "required": [
+        "key",
+        "value"
+      ],
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "TupleOfStringAndString": {
+      "type": "object",
+      "required": [
+        "item1",
+        "item2"
+      ],
+      "properties": {
+        "item1": {
+          "type": "string"
+        },
+        "item2": {
+          "type": "string"
+        }
+      }
+    },
+    "TaskCreateDto": {
+      "type": "object",
+      "required": [
+        "refId",
+        "physique",
+        "address",
+        "cashToCollect",
+        "stockValue",
+        "note"
+      ],
+      "properties": {
+        "refId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "physique": {
+          "$ref": "#/definitions/PhysiqueDto"
+        },
+        "address": {
+          "$ref": "#/definitions/AddressInputDto"
+        },
+        "slotStart": {
+          "$ref": "#/definitions/FSharpOptionOfDateTimeOffset"
+        },
+        "slotEnd": {
+          "$ref": "#/definitions/FSharpOptionOfDateTimeOffset"
+        },
+        "cashToCollect": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "stockValue": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "merchantPickupPointAddressId": {
+          "$ref": "#/definitions/AddressId"
+        }
+      }
+    },
+    "AddressInputDto": {
+      "type": "object",
+      "x-abstract": true
+    },
+    "AddressId": {
+      "type": "object"
+    },
+    "ExchangeTaskCreateDto": {
+      "type": "object",
+      "required": [
+        "refId",
+        "deliveryPhysique",
+        "pickUpPhysique",
+        "address",
+        "cashToCollect",
+        "deliveryStockValue",
+        "pickUpStockValue",
+        "note"
+      ],
+      "properties": {
+        "refId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "deliveryPhysique": {
+          "$ref": "#/definitions/PhysiqueDto"
+        },
+        "pickUpPhysique": {
+          "$ref": "#/definitions/PhysiqueDto"
+        },
+        "address": {
+          "$ref": "#/definitions/AddressInputDto"
+        },
+        "slotStart": {
+          "$ref": "#/definitions/FSharpOptionOfDateTimeOffset"
+        },
+        "slotEnd": {
+          "$ref": "#/definitions/FSharpOptionOfDateTimeOffset"
+        },
+        "cashToCollect": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "deliveryStockValue": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "pickUpStockValue": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "merchantPickupPointAddressId": {
+          "$ref": "#/definitions/AddressId"
+        }
+      }
+    },
+    "ValidatedRow": {
+      "type": "object",
+      "properties": {
+        "merchantRef": {
+          "$ref": "#/definitions/ValidationResultOfString"
+        },
+        "name": {
+          "$ref": "#/definitions/ValidationResultOfString"
+        },
+        "address": {
+          "$ref": "#/definitions/ValidationResultOfString"
+        },
+        "phone": {
+          "$ref": "#/definitions/ValidationResultOfString"
+        },
+        "amountToCollect": {
+          "$ref": "#/definitions/ValidationResultOfUnsignedDecimal"
+        },
+        "stockValue": {
+          "$ref": "#/definitions/ValidationResultOfUnsignedDecimal"
+        },
+        "note": {
+          "$ref": "#/definitions/ValidationResultOfString"
+        }
+      }
+    },
+    "ValidationResultOfString": {
+      "type": "object",
+      "x-abstract": true
+    },
+    "ValidationResultOfUnsignedDecimal": {
+      "type": "object",
+      "x-abstract": true
+    },
+    "BulkTaskUploadDto": {
+      "type": "object",
+      "required": [
+        "merchantPickupPointAddressId"
+      ],
+      "properties": {
+        "csv": {
+          "type": "string"
+        },
+        "merchantPickupPointAddressId": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "FailureAlertDto": {
+      "type": "object",
+      "properties": {
+        "task": {
+          "$ref": "#/definitions/TaskDto"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "ConsignmentDto": {
+      "type": "object",
+      "required": [
+        "id",
+        "requestTime"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "guid"
+        },
+        "requestTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "trackingRefToStatus": {
+          "$ref": "#/definitions/FSharpMapOfStringAndString"
+        }
+      }
+    },
+    "TaskAuditTrail": {
+      "type": "object",
+      "required": [
+        "lastActionOn",
+        "stateTransitionedOn"
+      ],
+      "properties": {
+        "tripStatus": {
+          "type": "string"
+        },
+        "lastActionOn": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "stateTransitionedOn": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "failedOrRejectReason": {
+          "$ref": "#/definitions/FSharpOptionOfString"
+        }
+      }
+    },
+    "DeliveryArea": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/DeliveryAreaId"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "DeliveryAreaId": {
+      "type": "object"
+    },
+    "FSharpOptionOfTupleOfIdentityProfileAndIEnumerableOfAddressInfoDto": {
+      "type": "object"
+    },
+    "OrganizationDto": {
+      "type": "object",
+      "properties": {
+        "businessDetails": {
+          "$ref": "#/definitions/BusinessDetailsDto"
+        },
+        "businessType": {
+          "$ref": "#/definitions/BusinessTypeDto"
+        },
+        "paymentType": {
+          "$ref": "#/definitions/PaymentTypeDto"
+        },
+        "bKashDetails": {
+          "$ref": "#/definitions/FSharpOptionOfBkashDetailsDto"
+        },
+        "bankDetails": {
+          "$ref": "#/definitions/FSharpOptionOfBankDetailsDto"
+        },
+        "idType": {
+          "$ref": "#/definitions/MerchantIDTypeDto"
+        },
+        "nidFront": {
+          "$ref": "#/definitions/FSharpOptionOfString"
+        },
+        "nidBack": {
+          "$ref": "#/definitions/FSharpOptionOfString"
+        },
+        "passport": {
+          "$ref": "#/definitions/FSharpOptionOfString"
+        },
+        "birthCertificate": {
+          "$ref": "#/definitions/FSharpOptionOfString"
+        }
+      }
+    },
+    "BusinessDetailsDto": {
+      "type": "object",
+      "required": [
+        "deliveryAreaId"
+      ],
+      "properties": {
+        "ownersName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "businessName": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "deliveryAreaId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "businessUrl": {
+          "type": "string"
+        }
+      }
+    },
+    "BusinessTypeDto": {
+      "type": "object"
+    },
+    "PaymentTypeDto": {
+      "type": "object"
+    },
+    "FSharpOptionOfBkashDetailsDto": {
+      "type": "object"
+    },
+    "FSharpOptionOfBankDetailsDto": {
+      "type": "object"
+    },
+    "MerchantIDTypeDto": {
+      "type": "object"
+    },
+    "FSharpOptionOfOrgVerificationStatusDto": {
+      "type": "object"
+    },
+    "OrgPickupPointDto": {
+      "type": "object",
+      "required": [
+        "deliveryAreaId"
+      ],
+      "properties": {
+        "pickupPointName": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "deliveryAreaId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "phone": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

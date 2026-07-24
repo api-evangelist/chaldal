@@ -1,0 +1,22 @@
+{
+  "provider": "chaldal",
+  "sources": [
+    "chaldal-accounts-api-openapi.yml",
+    "chaldal-heartbeat-api-openapi.yml",
+    "chaldal-identity-api-openapi.yml",
+    "chaldal-organization-api-openapi.yml",
+    "chaldal-task-api-openapi.yml"
+  ],
+  "outputs": [
+    "chaldal-accounts-api-openapi.yml",
+    "chaldal-heartbeat-api-openapi.yml",
+    "chaldal-identity-api-openapi.yml",
+    "chaldal-organization-api-openapi.yml",
+    "chaldal-task-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

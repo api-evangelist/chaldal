@@ -1,0 +1,34 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Chaldal Egg Transport
+  version: 1.0.0
+extends: openapi/chaldal-eggtransport-openapi-original.json
+actions:
+- target: $.info
+  update:
+    title: Chaldal Egg Transport (Gogo Bangla) Delivery API
+    description: >-
+      B2B third-party-logistics API for Chaldal's Gogo Bangla delivery network. Organizations
+      create delivery, pickup, and exchange tasks, consolidate them into consignments, track
+      status, print labels, and reconcile bills. Authenticate with the X-Egg-ApiKey and
+      X-Egg-UserId headers (credentials via tech@chaldal.com).
+    x-apievangelist-rating: 3
+    x-api-evangelist-enriched: '2026-07-18'
+- target: $.info
+  update:
+    contact:
+      name: Chaldal Tech
+      email: tech@chaldal.com
+      url: https://gogobangla.com/static/api-docs/
+- target: $.securityDefinitions
+  update:
+    X-Egg-ApiKey:
+      type: apiKey
+      in: header
+      name: X-Egg-ApiKey
+      description: Secret API key issued to the organization (contact tech@chaldal.com).
+    X-Egg-UserId:
+      type: apiKey
+      in: header
+      name: X-Egg-UserId
+      description: User Id paired with the API key.

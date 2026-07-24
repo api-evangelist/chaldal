@@ -1,0 +1,67 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/chaldal-eggtransport-openapi-original.json
+format: http-status
+note: Egg Transport returns standard HTTP status codes; responses are not application/problem+json. Titles/remediation
+  enriched from the Gogo Bangla API reference (https://gogobangla.com/static/api-docs/).
+envelope:
+  style: http-status
+  problem_json: false
+problems:
+- status: 400
+  title: Bad request
+  remediation: Validate the request body/parameters against the schema before retrying.
+  operation_count: 10
+  example_operations:
+  - openapi/chaldal-eggtransport-openapi-original.json#Task_GetQrCodeBinary
+  - openapi/chaldal-eggtransport-openapi-original.json#Task_GetTasksStatuses
+  - openapi/chaldal-eggtransport-openapi-original.json#Task_CreateThirdPartyDeliveryTask
+  - openapi/chaldal-eggtransport-openapi-original.json#Task_CreateThirdPartyPickUpTask
+- status: 401
+  title: Unauthorized
+  remediation: Supply valid X-Egg-ApiKey and X-Egg-UserId headers; request credentials from tech@chaldal.com.
+  operation_count: 24
+  example_operations:
+  - openapi/chaldal-eggtransport-openapi-original.json#Task_GetQrCodeBinary
+  - openapi/chaldal-eggtransport-openapi-original.json#Task_GetTasks
+  - openapi/chaldal-eggtransport-openapi-original.json#Task_CreateThirdPartyDeliveryTask
+  - openapi/chaldal-eggtransport-openapi-original.json#Task_CreateThirdPartyPickUpTask
+- status: 403
+  title: Forbidden
+  remediation: The authenticated org lacks permission for this operation or resource.
+  operation_count: 17
+  example_operations:
+  - openapi/chaldal-eggtransport-openapi-original.json#Task_GetTasks
+  - openapi/chaldal-eggtransport-openapi-original.json#Task_CreateThirdPartyDeliveryTask
+  - openapi/chaldal-eggtransport-openapi-original.json#Task_CreateThirdPartyPickUpTask
+  - openapi/chaldal-eggtransport-openapi-original.json#Task_CreateThirdPartyExchangeTask
+- status: 404
+  title: Not found
+  remediation: The referenced task/consignment/address/pickup-point does not exist in your org.
+  operation_count: 9
+  example_operations:
+  - openapi/chaldal-eggtransport-openapi-original.json#Task_GetQrCodeBinary
+  - openapi/chaldal-eggtransport-openapi-original.json#Task_GetTaskStatus
+  - openapi/chaldal-eggtransport-openapi-original.json#Task_OrgCancelTask
+  - openapi/chaldal-eggtransport-openapi-original.json#Task_ConsolidateTasksForMyOrg
+- status: 409
+  title: Conflict
+  remediation: The resource is in a conflicting state; refetch and retry.
+  operation_count: 2
+  example_operations:
+  - openapi/chaldal-eggtransport-openapi-original.json#Task_OrgCancelTask
+  - openapi/chaldal-eggtransport-openapi-original.json#Task_UpdateInstructionsForFailureAlertInMyOrg
+- status: 412
+  title: Precondition failed
+  remediation: A precondition (e.g. task state) was not met; check current status first.
+  operation_count: 2
+  example_operations:
+  - openapi/chaldal-eggtransport-openapi-original.json#Task_OrgCancelTask
+  - openapi/chaldal-eggtransport-openapi-original.json#Task_UpdateInstructionsForFailureAlertInMyOrg
+- status: 500
+  title: Internal server error
+  remediation: Server error; retry with backoff and contact tech@chaldal.com if it persists.
+  operation_count: 2
+  example_operations:
+  - openapi/chaldal-eggtransport-openapi-original.json#Organization_CreateOrganization
+  - openapi/chaldal-eggtransport-openapi-original.json#Organization_AddOrgPickupPoint

@@ -1,0 +1,191 @@
+generated: '2026-07-18'
+method: derived
+status: candidate
+source: openapi/chaldal-eggtransport-openapi-original.json
+note: Candidate MCP tool list derived one-per-operation from the Egg Transport OpenAPI. No official hosted
+  MCP server was found for Chaldal as of this run.
+server:
+  name: chaldal-eggtransport
+  transport: http
+  url: null
+auth:
+  type: apiKey
+  headers:
+  - X-Egg-ApiKey
+  - X-Egg-UserId
+tools:
+- name: Heartbeat_Smoketest
+  description: Heartbeat Smoketest
+  method: POST
+  path: /api/Heartbeat/Smoketest
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Heartbeat_Smoketest
+- name: Heartbeat_Ping
+  description: Heartbeat Ping
+  method: GET
+  path: /api/Heartbeat/Ping
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Heartbeat_Ping
+- name: Accounts_GetCurrentOrgAccountingTransactionsForDateRange
+  description: Accounts GetCurrentOrgAccountingTransactionsForDateRange
+  method: GET
+  path: /api/Accounts/GetCurrentOrgAccountingTransactionsForDateRange
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Accounts_GetCurrentOrgAccountingTransactionsForDateRange
+- name: Accounts_GetPaymentHistoryForMyOrg
+  description: Accounts GetPaymentHistoryForMyOrg
+  method: GET
+  path: /api/Accounts/GetPaymentHistoryForMyOrg
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Accounts_GetPaymentHistoryForMyOrg
+- name: Accounts_GetBillsForMyOrg
+  description: Accounts GetBillsForMyOrg
+  method: GET
+  path: /api/Accounts/GetBillsForMyOrg
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Accounts_GetBillsForMyOrg
+- name: Accounts_GetBillItemsForMyBill
+  description: Accounts GetBillItemsForMyBill
+  method: GET
+  path: /api/Accounts/GetBillItemsForMyBill
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Accounts_GetBillItemsForMyBill
+- name: Task_GetQrCodeBinary
+  description: Task GetQrCodeBinary
+  method: GET
+  path: /api/Task/GetQrCodeBinary
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Task_GetQrCodeBinary
+- name: Task_GetTaskStatus
+  description: Task GetTaskStatus
+  method: GET
+  path: /api/Task/GetTaskStatus
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Task_GetTaskStatus
+- name: Task_GetTasks
+  description: Task GetTasks
+  method: POST
+  path: /api/Task/GetTasks
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Task_GetTasks
+- name: Task_GetTasksStatuses
+  description: Task GetTasksStatuses
+  method: POST
+  path: /api/Task/GetTasksStatuses
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Task_GetTasksStatuses
+- name: Task_CreateThirdPartyDeliveryTask
+  description: Task CreateThirdPartyDeliveryTask
+  method: POST
+  path: /api/Task/CreateThirdPartyDeliveryTask
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Task_CreateThirdPartyDeliveryTask
+- name: Task_CreateThirdPartyPickUpTask
+  description: Task CreateThirdPartyPickUpTask
+  method: POST
+  path: /api/Task/CreateThirdPartyPickUpTask
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Task_CreateThirdPartyPickUpTask
+- name: Task_CreateThirdPartyExchangeTask
+  description: Task CreateThirdPartyExchangeTask
+  method: POST
+  path: /api/Task/CreateThirdPartyExchangeTask
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Task_CreateThirdPartyExchangeTask
+- name: Task_SearchTasksForMyOrg
+  description: Task SearchTasksForMyOrg
+  method: GET
+  path: /api/Task/SearchTasksForMyOrg
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Task_SearchTasksForMyOrg
+- name: Task_OrgCancelTask
+  description: Task OrgCancelTask
+  method: POST
+  path: /api/Task/OrgCancelTask
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Task_OrgCancelTask
+- name: Task_ValidateTaskImportCsv
+  description: Task ValidateTaskImportCsv
+  method: POST
+  path: /api/Task/ValidateTaskImportCsv
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Task_ValidateTaskImportCsv
+- name: Task_ImportTasksToMyOrg
+  description: Task ImportTasksToMyOrg
+  method: POST
+  path: /api/Task/ImportTasksToMyOrg
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Task_ImportTasksToMyOrg
+- name: Task_GetUnconsolidatedTasksForMyOrg
+  description: Task GetUnconsolidatedTasksForMyOrg
+  method: GET
+  path: /api/Task/GetUnconsolidatedTasksForMyOrg
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Task_GetUnconsolidatedTasksForMyOrg
+- name: Task_GetTasksWithFailureAlertsForMyOrg
+  description: Task GetTasksWithFailureAlertsForMyOrg
+  method: GET
+  path: /api/Task/GetTasksWithFailureAlertsForMyOrg
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Task_GetTasksWithFailureAlertsForMyOrg
+- name: Task_ConsolidateTasksForMyOrg
+  description: Task ConsolidateTasksForMyOrg
+  method: POST
+  path: /api/Task/ConsolidateTasksForMyOrg
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Task_ConsolidateTasksForMyOrg
+- name: Task_CancelTasksForMyOrg
+  description: Task CancelTasksForMyOrg
+  method: POST
+  path: /api/Task/CancelTasksForMyOrg
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Task_CancelTasksForMyOrg
+- name: Task_GetConsignmentsForMyOrg
+  description: Task GetConsignmentsForMyOrg
+  method: GET
+  path: /api/Task/GetConsignmentsForMyOrg
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Task_GetConsignmentsForMyOrg
+- name: Task_GetConsolidatedTasksForConsignmentInMyOrg
+  description: Task GetConsolidatedTasksForConsignmentInMyOrg
+  method: GET
+  path: /api/Task/GetConsolidatedTasksForConsignmentInMyOrg
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Task_GetConsolidatedTasksForConsignmentInMyOrg
+- name: Task_UpdateInstructionsForFailureAlertInMyOrg
+  description: Task UpdateInstructionsForFailureAlertInMyOrg
+  method: POST
+  path: /api/Task/UpdateInstructionsForFailureAlertInMyOrg
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Task_UpdateInstructionsForFailureAlertInMyOrg
+- name: Task_GetLabelsPdf
+  description: Task GetLabelsPdf
+  method: GET
+  path: /api/Task/GetLabelsPdf
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Task_GetLabelsPdf
+- name: Task_GetTaskAuditTrail
+  description: Task GetTaskAuditTrail
+  method: GET
+  path: /api/Task/GetTaskAuditTrail
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Task_GetTaskAuditTrail
+- name: Identity_GetDeliveryAreas
+  description: Identity GetDeliveryAreas
+  method: GET
+  path: /api/Identity/GetDeliveryAreas
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Identity_GetDeliveryAreas
+- name: Identity_SearchForIdentityInMyOrg
+  description: Identity SearchForIdentityInMyOrg
+  method: POST
+  path: /api/Identity/SearchForIdentityInMyOrg
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Identity_SearchForIdentityInMyOrg
+- name: Identity_GetAddressInfoFromAddressIdInMyOrg
+  description: Identity GetAddressInfoFromAddressIdInMyOrg
+  method: GET
+  path: /api/Identity/GetAddressInfoFromAddressIdInMyOrg
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Identity_GetAddressInfoFromAddressIdInMyOrg
+- name: Identity_GetAddressInfoListFromAddressIdListInMyOrg
+  description: Identity GetAddressInfoListFromAddressIdListInMyOrg
+  method: GET
+  path: /api/Identity/GetAddressInfoListFromAddressIdListInMyOrg
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Identity_GetAddressInfoListFromAddressIdListInMyOrg
+- name: Organization_CreateOrganization
+  description: Organization CreateOrganization
+  method: POST
+  path: /api/Organization/CreateOrganization
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Organization_CreateOrganization
+- name: Organization_GetOrgStatus
+  description: Organization GetOrgStatus
+  method: POST
+  path: /api/Organization/GetOrgStatus
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Organization_GetOrgStatus
+- name: Organization_AddOrgPickupPoint
+  description: Organization AddOrgPickupPoint
+  method: POST
+  path: /api/Organization/AddOrgPickupPoint
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Organization_AddOrgPickupPoint
+- name: Organization_GetOrgPickupPoints
+  description: Organization GetOrgPickupPoints
+  method: GET
+  path: /api/Organization/GetOrgPickupPoints
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Organization_GetOrgPickupPoints
+- name: Organization_GetOrgPickupPointByTrackingRef
+  description: Organization GetOrgPickupPointByTrackingRef
+  method: GET
+  path: /api/Organization/GetOrgPickupPointByTrackingRef
+  source_operation: openapi/chaldal-eggtransport-openapi-original.json#Organization_GetOrgPickupPointByTrackingRef
