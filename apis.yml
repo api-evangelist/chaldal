@@ -210,6 +210,12 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: AgentSkill
+  url: skills/chaldal-consolidate-consignment.md
+- type: MCPServer
+  url: mcp/chaldal-mcp.yml
+- type: Overlay
+  url: overlays/chaldal-eggtransport-overlay.yaml
 - type: AgenticAccess
   url: agentic-access/chaldal-agentic-access.yml
 - type: DomainSecurity
