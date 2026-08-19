@@ -1,0 +1,79 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "My Title Accounts Identity API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Identity",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Identity_GetDeliveryAreas",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/Identity/GetDeliveryAreas"
+          }
+        },
+        {
+          "info": {
+            "name": "Identity_SearchForIdentityInMyOrg",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/Identity/SearchForIdentityInMyOrg",
+            "params": [
+              {
+                "name": "phoneNumber",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Identity_GetAddressInfoFromAddressIdInMyOrg",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/Identity/GetAddressInfoFromAddressIdInMyOrg",
+            "params": [
+              {
+                "name": "addressId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Identity_GetAddressInfoListFromAddressIdListInMyOrg",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/Identity/GetAddressInfoListFromAddressIdListInMyOrg",
+            "params": [
+              {
+                "name": "addressIdList",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -189,3 +189,9 @@ tools:
   method: GET
   path: /api/Organization/GetOrgPickupPointByTrackingRef
   source_operation: openapi/chaldal-eggtransport-openapi-original.json#Organization_GetOrgPickupPointByTrackingRef
+deployment:
+  mode: none
+  verified: derived
+  tools: 35
+  checked: '2026-08-12'
+  source: catalog MCP census

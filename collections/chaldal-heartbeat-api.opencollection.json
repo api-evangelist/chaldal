@@ -1,0 +1,38 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "My Title Accounts Heartbeat API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Heartbeat",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Heartbeat_Smoketest",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/Heartbeat/Smoketest"
+          }
+        },
+        {
+          "info": {
+            "name": "Heartbeat_Ping",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/Heartbeat/Ping"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

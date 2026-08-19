@@ -1,0 +1,350 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "My Title Accounts Task API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Task",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Task_GetQrCodeBinary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/Task/GetQrCodeBinary",
+            "params": [
+              {
+                "name": "trackingRef",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "side",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Task_GetTaskStatus",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/Task/GetTaskStatus",
+            "params": [
+              {
+                "name": "trackingRef",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Task_GetTasks",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/Task/GetTasks"
+          }
+        },
+        {
+          "info": {
+            "name": "Task_GetTasksStatuses",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/Task/GetTasksStatuses",
+            "params": [
+              {
+                "name": "trackingRefsCsv",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Task_CreateThirdPartyDeliveryTask",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/Task/CreateThirdPartyDeliveryTask"
+          }
+        },
+        {
+          "info": {
+            "name": "Task_CreateThirdPartyPickUpTask",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/Task/CreateThirdPartyPickUpTask"
+          }
+        },
+        {
+          "info": {
+            "name": "Task_CreateThirdPartyExchangeTask",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/Task/CreateThirdPartyExchangeTask"
+          }
+        },
+        {
+          "info": {
+            "name": "Task_SearchTasksForMyOrg",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/Task/SearchTasksForMyOrg",
+            "params": [
+              {
+                "name": "searchText",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "taskType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fromDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "toDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "highLevelStatus",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageNum",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Task_OrgCancelTask",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/Task/OrgCancelTask",
+            "params": [
+              {
+                "name": "trackingRef",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Task_ValidateTaskImportCsv",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/Task/ValidateTaskImportCsv"
+          }
+        },
+        {
+          "info": {
+            "name": "Task_ImportTasksToMyOrg",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/Task/ImportTasksToMyOrg"
+          }
+        },
+        {
+          "info": {
+            "name": "Task_GetUnconsolidatedTasksForMyOrg",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/Task/GetUnconsolidatedTasksForMyOrg",
+            "params": [
+              {
+                "name": "pageNum",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Task_GetTasksWithFailureAlertsForMyOrg",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/Task/GetTasksWithFailureAlertsForMyOrg",
+            "params": [
+              {
+                "name": "pageNum",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Task_ConsolidateTasksForMyOrg",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/Task/ConsolidateTasksForMyOrg"
+          }
+        },
+        {
+          "info": {
+            "name": "Task_CancelTasksForMyOrg",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/Task/CancelTasksForMyOrg"
+          }
+        },
+        {
+          "info": {
+            "name": "Task_GetConsignmentsForMyOrg",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/Task/GetConsignmentsForMyOrg"
+          }
+        },
+        {
+          "info": {
+            "name": "Task_GetConsolidatedTasksForConsignmentInMyOrg",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/Task/GetConsolidatedTasksForConsignmentInMyOrg",
+            "params": [
+              {
+                "name": "consignmentId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageNum",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Task_UpdateInstructionsForFailureAlertInMyOrg",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/Task/UpdateInstructionsForFailureAlertInMyOrg",
+            "params": [
+              {
+                "name": "trackingRef",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Task_GetLabelsPdf",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/Task/GetLabelsPdf",
+            "params": [
+              {
+                "name": "trackingRefsCsv",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Task_GetTaskAuditTrail",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/Task/GetTaskAuditTrail",
+            "params": [
+              {
+                "name": "trackingRef",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

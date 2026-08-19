@@ -1,0 +1,437 @@
+{
+  "item": [
+    {
+      "id": "c31a6c82-e9e1-43f4-83e7-86bd01c3ff26",
+      "name": "Accounts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "789da4f7-b813-4002-a668-832253a178f8",
+          "name": "Accounts Get Current Org Accounting Transactions For Date Range",
+          "request": {
+            "name": "Accounts Get Current Org Accounting Transactions For Date Range",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Accounts",
+                "GetCurrentOrgAccountingTransactionsForDateRange"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "startTime",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "endTime",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ddaf19b4-5fbc-480b-99e8-b5c8cd3ddbff",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Accounts",
+                    "GetCurrentOrgAccountingTransactionsForDateRange"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "startTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "endTime",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"accountPeriodSummaryDto\": {\n    \"earliestTxnDate\": \"1947-02-02T21:51:59.350Z\",\n    \"moneyBalance\": 1940.9763029072978,\n    \"stockBalance\": 3813.2674689580435,\n    \"holdBalance\": 6942.333845963992,\n    \"availableBalance\": 9502.6535679006,\n    \"periodOpeningBalance\": 6875.099832017406,\n    \"periodClosingBalance\": 4591.4456542092485\n  },\n  \"transactions\": [\n    {\n      \"on\": \"1961-10-24T09:46:10.538Z\",\n      \"amount\": 7530.298280688291,\n      \"stockValue\": 803.5692365592429,\n      \"moneyBalance\": 1650.7473785254135,\n      \"stockBalance\": 6292.553697327021,\n      \"sequenceNum\": 5148,\n      \"memo\": \"string\",\n      \"category\": \"string\"\n    },\n    {\n      \"on\": \"2000-01-13T10:30:30.744Z\",\n      \"amount\": 5779.516920228562,\n      \"stockValue\": 4933.795418446138,\n      \"moneyBalance\": 452.2831155129481,\n      \"stockBalance\": 6536.70061152538,\n      \"sequenceNum\": 2373,\n      \"memo\": \"string\",\n      \"category\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "798de8cc-5e45-4bca-a9e3-f3b284959bcc",
+          "name": "Accounts Get Payment History For My Org",
+          "request": {
+            "name": "Accounts Get Payment History For My Org",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Accounts",
+                "GetPaymentHistoryForMyOrg"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "startTime",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "endTime",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageNum",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e0c46156-d98b-4945-b81e-b44bc163b956",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Accounts",
+                    "GetPaymentHistoryForMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "startTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "endTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "pageNum",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"billId\": 637,\n    \"createdOn\": \"1978-05-28T02:16:44.661Z\",\n    \"total\": 9588.500690029367,\n    \"lastActionOn\": \"1997-05-16T23:57:01.113Z\",\n    \"status\": \"string\",\n    \"settlementMemo\": {},\n    \"settlementImageUri\": {},\n    \"billItems\": [\n      {\n        \"deliveryCharge\": 2312.7873517535545,\n        \"cashCollected\": 1388.0022050237362,\n        \"serviceCharge\": 4507.59402019129,\n        \"stockValueCompensated\": 3922.101103370068,\n        \"description\": \"string\",\n        \"task\": {\n          \"cashToCollect\": 8156.399528935658,\n          \"stockValue\": 1762.3211944773232,\n          \"trackingRef\": \"string\",\n          \"merchantRef\": \"string\",\n          \"physique\": {},\n          \"addressInfo\": {\n            \"identity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"streetAddress\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"phoneNumber\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"deliveryArea\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"customerHub\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"geoLocation\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"confidenceLevel\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"slotStart\": {},\n          \"slotEnd\": {},\n          \"weight\": \"string\",\n          \"status\": \"string\",\n          \"taskType\": \"string\",\n          \"merchantHub\": {},\n          \"notes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"customerHub\": \"string\",\n        \"deliveryArea\": \"string\"\n      },\n      {\n        \"deliveryCharge\": 6057.344886969797,\n        \"cashCollected\": 1467.3438499996905,\n        \"serviceCharge\": 2473.5478992532444,\n        \"stockValueCompensated\": 8698.178458287808,\n        \"description\": \"string\",\n        \"task\": {\n          \"cashToCollect\": 360.41043962697916,\n          \"stockValue\": 3963.27349103612,\n          \"trackingRef\": \"string\",\n          \"merchantRef\": \"string\",\n          \"physique\": {},\n          \"addressInfo\": {\n            \"identity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"streetAddress\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"phoneNumber\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"deliveryArea\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"customerHub\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"geoLocation\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"confidenceLevel\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"slotStart\": {},\n          \"slotEnd\": {},\n          \"weight\": \"string\",\n          \"status\": \"string\",\n          \"taskType\": \"string\",\n          \"merchantHub\": {},\n          \"notes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"customerHub\": \"string\",\n        \"deliveryArea\": \"string\"\n      }\n    ]\n  },\n  {\n    \"billId\": 2044,\n    \"createdOn\": \"1981-04-23T10:12:14.870Z\",\n    \"total\": 5596.4896938097945,\n    \"lastActionOn\": \"2018-12-27T02:39:54.689Z\",\n    \"status\": \"string\",\n    \"settlementMemo\": {},\n    \"settlementImageUri\": {},\n    \"billItems\": [\n      {\n        \"deliveryCharge\": 4231.67721030129,\n        \"cashCollected\": 9932.575954876884,\n        \"serviceCharge\": 2150.821083529998,\n        \"stockValueCompensated\": 4179.644418157978,\n        \"description\": \"string\",\n        \"task\": {\n          \"cashToCollect\": 6653.551919007441,\n          \"stockValue\": 6943.998867079439,\n          \"trackingRef\": \"string\",\n          \"merchantRef\": \"string\",\n          \"physique\": {},\n          \"addressInfo\": {\n            \"identity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"streetAddress\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"phoneNumber\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"deliveryArea\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"customerHub\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"geoLocation\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"confidenceLevel\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"slotStart\": {},\n          \"slotEnd\": {},\n          \"weight\": \"string\",\n          \"status\": \"string\",\n          \"taskType\": \"string\",\n          \"merchantHub\": {},\n          \"notes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"customerHub\": \"string\",\n        \"deliveryArea\": \"string\"\n      },\n      {\n        \"deliveryCharge\": 4681.026466612611,\n        \"cashCollected\": 5256.920090515849,\n        \"serviceCharge\": 217.1944878470622,\n        \"stockValueCompensated\": 1932.084308465325,\n        \"description\": \"string\",\n        \"task\": {\n          \"cashToCollect\": 1189.085403895267,\n          \"stockValue\": 5981.792211424068,\n          \"trackingRef\": \"string\",\n          \"merchantRef\": \"string\",\n          \"physique\": {},\n          \"addressInfo\": {\n            \"identity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"streetAddress\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"phoneNumber\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"deliveryArea\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"customerHub\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"geoLocation\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"confidenceLevel\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"slotStart\": {},\n          \"slotEnd\": {},\n          \"weight\": \"string\",\n          \"status\": \"string\",\n          \"taskType\": \"string\",\n          \"merchantHub\": {},\n          \"notes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"customerHub\": \"string\",\n        \"deliveryArea\": \"string\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8a5515c9-7328-47b3-b34b-b27d4ce5f6f7",
+          "name": "Accounts Get Bills For My Org",
+          "request": {
+            "name": "Accounts Get Bills For My Org",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Accounts",
+                "GetBillsForMyOrg"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "startTime",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "endTime",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageNum",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "59ed0dae-8504-4c9d-9a75-5fc582e555b3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Accounts",
+                    "GetBillsForMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "startTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "endTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "pageNum",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"billId\": 3574,\n    \"createdOn\": \"1960-12-13T04:23:50.010Z\",\n    \"total\": 6453.912572048458,\n    \"lastActionOn\": \"2025-01-31T02:59:57.900Z\",\n    \"status\": \"string\",\n    \"settlementMemo\": {},\n    \"settlementImageUri\": {},\n    \"billItems\": [\n      {\n        \"deliveryCharge\": 4000.0826397421206,\n        \"cashCollected\": 8202.13315935403,\n        \"serviceCharge\": 1798.8974124071988,\n        \"stockValueCompensated\": 171.90632528204742,\n        \"description\": \"string\",\n        \"task\": {\n          \"cashToCollect\": 466.5198654122604,\n          \"stockValue\": 9753.603457065814,\n          \"trackingRef\": \"string\",\n          \"merchantRef\": \"string\",\n          \"physique\": {},\n          \"addressInfo\": {\n            \"identity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"streetAddress\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"phoneNumber\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"deliveryArea\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"customerHub\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"geoLocation\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"confidenceLevel\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"slotStart\": {},\n          \"slotEnd\": {},\n          \"weight\": \"string\",\n          \"status\": \"string\",\n          \"taskType\": \"string\",\n          \"merchantHub\": {},\n          \"notes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"customerHub\": \"string\",\n        \"deliveryArea\": \"string\"\n      },\n      {\n        \"deliveryCharge\": 800.269827042458,\n        \"cashCollected\": 7517.810680407463,\n        \"serviceCharge\": 5516.277112113021,\n        \"stockValueCompensated\": 4384.693191283173,\n        \"description\": \"string\",\n        \"task\": {\n          \"cashToCollect\": 4061.311640789708,\n          \"stockValue\": 8915.066068457121,\n          \"trackingRef\": \"string\",\n          \"merchantRef\": \"string\",\n          \"physique\": {},\n          \"addressInfo\": {\n            \"identity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"streetAddress\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"phoneNumber\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"deliveryArea\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"customerHub\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"geoLocation\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"confidenceLevel\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"slotStart\": {},\n          \"slotEnd\": {},\n          \"weight\": \"string\",\n          \"status\": \"string\",\n          \"taskType\": \"string\",\n          \"merchantHub\": {},\n          \"notes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"customerHub\": \"string\",\n        \"deliveryArea\": \"string\"\n      }\n    ]\n  },\n  {\n    \"billId\": 9972,\n    \"createdOn\": \"1989-10-02T02:12:05.342Z\",\n    \"total\": 5505.948418095405,\n    \"lastActionOn\": \"1974-11-28T02:30:10.694Z\",\n    \"status\": \"string\",\n    \"settlementMemo\": {},\n    \"settlementImageUri\": {},\n    \"billItems\": [\n      {\n        \"deliveryCharge\": 6771.945365442014,\n        \"cashCollected\": 7177.753775485003,\n        \"serviceCharge\": 5163.618065276615,\n        \"stockValueCompensated\": 7258.377497137947,\n        \"description\": \"string\",\n        \"task\": {\n          \"cashToCollect\": 4808.280608049865,\n          \"stockValue\": 3735.957490810805,\n          \"trackingRef\": \"string\",\n          \"merchantRef\": \"string\",\n          \"physique\": {},\n          \"addressInfo\": {\n            \"identity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"streetAddress\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"phoneNumber\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"deliveryArea\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"customerHub\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"geoLocation\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"confidenceLevel\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"slotStart\": {},\n          \"slotEnd\": {},\n          \"weight\": \"string\",\n          \"status\": \"string\",\n          \"taskType\": \"string\",\n          \"merchantHub\": {},\n          \"notes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"customerHub\": \"string\",\n        \"deliveryArea\": \"string\"\n      },\n      {\n        \"deliveryCharge\": 1607.544018479723,\n        \"cashCollected\": 7863.27394015194,\n        \"serviceCharge\": 9870.807143361215,\n        \"stockValueCompensated\": 6924.868284590375,\n        \"description\": \"string\",\n        \"task\": {\n          \"cashToCollect\": 1603.998177096545,\n          \"stockValue\": 5342.048521667329,\n          \"trackingRef\": \"string\",\n          \"merchantRef\": \"string\",\n          \"physique\": {},\n          \"addressInfo\": {\n            \"identity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"streetAddress\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"phoneNumber\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"deliveryArea\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"customerHub\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"geoLocation\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"confidenceLevel\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"slotStart\": {},\n          \"slotEnd\": {},\n          \"weight\": \"string\",\n          \"status\": \"string\",\n          \"taskType\": \"string\",\n          \"merchantHub\": {},\n          \"notes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"customerHub\": \"string\",\n        \"deliveryArea\": \"string\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ec4c516a-a7b5-4e2b-936a-0620f35b4cf2",
+          "name": "Accounts Get Bill Items For My Bill",
+          "request": {
+            "name": "Accounts Get Bill Items For My Bill",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Accounts",
+                "GetBillItemsForMyBill"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "billId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageNum",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "df712311-4df0-4815-acfd-3f4cd3d9cbb5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Accounts",
+                    "GetBillItemsForMyBill"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "billId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageNum",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"deliveryCharge\": 6513.729891403747,\n    \"cashCollected\": 4667.514390821087,\n    \"serviceCharge\": 5894.808741150044,\n    \"stockValueCompensated\": 8687.886206470479,\n    \"description\": \"string\",\n    \"task\": {\n      \"cashToCollect\": 4082.6660385635673,\n      \"stockValue\": 4058.831021054764,\n      \"trackingRef\": \"string\",\n      \"merchantRef\": \"string\",\n      \"physique\": {},\n      \"addressInfo\": {\n        \"identity\": \"string\",\n        \"address\": {},\n        \"fullName\": \"string\",\n        \"streetAddress\": \"string\",\n        \"phoneNumber\": \"string\",\n        \"deliveryArea\": {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": \"string\"\n        },\n        \"customerHub\": \"string\",\n        \"geoLocation\": {},\n        \"confidenceLevel\": {}\n      },\n      \"slotStart\": {},\n      \"slotEnd\": {},\n      \"weight\": \"string\",\n      \"status\": \"string\",\n      \"taskType\": \"string\",\n      \"merchantHub\": {},\n      \"notes\": [\n        {\n          \"noteId\": \"string\",\n          \"createdOn\": \"1987-12-28T04:14:18.892Z\",\n          \"createdBy\": \"string\",\n          \"note\": \"string\"\n        },\n        {\n          \"noteId\": \"string\",\n          \"createdOn\": \"1946-12-18T03:21:42.314Z\",\n          \"createdBy\": \"string\",\n          \"note\": \"string\"\n        }\n      ]\n    },\n    \"customerHub\": \"string\",\n    \"deliveryArea\": \"string\"\n  },\n  {\n    \"deliveryCharge\": 2592.805793685751,\n    \"cashCollected\": 7184.288502236842,\n    \"serviceCharge\": 5803.435287024399,\n    \"stockValueCompensated\": 8818.637509029872,\n    \"description\": \"string\",\n    \"task\": {\n      \"cashToCollect\": 884.0735302021208,\n      \"stockValue\": 4832.531464670069,\n      \"trackingRef\": \"string\",\n      \"merchantRef\": \"string\",\n      \"physique\": {},\n      \"addressInfo\": {\n        \"identity\": \"string\",\n        \"address\": {},\n        \"fullName\": \"string\",\n        \"streetAddress\": \"string\",\n        \"phoneNumber\": \"string\",\n        \"deliveryArea\": {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": \"string\"\n        },\n        \"customerHub\": \"string\",\n        \"geoLocation\": {},\n        \"confidenceLevel\": {}\n      },\n      \"slotStart\": {},\n      \"slotEnd\": {},\n      \"weight\": \"string\",\n      \"status\": \"string\",\n      \"taskType\": \"string\",\n      \"merchantHub\": {},\n      \"notes\": [\n        {\n          \"noteId\": \"string\",\n          \"createdOn\": \"1987-10-27T18:54:46.754Z\",\n          \"createdBy\": \"string\",\n          \"note\": \"string\"\n        },\n        {\n          \"noteId\": \"string\",\n          \"createdOn\": \"1989-07-07T18:40:12.442Z\",\n          \"createdBy\": \"string\",\n          \"note\": \"string\"\n        }\n      ]\n    },\n    \"customerHub\": \"string\",\n    \"deliveryArea\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://eggtransport.chaldal.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "21a91b4b-b78b-4b61-b519-3242fc0dc764",
+    "name": "My Title Accounts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

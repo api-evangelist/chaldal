@@ -1,0 +1,564 @@
+{
+  "item": [
+    {
+      "id": "fecf38e1-c806-48c4-a637-f3e6197ad163",
+      "name": "Identity",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0adf22f7-b72c-4285-ada3-01912b272816",
+          "name": "Identity Get Delivery Areas",
+          "request": {
+            "name": "Identity Get Delivery Areas",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Identity",
+                "GetDeliveryAreas"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "24f2dd1b-209b-47f8-87b2-6a80bb6eacb7",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Identity",
+                    "GetDeliveryAreas"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": {},\n    \"name\": \"string\"\n  },\n  {\n    \"id\": {},\n    \"name\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1d0437c5-dad2-425b-93a8-0370171c8b8d",
+          "name": "Identity Search For Identity In My Org",
+          "request": {
+            "name": "Identity Search For Identity In My Org",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Identity",
+                "SearchForIdentityInMyOrg"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "phoneNumber",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "18d008e7-418c-44ba-a3d9-fbc9384837da",
+              "name": "Possibly Profile and Addresses",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Identity",
+                    "SearchForIdentityInMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "phoneNumber",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b2830537-593a-44c1-b6d6-4d725a7d7bec",
+              "name": "Not logged in",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Identity",
+                    "SearchForIdentityInMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "phoneNumber",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7298abf8-765f-487b-8f5b-5ba66d6c8a21",
+              "name": "Not authorized to view customers for Org",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Identity",
+                    "SearchForIdentityInMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "phoneNumber",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b4ac0ad5-a45d-4509-81a4-9fe07f9e8cb5",
+          "name": "Identity Get Address Info From Address Id In My Org",
+          "request": {
+            "name": "Identity Get Address Info From Address Id In My Org",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Identity",
+                "GetAddressInfoFromAddressIdInMyOrg"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "addressId",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9c999281-7af9-458b-9578-9d23ef495899",
+              "name": "Address Info",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Identity",
+                    "GetAddressInfoFromAddressIdInMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "addressId",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"identity\": \"string\",\n  \"address\": {},\n  \"fullName\": \"string\",\n  \"streetAddress\": \"string\",\n  \"phoneNumber\": \"string\",\n  \"deliveryArea\": {\n    \"id\": {},\n    \"name\": \"string\"\n  },\n  \"customerHub\": \"string\",\n  \"geoLocation\": {},\n  \"confidenceLevel\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2369fcad-3a0c-49ad-b95d-05af58fc3357",
+              "name": "Not logged in",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Identity",
+                    "GetAddressInfoFromAddressIdInMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "addressId",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cd6d86ea-9445-4cf1-ad93-68e8b390c7d2",
+              "name": "Not authorized to view customer Info",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Identity",
+                    "GetAddressInfoFromAddressIdInMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "addressId",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "66aaac74-2a9e-406a-9a0c-23117a470468",
+          "name": "Identity Get Address Info List From Address Id List In My Org",
+          "request": {
+            "name": "Identity Get Address Info List From Address Id List In My Org",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Identity",
+                "GetAddressInfoListFromAddressIdListInMyOrg"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "addressIdList",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "74c865c8-5d0b-44b6-81ac-e134d52d1dc7",
+              "name": "Address Infos",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Identity",
+                    "GetAddressInfoListFromAddressIdListInMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "addressIdList",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"identity\": \"string\",\n    \"address\": {},\n    \"fullName\": \"string\",\n    \"streetAddress\": \"string\",\n    \"phoneNumber\": \"string\",\n    \"deliveryArea\": {\n      \"id\": {},\n      \"name\": \"string\"\n    },\n    \"customerHub\": \"string\",\n    \"geoLocation\": {},\n    \"confidenceLevel\": {}\n  },\n  {\n    \"identity\": \"string\",\n    \"address\": {},\n    \"fullName\": \"string\",\n    \"streetAddress\": \"string\",\n    \"phoneNumber\": \"string\",\n    \"deliveryArea\": {\n      \"id\": {},\n      \"name\": \"string\"\n    },\n    \"customerHub\": \"string\",\n    \"geoLocation\": {},\n    \"confidenceLevel\": {}\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1ca7749c-7b88-4852-9ec3-7b12be009534",
+              "name": "Not logged in",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Identity",
+                    "GetAddressInfoListFromAddressIdListInMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "addressIdList",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "229925de-b69e-45db-b92b-9f5fae523416",
+              "name": "Not authorized to view customer Info",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Identity",
+                    "GetAddressInfoListFromAddressIdListInMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "addressIdList",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://eggtransport.chaldal.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "865a4fbb-4852-4aa5-bf7a-85c09f5f1432",
+    "name": "My Title Accounts Identity API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,3624 @@
+{
+  "item": [
+    {
+      "id": "ee6e3713-3e6f-476d-be7c-3f078051f14b",
+      "name": "Task",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "016fe461-da28-4127-ae1f-b85d64cf7753",
+          "name": "Task Get Qr Code Binary",
+          "request": {
+            "name": "Task Get Qr Code Binary",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Task",
+                "GetQrCodeBinary"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "trackingRef",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "side",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0860d110-0cca-4bf1-98b3-0b5c690bbba7",
+              "name": "Binary PNG Image",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetQrCodeBinary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "side",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cfbf753c-a206-4494-b71a-f613fc1e2393",
+              "name": "Invalid Dimensions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetQrCodeBinary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "side",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c7f590da-06d2-4f05-8bd2-946a699eafd3",
+              "name": "Not logged in",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetQrCodeBinary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "side",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "707fffcf-e465-43c3-a289-bf97cb33f127",
+              "name": "Invalid TrackingRef",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetQrCodeBinary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "side",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cef124d4-beb6-40d6-8216-18d874bd5048",
+          "name": "Task Get Task Status",
+          "request": {
+            "name": "Task Get Task Status",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Task",
+                "GetTaskStatus"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "trackingRef",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dd8fc5f1-a41f-48c1-8adc-71cbe2acc924",
+              "name": "Simplified Task Status",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetTaskStatus"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "022d8662-7175-4f6a-adb8-4ae82cc37b04",
+              "name": "Invalid TrackingRef",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetTaskStatus"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b8b90d27-497c-4852-954d-7bc3df51d9c8",
+          "name": "Task Get Tasks",
+          "request": {
+            "name": "Task Get Tasks",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Task",
+                "GetTasks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  \"<string>\",\n  \"<string>\"\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bcb9bc21-266f-4450-bd08-9a11794e1438",
+              "name": "Tasks By Tracking Ref",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetTasks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"IsEmpty\": true,\n  \"Count\": 6965,\n  \"comparer@686\": {},\n  \"tree@690\": {},\n  \"serializedData\": [\n    {\n      \"key\": \"string\",\n      \"value\": {\n        \"cashToCollect\": 371.63419446743063,\n        \"stockValue\": 3989.76043127654,\n        \"trackingRef\": \"string\",\n        \"merchantRef\": \"string\",\n        \"physique\": {},\n        \"addressInfo\": {\n          \"identity\": \"string\",\n          \"address\": {},\n          \"fullName\": \"string\",\n          \"streetAddress\": \"string\",\n          \"phoneNumber\": \"string\",\n          \"deliveryArea\": {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"customerHub\": \"string\",\n          \"geoLocation\": {},\n          \"confidenceLevel\": {}\n        },\n        \"slotStart\": {},\n        \"slotEnd\": {},\n        \"weight\": \"string\",\n        \"status\": \"string\",\n        \"taskType\": \"string\",\n        \"merchantHub\": {},\n        \"notes\": [\n          {\n            \"noteId\": \"string\",\n            \"createdOn\": \"1976-10-14T16:19:37.041Z\",\n            \"createdBy\": \"string\",\n            \"note\": \"string\"\n          },\n          {\n            \"noteId\": \"string\",\n            \"createdOn\": \"2014-06-11T10:10:37.026Z\",\n            \"createdBy\": \"string\",\n            \"note\": \"string\"\n          }\n        ]\n      }\n    },\n    {\n      \"key\": \"string\",\n      \"value\": {\n        \"cashToCollect\": 3266.0003950317864,\n        \"stockValue\": 6781.214689805254,\n        \"trackingRef\": \"string\",\n        \"merchantRef\": \"string\",\n        \"physique\": {},\n        \"addressInfo\": {\n          \"identity\": \"string\",\n          \"address\": {},\n          \"fullName\": \"string\",\n          \"streetAddress\": \"string\",\n          \"phoneNumber\": \"string\",\n          \"deliveryArea\": {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"customerHub\": \"string\",\n          \"geoLocation\": {},\n          \"confidenceLevel\": {}\n        },\n        \"slotStart\": {},\n        \"slotEnd\": {},\n        \"weight\": \"string\",\n        \"status\": \"string\",\n        \"taskType\": \"string\",\n        \"merchantHub\": {},\n        \"notes\": [\n          {\n            \"noteId\": \"string\",\n            \"createdOn\": \"1973-06-01T06:20:03.650Z\",\n            \"createdBy\": \"string\",\n            \"note\": \"string\"\n          },\n          {\n            \"noteId\": \"string\",\n            \"createdOn\": \"2020-02-04T16:25:12.142Z\",\n            \"createdBy\": \"string\",\n            \"note\": \"string\"\n          }\n        ]\n      }\n    }\n  ],\n  \"Comparer\": {},\n  \"Tree\": {},\n  \"Item\": {\n    \"cashToCollect\": 6882.941702673381,\n    \"stockValue\": 4173.3070184215685,\n    \"trackingRef\": \"string\",\n    \"merchantRef\": \"string\",\n    \"physique\": {},\n    \"addressInfo\": {\n      \"identity\": \"string\",\n      \"address\": {},\n      \"fullName\": \"string\",\n      \"streetAddress\": \"string\",\n      \"phoneNumber\": \"string\",\n      \"deliveryArea\": {\n        \"id\": {},\n        \"name\": \"string\"\n      },\n      \"customerHub\": \"string\",\n      \"geoLocation\": {},\n      \"confidenceLevel\": {}\n    },\n    \"slotStart\": {},\n    \"slotEnd\": {},\n    \"weight\": \"string\",\n    \"status\": \"string\",\n    \"taskType\": \"string\",\n    \"merchantHub\": {},\n    \"notes\": [\n      {\n        \"noteId\": \"string\",\n        \"createdOn\": \"1948-08-20T02:55:55.090Z\",\n        \"createdBy\": \"string\",\n        \"note\": \"string\"\n      },\n      {\n        \"noteId\": \"string\",\n        \"createdOn\": \"1960-03-23T05:24:49.357Z\",\n        \"createdBy\": \"string\",\n        \"note\": \"string\"\n      }\n    ]\n  },\n  \"Keys\": [\n    \"string\",\n    \"string\"\n  ],\n  \"Values\": [\n    {\n      \"cashToCollect\": 4173.182372493938,\n      \"stockValue\": 7640.682796123384,\n      \"trackingRef\": \"string\",\n      \"merchantRef\": \"string\",\n      \"physique\": {},\n      \"addressInfo\": {\n        \"identity\": \"string\",\n        \"address\": {},\n        \"fullName\": \"string\",\n        \"streetAddress\": \"string\",\n        \"phoneNumber\": \"string\",\n        \"deliveryArea\": {\n          \"id\": {},\n          \"name\": \"string\"\n        },\n        \"customerHub\": \"string\",\n        \"geoLocation\": {},\n        \"confidenceLevel\": {}\n      },\n      \"slotStart\": {},\n      \"slotEnd\": {},\n      \"weight\": \"string\",\n      \"status\": \"string\",\n      \"taskType\": \"string\",\n      \"merchantHub\": {},\n      \"notes\": [\n        {\n          \"noteId\": \"string\",\n          \"createdOn\": \"2018-10-26T03:19:23.038Z\",\n          \"createdBy\": \"string\",\n          \"note\": \"string\"\n        },\n        {\n          \"noteId\": \"string\",\n          \"createdOn\": \"2002-03-20T12:45:49.234Z\",\n          \"createdBy\": \"string\",\n          \"note\": \"string\"\n        }\n      ]\n    },\n    {\n      \"cashToCollect\": 1811.1619709174765,\n      \"stockValue\": 2368.1316331036496,\n      \"trackingRef\": \"string\",\n      \"merchantRef\": \"string\",\n      \"physique\": {},\n      \"addressInfo\": {\n        \"identity\": \"string\",\n        \"address\": {},\n        \"fullName\": \"string\",\n        \"streetAddress\": \"string\",\n        \"phoneNumber\": \"string\",\n        \"deliveryArea\": {\n          \"id\": {},\n          \"name\": \"string\"\n        },\n        \"customerHub\": \"string\",\n        \"geoLocation\": {},\n        \"confidenceLevel\": {}\n      },\n      \"slotStart\": {},\n      \"slotEnd\": {},\n      \"weight\": \"string\",\n      \"status\": \"string\",\n      \"taskType\": \"string\",\n      \"merchantHub\": {},\n      \"notes\": [\n        {\n          \"noteId\": \"string\",\n          \"createdOn\": \"1961-09-12T11:26:03.915Z\",\n          \"createdBy\": \"string\",\n          \"note\": \"string\"\n        },\n        {\n          \"noteId\": \"string\",\n          \"createdOn\": \"1993-06-18T17:59:54.874Z\",\n          \"createdBy\": \"string\",\n          \"note\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"MinKeyValue\": {\n    \"item1\": \"string\",\n    \"item2\": {\n      \"cashToCollect\": 1993.7772048333657,\n      \"stockValue\": 541.0839928809552,\n      \"trackingRef\": \"string\",\n      \"merchantRef\": \"string\",\n      \"physique\": {},\n      \"addressInfo\": {\n        \"identity\": \"string\",\n        \"address\": {},\n        \"fullName\": \"string\",\n        \"streetAddress\": \"string\",\n        \"phoneNumber\": \"string\",\n        \"deliveryArea\": {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": \"string\"\n        },\n        \"customerHub\": \"string\",\n        \"geoLocation\": {},\n        \"confidenceLevel\": {}\n      },\n      \"slotStart\": {},\n      \"slotEnd\": {},\n      \"weight\": \"string\",\n      \"status\": \"string\",\n      \"taskType\": \"string\",\n      \"merchantHub\": {},\n      \"notes\": [\n        {\n          \"noteId\": \"string\",\n          \"createdOn\": \"1948-02-25T14:30:08.393Z\",\n          \"createdBy\": \"string\",\n          \"note\": \"string\"\n        },\n        {\n          \"noteId\": \"string\",\n          \"createdOn\": \"1970-04-23T19:34:14.799Z\",\n          \"createdBy\": \"string\",\n          \"note\": \"string\"\n        }\n      ]\n    }\n  },\n  \"MaxKeyValue\": {\n    \"item1\": \"string\",\n    \"item2\": {\n      \"cashToCollect\": 9114.742512823217,\n      \"stockValue\": 6983.901171447487,\n      \"trackingRef\": \"string\",\n      \"merchantRef\": \"string\",\n      \"physique\": {},\n      \"addressInfo\": {\n        \"identity\": \"string\",\n        \"address\": {},\n        \"fullName\": \"string\",\n        \"streetAddress\": \"string\",\n        \"phoneNumber\": \"string\",\n        \"deliveryArea\": {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": \"string\"\n        },\n        \"customerHub\": \"string\",\n        \"geoLocation\": {},\n        \"confidenceLevel\": {}\n      },\n      \"slotStart\": {},\n      \"slotEnd\": {},\n      \"weight\": \"string\",\n      \"status\": \"string\",\n      \"taskType\": \"string\",\n      \"merchantHub\": {},\n      \"notes\": [\n        {\n          \"noteId\": \"string\",\n          \"createdOn\": \"2016-12-08T23:16:59.342Z\",\n          \"createdBy\": \"string\",\n          \"note\": \"string\"\n        },\n        {\n          \"noteId\": \"string\",\n          \"createdOn\": \"2025-12-25T06:14:21.504Z\",\n          \"createdBy\": \"string\",\n          \"note\": \"string\"\n        }\n      ]\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "da4cfff5-2386-476f-a9da-f4331f76937d",
+              "name": "Not logged in",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetTasks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f1e5de10-0797-42c6-8cbb-b5daf7c93412",
+              "name": "No access to task",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetTasks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "35b04492-df65-4a08-aa38-f5b372125e58",
+          "name": "Task Get Tasks Statuses",
+          "request": {
+            "name": "Task Get Tasks Statuses",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Task",
+                "GetTasksStatuses"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "trackingRefsCsv",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "28a3bf0d-feaf-467e-92e8-0a43a9f485b1",
+              "name": "Task status by tracking ref",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetTasksStatuses"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRefsCsv",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"IsEmpty\": false,\n  \"Count\": 3206,\n  \"comparer@686\": {},\n  \"tree@690\": {},\n  \"serializedData\": [\n    {\n      \"key\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"Comparer\": {},\n  \"Tree\": {},\n  \"Item\": \"string\",\n  \"Keys\": [\n    \"string\",\n    \"string\"\n  ],\n  \"Values\": [\n    \"string\",\n    \"string\"\n  ],\n  \"MinKeyValue\": {\n    \"item1\": \"string\",\n    \"item2\": \"string\"\n  },\n  \"MaxKeyValue\": {\n    \"item1\": \"string\",\n    \"item2\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8f6bfab9-232a-4a4d-b19f-bd3b2c681a8f",
+              "name": "No tracking refs specified",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetTasksStatuses"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRefsCsv",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3dd986db-fa7e-435c-83c9-3fb4f44caafa",
+          "name": "Task Create Third Party Delivery Task",
+          "request": {
+            "name": "Task Create Third Party Delivery Task",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Task",
+                "CreateThirdPartyDeliveryTask"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refId\": \"<string>\",\n  \"physique\": \"<object>\",\n  \"address\": \"<object>\",\n  \"cashToCollect\": \"<decimal>\",\n  \"stockValue\": \"<decimal>\",\n  \"note\": \"<string>\",\n  \"slotStart\": \"<object>\",\n  \"slotEnd\": \"<object>\",\n  \"merchantPickupPointAddressId\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4dd9d598-9976-476b-b49d-5de16c89ad0a",
+              "name": "Task Tracking Ref",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "CreateThirdPartyDeliveryTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c7ddacb2-531b-46c2-a3e2-f916867b492a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "CreateThirdPartyDeliveryTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9dc79d2c-45a1-44fe-b2c5-ddce375b4816",
+              "name": "Not logged in",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "CreateThirdPartyDeliveryTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e688cabb-485c-46ad-98d2-b371b6071230",
+              "name": "Not authorized to Create shipments for Org",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "CreateThirdPartyDeliveryTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "43812afb-8506-4085-80e2-098138598519",
+          "name": "Task Create Third Party Pick Up Task",
+          "request": {
+            "name": "Task Create Third Party Pick Up Task",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Task",
+                "CreateThirdPartyPickUpTask"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refId\": \"<string>\",\n  \"physique\": \"<object>\",\n  \"address\": \"<object>\",\n  \"cashToCollect\": \"<decimal>\",\n  \"stockValue\": \"<decimal>\",\n  \"note\": \"<string>\",\n  \"slotStart\": \"<object>\",\n  \"slotEnd\": \"<object>\",\n  \"merchantPickupPointAddressId\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4e88de70-cd90-4715-88cb-23df49080538",
+              "name": "Task Tracking Ref",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "CreateThirdPartyPickUpTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bf2c2aa6-1826-4d76-b871-ae7c9adb3de7",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "CreateThirdPartyPickUpTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "68ba6c30-6e4c-445c-9c35-d0c73047887a",
+              "name": "Not logged in",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "CreateThirdPartyPickUpTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "192de448-7e8a-4cfd-b555-4011b0f1290a",
+              "name": "Not authorized to Create shipments for Org",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "CreateThirdPartyPickUpTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0968dbf2-316a-499b-b07d-192aabd3846b",
+          "name": "Task Create Third Party Exchange Task",
+          "request": {
+            "name": "Task Create Third Party Exchange Task",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Task",
+                "CreateThirdPartyExchangeTask"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refId\": \"<string>\",\n  \"deliveryPhysique\": \"<object>\",\n  \"pickUpPhysique\": \"<object>\",\n  \"address\": \"<object>\",\n  \"cashToCollect\": \"<decimal>\",\n  \"deliveryStockValue\": \"<decimal>\",\n  \"pickUpStockValue\": \"<decimal>\",\n  \"note\": \"<string>\",\n  \"slotStart\": \"<object>\",\n  \"slotEnd\": \"<object>\",\n  \"merchantPickupPointAddressId\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a7da5868-49a5-416c-b4bb-38861a03956b",
+              "name": "Task Tracking Refs",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "CreateThirdPartyExchangeTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"refId\": \"<string>\",\n  \"deliveryPhysique\": \"<object>\",\n  \"pickUpPhysique\": \"<object>\",\n  \"address\": \"<object>\",\n  \"cashToCollect\": \"<decimal>\",\n  \"deliveryStockValue\": \"<decimal>\",\n  \"pickUpStockValue\": \"<decimal>\",\n  \"note\": \"<string>\",\n  \"slotStart\": \"<object>\",\n  \"slotEnd\": \"<object>\",\n  \"merchantPickupPointAddressId\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f7bfede9-757a-47db-a283-d203e8333257",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "CreateThirdPartyExchangeTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"refId\": \"<string>\",\n  \"deliveryPhysique\": \"<object>\",\n  \"pickUpPhysique\": \"<object>\",\n  \"address\": \"<object>\",\n  \"cashToCollect\": \"<decimal>\",\n  \"deliveryStockValue\": \"<decimal>\",\n  \"pickUpStockValue\": \"<decimal>\",\n  \"note\": \"<string>\",\n  \"slotStart\": \"<object>\",\n  \"slotEnd\": \"<object>\",\n  \"merchantPickupPointAddressId\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "39c4719c-99ef-40a3-829a-94fc085db3d7",
+              "name": "Not logged in",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "CreateThirdPartyExchangeTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"refId\": \"<string>\",\n  \"deliveryPhysique\": \"<object>\",\n  \"pickUpPhysique\": \"<object>\",\n  \"address\": \"<object>\",\n  \"cashToCollect\": \"<decimal>\",\n  \"deliveryStockValue\": \"<decimal>\",\n  \"pickUpStockValue\": \"<decimal>\",\n  \"note\": \"<string>\",\n  \"slotStart\": \"<object>\",\n  \"slotEnd\": \"<object>\",\n  \"merchantPickupPointAddressId\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8186b756-9aa7-406b-a02a-575f2139ddd4",
+              "name": "Not authorized to Create shipments for Org",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "CreateThirdPartyExchangeTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"refId\": \"<string>\",\n  \"deliveryPhysique\": \"<object>\",\n  \"pickUpPhysique\": \"<object>\",\n  \"address\": \"<object>\",\n  \"cashToCollect\": \"<decimal>\",\n  \"deliveryStockValue\": \"<decimal>\",\n  \"pickUpStockValue\": \"<decimal>\",\n  \"note\": \"<string>\",\n  \"slotStart\": \"<object>\",\n  \"slotEnd\": \"<object>\",\n  \"merchantPickupPointAddressId\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "810293c2-d905-4e22-8410-b49af8901ddc",
+          "name": "Task Search Tasks For My Org",
+          "request": {
+            "name": "Task Search Tasks For My Org",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Task",
+                "SearchTasksForMyOrg"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "searchText",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "taskType",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "fromDate",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "toDate",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "highLevelStatus",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageNum",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "99313b36-2160-4473-a34c-3048af4c17db",
+              "name": "Paginated Results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "SearchTasksForMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "searchText",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "taskType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fromDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "toDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "highLevelStatus",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageNum",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"cashToCollect\": 1514.9034128143257,\n    \"stockValue\": 3890.233813602261,\n    \"trackingRef\": \"string\",\n    \"merchantRef\": \"string\",\n    \"physique\": \"<object>\",\n    \"addressInfo\": {\n      \"identity\": \"string\",\n      \"address\": {},\n      \"fullName\": \"string\",\n      \"streetAddress\": \"string\",\n      \"phoneNumber\": \"string\",\n      \"deliveryArea\": {\n        \"id\": {},\n        \"name\": \"string\"\n      },\n      \"customerHub\": \"string\",\n      \"geoLocation\": {},\n      \"confidenceLevel\": {}\n    },\n    \"slotStart\": \"<object>\",\n    \"slotEnd\": \"<object>\",\n    \"weight\": \"string\",\n    \"status\": \"string\",\n    \"taskType\": \"string\",\n    \"merchantHub\": {},\n    \"notes\": [\n      {\n        \"noteId\": \"string\",\n        \"createdOn\": \"2019-10-16T01:30:02.136Z\",\n        \"createdBy\": \"string\",\n        \"note\": \"string\"\n      },\n      {\n        \"noteId\": \"string\",\n        \"createdOn\": \"1990-02-14T03:47:36.198Z\",\n        \"createdBy\": \"string\",\n        \"note\": \"string\"\n      }\n    ]\n  },\n  {\n    \"cashToCollect\": 2648.2632273966988,\n    \"stockValue\": 2460.5332528744407,\n    \"trackingRef\": \"string\",\n    \"merchantRef\": \"string\",\n    \"physique\": \"<object>\",\n    \"addressInfo\": {\n      \"identity\": \"string\",\n      \"address\": {},\n      \"fullName\": \"string\",\n      \"streetAddress\": \"string\",\n      \"phoneNumber\": \"string\",\n      \"deliveryArea\": {\n        \"id\": {},\n        \"name\": \"string\"\n      },\n      \"customerHub\": \"string\",\n      \"geoLocation\": {},\n      \"confidenceLevel\": {}\n    },\n    \"slotStart\": \"<object>\",\n    \"slotEnd\": \"<object>\",\n    \"weight\": \"string\",\n    \"status\": \"string\",\n    \"taskType\": \"string\",\n    \"merchantHub\": {},\n    \"notes\": [\n      {\n        \"noteId\": \"string\",\n        \"createdOn\": \"2013-08-26T12:29:42.507Z\",\n        \"createdBy\": \"string\",\n        \"note\": \"string\"\n      },\n      {\n        \"noteId\": \"string\",\n        \"createdOn\": \"1983-03-12T02:51:15.573Z\",\n        \"createdBy\": \"string\",\n        \"note\": \"string\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c1f7b313-8915-4f8c-8fb5-91b2e9439b91",
+              "name": "Not logged in",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "SearchTasksForMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "searchText",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "taskType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fromDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "toDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "highLevelStatus",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageNum",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "71e686db-7d9c-4014-9047-546090f54eb9",
+          "name": "Task Org Cancel Task",
+          "request": {
+            "name": "Task Org Cancel Task",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Task",
+                "OrgCancelTask"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "trackingRef",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4c3fa896-821c-45e2-a9d4-3145272ea393",
+              "name": "Cancelled Task",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "OrgCancelTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"cashToCollect\": 2202.585886025249,\n  \"stockValue\": 7422.6850197771455,\n  \"trackingRef\": \"string\",\n  \"merchantRef\": \"string\",\n  \"physique\": \"<object>\",\n  \"addressInfo\": {\n    \"identity\": \"string\",\n    \"address\": {},\n    \"fullName\": \"string\",\n    \"streetAddress\": \"string\",\n    \"phoneNumber\": \"string\",\n    \"deliveryArea\": {\n      \"id\": {},\n      \"name\": \"string\"\n    },\n    \"customerHub\": \"string\",\n    \"geoLocation\": {},\n    \"confidenceLevel\": {}\n  },\n  \"slotStart\": \"<object>\",\n  \"slotEnd\": \"<object>\",\n  \"weight\": \"string\",\n  \"status\": \"string\",\n  \"taskType\": \"string\",\n  \"merchantHub\": {},\n  \"notes\": [\n    {\n      \"noteId\": \"string\",\n      \"createdOn\": \"1988-07-16T21:13:55.856Z\",\n      \"createdBy\": \"string\",\n      \"note\": \"string\"\n    },\n    {\n      \"noteId\": \"string\",\n      \"createdOn\": \"1958-03-26T03:20:51.358Z\",\n      \"createdBy\": \"string\",\n      \"note\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d5df6592-8547-44e8-ac04-fe626fdd31c0",
+              "name": "Invalid request params",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "OrgCancelTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "39f39d88-d376-4f18-ab82-0d186d18bd84",
+              "name": "Not logged in",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "OrgCancelTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d8974ded-0ece-4532-83db-30ea2a0cd20b",
+              "name": "Not allowed to perform this action",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "OrgCancelTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "464d7549-acfa-47d0-8b35-1f58d457c884",
+              "name": "Invalid TrackingRef",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "OrgCancelTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2179a8ff-46b0-4a1b-b90b-79bd2c34541a",
+              "name": "Concurrent modification",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "OrgCancelTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d04e3790-6657-4a41-93bb-48c905f4521c",
+              "name": "Task's current state does not allow this action",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "OrgCancelTask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "55861ac9-f9c0-4990-88ac-5d570b1cda22",
+          "name": "Task Validate Task Import Csv",
+          "request": {
+            "name": "Task Validate Task Import Csv",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Task",
+                "ValidateTaskImportCsv"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "84e4af3d-8ffc-4a88-a19e-25d57f7c000e",
+              "name": "`ValidatedRow`s",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "ValidateTaskImportCsv"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"merchantRef\": {},\n    \"name\": {},\n    \"address\": {},\n    \"phone\": {},\n    \"amountToCollect\": {},\n    \"stockValue\": {},\n    \"note\": {}\n  },\n  {\n    \"merchantRef\": {},\n    \"name\": {},\n    \"address\": {},\n    \"phone\": {},\n    \"amountToCollect\": {},\n    \"stockValue\": {},\n    \"note\": {}\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8f16200e-c76b-408e-a730-a3f863164d06",
+          "name": "Task Import Tasks To My Org",
+          "request": {
+            "name": "Task Import Tasks To My Org",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Task",
+                "ImportTasksToMyOrg"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"merchantPickupPointAddressId\": \"<integer>\",\n  \"csv\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0e76c6f0-4549-45b3-8b3b-a7327f90c0bf",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "ImportTasksToMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"merchantPickupPointAddressId\": \"<integer>\",\n  \"csv\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "01772707-6138-45d2-9e66-54c4b0d4733d",
+              "name": "When CSV has validation errors (if CSV is parsable, ValidatedRows are returned)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "ImportTasksToMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"merchantPickupPointAddressId\": \"<integer>\",\n  \"csv\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "[\n  {\n    \"merchantRef\": {},\n    \"name\": {},\n    \"address\": {},\n    \"phone\": {},\n    \"amountToCollect\": {},\n    \"stockValue\": {},\n    \"note\": {}\n  },\n  {\n    \"merchantRef\": {},\n    \"name\": {},\n    \"address\": {},\n    \"phone\": {},\n    \"amountToCollect\": {},\n    \"stockValue\": {},\n    \"note\": {}\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cb2db1ef-71f0-4227-8685-d00804a9f096",
+              "name": "When unauthenticated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "ImportTasksToMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"merchantPickupPointAddressId\": \"<integer>\",\n  \"csv\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "53ee355a-5af3-4d5d-9536-ea1bb612bce1",
+              "name": "When not authorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "ImportTasksToMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"merchantPickupPointAddressId\": \"<integer>\",\n  \"csv\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6b6ac2bb-f1d8-4aa2-a6b7-bdb10387e1a6",
+          "name": "Task Get Unconsolidated Tasks For My Org",
+          "request": {
+            "name": "Task Get Unconsolidated Tasks For My Org",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Task",
+                "GetUnconsolidatedTasksForMyOrg"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pageNum",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "eeb96ac3-3e92-4976-8ab3-b809f32f542e",
+              "name": "Paginated Tasks",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetUnconsolidatedTasksForMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageNum",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"cashToCollect\": 1514.9034128143257,\n    \"stockValue\": 3890.233813602261,\n    \"trackingRef\": \"string\",\n    \"merchantRef\": \"string\",\n    \"physique\": \"<object>\",\n    \"addressInfo\": {\n      \"identity\": \"string\",\n      \"address\": {},\n      \"fullName\": \"string\",\n      \"streetAddress\": \"string\",\n      \"phoneNumber\": \"string\",\n      \"deliveryArea\": {\n        \"id\": {},\n        \"name\": \"string\"\n      },\n      \"customerHub\": \"string\",\n      \"geoLocation\": {},\n      \"confidenceLevel\": {}\n    },\n    \"slotStart\": \"<object>\",\n    \"slotEnd\": \"<object>\",\n    \"weight\": \"string\",\n    \"status\": \"string\",\n    \"taskType\": \"string\",\n    \"merchantHub\": {},\n    \"notes\": [\n      {\n        \"noteId\": \"string\",\n        \"createdOn\": \"2019-10-16T01:30:02.136Z\",\n        \"createdBy\": \"string\",\n        \"note\": \"string\"\n      },\n      {\n        \"noteId\": \"string\",\n        \"createdOn\": \"1990-02-14T03:47:36.198Z\",\n        \"createdBy\": \"string\",\n        \"note\": \"string\"\n      }\n    ]\n  },\n  {\n    \"cashToCollect\": 2648.2632273966988,\n    \"stockValue\": 2460.5332528744407,\n    \"trackingRef\": \"string\",\n    \"merchantRef\": \"string\",\n    \"physique\": \"<object>\",\n    \"addressInfo\": {\n      \"identity\": \"string\",\n      \"address\": {},\n      \"fullName\": \"string\",\n      \"streetAddress\": \"string\",\n      \"phoneNumber\": \"string\",\n      \"deliveryArea\": {\n        \"id\": {},\n        \"name\": \"string\"\n      },\n      \"customerHub\": \"string\",\n      \"geoLocation\": {},\n      \"confidenceLevel\": {}\n    },\n    \"slotStart\": \"<object>\",\n    \"slotEnd\": \"<object>\",\n    \"weight\": \"string\",\n    \"status\": \"string\",\n    \"taskType\": \"string\",\n    \"merchantHub\": {},\n    \"notes\": [\n      {\n        \"noteId\": \"string\",\n        \"createdOn\": \"2013-08-26T12:29:42.507Z\",\n        \"createdBy\": \"string\",\n        \"note\": \"string\"\n      },\n      {\n        \"noteId\": \"string\",\n        \"createdOn\": \"1983-03-12T02:51:15.573Z\",\n        \"createdBy\": \"string\",\n        \"note\": \"string\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a4ba360c-0127-4506-aeb4-b3e140724d1f",
+              "name": "Not logged in",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetUnconsolidatedTasksForMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageNum",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8910d69e-bd9d-4e57-bac3-fca1a584bb71",
+              "name": "Not authorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetUnconsolidatedTasksForMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageNum",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f1add8d2-cb7b-4356-a184-713fbfefe106",
+          "name": "Task Get Tasks With Failure Alerts For My Org",
+          "request": {
+            "name": "Task Get Tasks With Failure Alerts For My Org",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Task",
+                "GetTasksWithFailureAlertsForMyOrg"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pageNum",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "85d139f6-f124-4c2b-a286-7a45e9de671b",
+              "name": "Paginated List of FailureAlertDtos",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetTasksWithFailureAlertsForMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageNum",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"task\": {\n      \"cashToCollect\": 8755.480909220461,\n      \"stockValue\": 4096.977358167908,\n      \"trackingRef\": \"string\",\n      \"merchantRef\": \"string\",\n      \"physique\": \"<object>\",\n      \"addressInfo\": {\n        \"identity\": \"string\",\n        \"address\": {},\n        \"fullName\": \"string\",\n        \"streetAddress\": \"string\",\n        \"phoneNumber\": \"string\",\n        \"deliveryArea\": {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": \"string\"\n        },\n        \"customerHub\": \"string\",\n        \"geoLocation\": {},\n        \"confidenceLevel\": {}\n      },\n      \"slotStart\": \"<object>\",\n      \"slotEnd\": \"<object>\",\n      \"weight\": \"string\",\n      \"status\": \"string\",\n      \"taskType\": \"string\",\n      \"merchantHub\": {},\n      \"notes\": [\n        {\n          \"noteId\": \"string\",\n          \"createdOn\": \"1965-02-08T11:47:29.092Z\",\n          \"createdBy\": \"string\",\n          \"note\": \"string\"\n        },\n        {\n          \"noteId\": \"string\",\n          \"createdOn\": \"1957-05-10T12:04:53.472Z\",\n          \"createdBy\": \"string\",\n          \"note\": \"string\"\n        }\n      ]\n    },\n    \"message\": \"string\"\n  },\n  {\n    \"task\": {\n      \"cashToCollect\": 650.7495891360127,\n      \"stockValue\": 4319.616788678519,\n      \"trackingRef\": \"string\",\n      \"merchantRef\": \"string\",\n      \"physique\": \"<object>\",\n      \"addressInfo\": {\n        \"identity\": \"string\",\n        \"address\": {},\n        \"fullName\": \"string\",\n        \"streetAddress\": \"string\",\n        \"phoneNumber\": \"string\",\n        \"deliveryArea\": {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": \"string\"\n        },\n        \"customerHub\": \"string\",\n        \"geoLocation\": {},\n        \"confidenceLevel\": {}\n      },\n      \"slotStart\": \"<object>\",\n      \"slotEnd\": \"<object>\",\n      \"weight\": \"string\",\n      \"status\": \"string\",\n      \"taskType\": \"string\",\n      \"merchantHub\": {},\n      \"notes\": [\n        {\n          \"noteId\": \"string\",\n          \"createdOn\": \"1970-12-01T00:11:55.257Z\",\n          \"createdBy\": \"string\",\n          \"note\": \"string\"\n        },\n        {\n          \"noteId\": \"string\",\n          \"createdOn\": \"1946-10-30T04:46:47.630Z\",\n          \"createdBy\": \"string\",\n          \"note\": \"string\"\n        }\n      ]\n    },\n    \"message\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3f131c74-f865-44a8-833d-f8bbdfe0efa5",
+              "name": "Not logged in",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetTasksWithFailureAlertsForMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageNum",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ec7f8026-81f0-49e9-86ed-e2408bc5025c",
+              "name": "Not authorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetTasksWithFailureAlertsForMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageNum",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d8a0f7a5-5fec-4bfa-999c-89c7e3004708",
+          "name": "Task Consolidate Tasks For My Org",
+          "request": {
+            "name": "Task Consolidate Tasks For My Org",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Task",
+                "ConsolidateTasksForMyOrg"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  \"<string>\",\n  \"<string>\"\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4ff6fd54-3a10-4242-9ae7-8976f911eab2",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "ConsolidateTasksForMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b0b87034-8a97-4c52-969b-8508aede49c3",
+              "name": "Not logged in",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "ConsolidateTasksForMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4083301c-2956-4d0f-a21d-528bd1b300f2",
+              "name": "Not authorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "ConsolidateTasksForMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2a01bc8c-fdc5-4645-8c2d-488b990c0f95",
+              "name": "If one or more tracking refs is invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "ConsolidateTasksForMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2dffd946-9230-4d31-abab-21d448f56ea0",
+          "name": "Task Cancel Tasks For My Org",
+          "request": {
+            "name": "Task Cancel Tasks For My Org",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Task",
+                "CancelTasksForMyOrg"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  \"<string>\",\n  \"<string>\"\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c6b80320-e3fc-4f73-8af3-1e93e75c74ba",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "CancelTasksForMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e5f0b583-766a-45bf-a8c3-637251975e31",
+              "name": "Not logged in",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "CancelTasksForMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4c5a37b7-193b-4743-b53d-59bd33f166af",
+              "name": "Not authorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "CancelTasksForMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4a4d11c6-76cb-4028-8b60-c8c59d7a19db",
+              "name": "If one or more tracking refs is invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "CancelTasksForMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2cfe1f9a-ccb0-4e5f-b414-978cf3151676",
+          "name": "Task Get Consignments For My Org",
+          "request": {
+            "name": "Task Get Consignments For My Org",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Task",
+                "GetConsignmentsForMyOrg"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5788a54c-87a3-4e32-9723-8000152bac68",
+              "name": "List of pending Consignments",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetConsignmentsForMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"requestTime\": \"1951-03-10T13:00:45.780Z\",\n    \"trackingRefToStatus\": {\n      \"IsEmpty\": true,\n      \"Count\": 6200,\n      \"comparer@686\": {},\n      \"tree@690\": {},\n      \"serializedData\": [\n        {\n          \"key\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"key\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"Comparer\": {},\n      \"Tree\": {},\n      \"Item\": \"string\",\n      \"Keys\": [\n        \"string\",\n        \"string\"\n      ],\n      \"Values\": [\n        \"string\",\n        \"string\"\n      ],\n      \"MinKeyValue\": {\n        \"item1\": \"string\",\n        \"item2\": \"string\"\n      },\n      \"MaxKeyValue\": {\n        \"item1\": \"string\",\n        \"item2\": \"string\"\n      }\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"requestTime\": \"1967-09-02T12:18:25.457Z\",\n    \"trackingRefToStatus\": {\n      \"IsEmpty\": true,\n      \"Count\": 718,\n      \"comparer@686\": {},\n      \"tree@690\": {},\n      \"serializedData\": [\n        {\n          \"key\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"key\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"Comparer\": {},\n      \"Tree\": {},\n      \"Item\": \"string\",\n      \"Keys\": [\n        \"string\",\n        \"string\"\n      ],\n      \"Values\": [\n        \"string\",\n        \"string\"\n      ],\n      \"MinKeyValue\": {\n        \"item1\": \"string\",\n        \"item2\": \"string\"\n      },\n      \"MaxKeyValue\": {\n        \"item1\": \"string\",\n        \"item2\": \"string\"\n      }\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "75804c1e-06d9-41a8-8371-9036f1cdd7be",
+              "name": "Not logged in",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetConsignmentsForMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1c042ba7-3536-42d1-ba97-67eeebd4f92a",
+              "name": "Not authorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetConsignmentsForMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "95ea33b8-d244-4304-b688-0b3b98ec93c7",
+          "name": "Task Get Consolidated Tasks For Consignment In My Org",
+          "request": {
+            "name": "Task Get Consolidated Tasks For Consignment In My Org",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Task",
+                "GetConsolidatedTasksForConsignmentInMyOrg"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "consignmentId",
+                  "value": "<guid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageNum",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "13573a18-371a-461c-8fbc-f5b0b1a8ea19",
+              "name": "Paginated Tasks in Consignment",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetConsolidatedTasksForConsignmentInMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "consignmentId",
+                      "value": "<guid>"
+                    },
+                    {
+                      "key": "pageNum",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"cashToCollect\": 1514.9034128143257,\n    \"stockValue\": 3890.233813602261,\n    \"trackingRef\": \"string\",\n    \"merchantRef\": \"string\",\n    \"physique\": \"<object>\",\n    \"addressInfo\": {\n      \"identity\": \"string\",\n      \"address\": {},\n      \"fullName\": \"string\",\n      \"streetAddress\": \"string\",\n      \"phoneNumber\": \"string\",\n      \"deliveryArea\": {\n        \"id\": {},\n        \"name\": \"string\"\n      },\n      \"customerHub\": \"string\",\n      \"geoLocation\": {},\n      \"confidenceLevel\": {}\n    },\n    \"slotStart\": \"<object>\",\n    \"slotEnd\": \"<object>\",\n    \"weight\": \"string\",\n    \"status\": \"string\",\n    \"taskType\": \"string\",\n    \"merchantHub\": {},\n    \"notes\": [\n      {\n        \"noteId\": \"string\",\n        \"createdOn\": \"2019-10-16T01:30:02.136Z\",\n        \"createdBy\": \"string\",\n        \"note\": \"string\"\n      },\n      {\n        \"noteId\": \"string\",\n        \"createdOn\": \"1990-02-14T03:47:36.198Z\",\n        \"createdBy\": \"string\",\n        \"note\": \"string\"\n      }\n    ]\n  },\n  {\n    \"cashToCollect\": 2648.2632273966988,\n    \"stockValue\": 2460.5332528744407,\n    \"trackingRef\": \"string\",\n    \"merchantRef\": \"string\",\n    \"physique\": \"<object>\",\n    \"addressInfo\": {\n      \"identity\": \"string\",\n      \"address\": {},\n      \"fullName\": \"string\",\n      \"streetAddress\": \"string\",\n      \"phoneNumber\": \"string\",\n      \"deliveryArea\": {\n        \"id\": {},\n        \"name\": \"string\"\n      },\n      \"customerHub\": \"string\",\n      \"geoLocation\": {},\n      \"confidenceLevel\": {}\n    },\n    \"slotStart\": \"<object>\",\n    \"slotEnd\": \"<object>\",\n    \"weight\": \"string\",\n    \"status\": \"string\",\n    \"taskType\": \"string\",\n    \"merchantHub\": {},\n    \"notes\": [\n      {\n        \"noteId\": \"string\",\n        \"createdOn\": \"2013-08-26T12:29:42.507Z\",\n        \"createdBy\": \"string\",\n        \"note\": \"string\"\n      },\n      {\n        \"noteId\": \"string\",\n        \"createdOn\": \"1983-03-12T02:51:15.573Z\",\n        \"createdBy\": \"string\",\n        \"note\": \"string\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b5caba82-a0a1-4813-a5d0-31b88c365a6f",
+              "name": "Not logged in",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetConsolidatedTasksForConsignmentInMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "consignmentId",
+                      "value": "<guid>"
+                    },
+                    {
+                      "key": "pageNum",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "69ec1a03-5ea6-4110-87ec-f8ffe7eda308",
+              "name": "Not authorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetConsolidatedTasksForConsignmentInMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "consignmentId",
+                      "value": "<guid>"
+                    },
+                    {
+                      "key": "pageNum",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "39e0e2a2-570c-429d-b914-d41e2f567a1b",
+          "name": "Task Update Instructions For Failure Alert In My Org",
+          "request": {
+            "name": "Task Update Instructions For Failure Alert In My Org",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Task",
+                "UpdateInstructionsForFailureAlertInMyOrg"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "trackingRef",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "19e3a836-2b9f-48a6-9e90-b672dee84299",
+              "name": "Updated Task",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "UpdateInstructionsForFailureAlertInMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"cashToCollect\": 2202.585886025249,\n  \"stockValue\": 7422.6850197771455,\n  \"trackingRef\": \"string\",\n  \"merchantRef\": \"string\",\n  \"physique\": \"<object>\",\n  \"addressInfo\": {\n    \"identity\": \"string\",\n    \"address\": {},\n    \"fullName\": \"string\",\n    \"streetAddress\": \"string\",\n    \"phoneNumber\": \"string\",\n    \"deliveryArea\": {\n      \"id\": {},\n      \"name\": \"string\"\n    },\n    \"customerHub\": \"string\",\n    \"geoLocation\": {},\n    \"confidenceLevel\": {}\n  },\n  \"slotStart\": \"<object>\",\n  \"slotEnd\": \"<object>\",\n  \"weight\": \"string\",\n  \"status\": \"string\",\n  \"taskType\": \"string\",\n  \"merchantHub\": {},\n  \"notes\": [\n    {\n      \"noteId\": \"string\",\n      \"createdOn\": \"1988-07-16T21:13:55.856Z\",\n      \"createdBy\": \"string\",\n      \"note\": \"string\"\n    },\n    {\n      \"noteId\": \"string\",\n      \"createdOn\": \"1958-03-26T03:20:51.358Z\",\n      \"createdBy\": \"string\",\n      \"note\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d48b0ba3-674b-43b7-98fb-ca70bcf15ac5",
+              "name": "Invalid request params",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "UpdateInstructionsForFailureAlertInMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f774d717-2c78-47d2-b2cb-555fa378f837",
+              "name": "Not logged in",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "UpdateInstructionsForFailureAlertInMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1aa6303d-78e5-4c27-9506-01060df82741",
+              "name": "Not allowed to perform this action",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "UpdateInstructionsForFailureAlertInMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c7bf1a02-f63d-43d0-9488-357d83a57468",
+              "name": "Invalid TrackingRef",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "UpdateInstructionsForFailureAlertInMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b4d2bba6-2fd2-4a44-a359-768ae8451051",
+              "name": "Concurrent modification",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "UpdateInstructionsForFailureAlertInMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7d349a9a-342c-4a1a-98ca-0e9786c2c019",
+              "name": "Task's current state does not allow this action",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "UpdateInstructionsForFailureAlertInMyOrg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eb0fd556-6853-4db5-a7a8-39091f00b653",
+          "name": "Task Get Labels Pdf",
+          "request": {
+            "name": "Task Get Labels Pdf",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Task",
+                "GetLabelsPdf"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "trackingRefsCsv",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "12256e26-cc39-4260-accf-092cbdb88866",
+              "name": "PDF Bytes",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetLabelsPdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRefsCsv",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f008676c-a1d8-4924-8161-6c0d32284889",
+              "name": "Invalid request params",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetLabelsPdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRefsCsv",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d6b1b0c3-e133-4aae-b99a-a564936007cf",
+              "name": "Invalid TrackingRef",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetLabelsPdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRefsCsv",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "562a948e-ae96-4b02-9309-66a5ed1daf14",
+          "name": "Task Get Task Audit Trail",
+          "request": {
+            "name": "Task Get Task Audit Trail",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Task",
+                "GetTaskAuditTrail"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "trackingRef",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4f9ac648-bbfa-49bb-a354-ac33629b2448",
+              "name": "Audit Trail",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetTaskAuditTrail"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"lastActionOn\": \"2012-09-15T18:24:39.065Z\",\n    \"stateTransitionedOn\": \"2011-09-16T04:24:19.951Z\",\n    \"tripStatus\": \"string\",\n    \"failedOrRejectReason\": {}\n  },\n  {\n    \"lastActionOn\": \"2008-07-12T09:09:41.126Z\",\n    \"stateTransitionedOn\": \"1967-02-16T05:35:02.098Z\",\n    \"tripStatus\": \"string\",\n    \"failedOrRejectReason\": {}\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "12a7e976-c803-46d6-acbe-c4ddc875ad81",
+              "name": "Not logged in",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetTaskAuditTrail"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3466808e-2fb6-42c5-a7e2-41683bc6078a",
+              "name": "No access",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetTaskAuditTrail"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5eda02a0-5dae-4631-ace9-939d9fde9eec",
+              "name": "Invalid TrackingRef",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Task",
+                    "GetTaskAuditTrail"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://eggtransport.chaldal.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b6b54dcc-8304-4c4c-be2c-1e9d0121095e",
+    "name": "My Title Accounts Task API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

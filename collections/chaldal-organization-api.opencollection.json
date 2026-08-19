@@ -1,0 +1,75 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "My Title Accounts Organization API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Organization",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Organization_CreateOrganization",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/Organization/CreateOrganization"
+          }
+        },
+        {
+          "info": {
+            "name": "Organization_GetOrgStatus",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/Organization/GetOrgStatus"
+          }
+        },
+        {
+          "info": {
+            "name": "Organization_AddOrgPickupPoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/Organization/AddOrgPickupPoint"
+          }
+        },
+        {
+          "info": {
+            "name": "Organization_GetOrgPickupPoints",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/Organization/GetOrgPickupPoints"
+          }
+        },
+        {
+          "info": {
+            "name": "Organization_GetOrgPickupPointByTrackingRef",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/Organization/GetOrgPickupPointByTrackingRef",
+            "params": [
+              {
+                "name": "trackingRef",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

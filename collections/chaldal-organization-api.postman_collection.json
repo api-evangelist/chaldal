@@ -1,0 +1,761 @@
+{
+  "item": [
+    {
+      "id": "5df5043b-f261-4242-a2a8-eae95fb5b95b",
+      "name": "Organization",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c3f5acab-cb2d-4efa-8673-dd3734840898",
+          "name": "Organization Create Organization",
+          "request": {
+            "name": "Organization Create Organization",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Organization",
+                "CreateOrganization"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"businessDetails\": {\n    \"deliveryAreaId\": \"<integer>\",\n    \"ownersName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"businessName\": \"<string>\",\n    \"address\": \"<string>\",\n    \"businessUrl\": \"<string>\"\n  },\n  \"businessType\": \"<object>\",\n  \"paymentType\": \"<object>\",\n  \"bKashDetails\": \"<object>\",\n  \"bankDetails\": \"<object>\",\n  \"idType\": \"<object>\",\n  \"nidFront\": \"<object>\",\n  \"nidBack\": \"<object>\",\n  \"passport\": \"<object>\",\n  \"birthCertificate\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0b03454f-161e-4e35-b6c7-9eecd5288d96",
+              "name": "Creates a new Organization and assigns a manager to the organization",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Organization",
+                    "CreateOrganization"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"businessDetails\": {\n    \"deliveryAreaId\": \"<integer>\",\n    \"ownersName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"businessName\": \"<string>\",\n    \"address\": \"<string>\",\n    \"businessUrl\": \"<string>\"\n  },\n  \"businessType\": \"<object>\",\n  \"paymentType\": \"<object>\",\n  \"bKashDetails\": \"<object>\",\n  \"bankDetails\": \"<object>\",\n  \"idType\": \"<object>\",\n  \"nidFront\": \"<object>\",\n  \"nidBack\": \"<object>\",\n  \"passport\": \"<object>\",\n  \"birthCertificate\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "6502",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "014232cc-ddab-4332-9e26-fcb9e04ac7c9",
+              "name": "Not logged in",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Organization",
+                    "CreateOrganization"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"businessDetails\": {\n    \"deliveryAreaId\": \"<integer>\",\n    \"ownersName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"businessName\": \"<string>\",\n    \"address\": \"<string>\",\n    \"businessUrl\": \"<string>\"\n  },\n  \"businessType\": \"<object>\",\n  \"paymentType\": \"<object>\",\n  \"bKashDetails\": \"<object>\",\n  \"bankDetails\": \"<object>\",\n  \"idType\": \"<object>\",\n  \"nidFront\": \"<object>\",\n  \"nidBack\": \"<object>\",\n  \"passport\": \"<object>\",\n  \"birthCertificate\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "80787f36-8548-4ba6-8eab-74ea741f4383",
+              "name": "Insert Organization operation failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Organization",
+                    "CreateOrganization"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"businessDetails\": {\n    \"deliveryAreaId\": \"<integer>\",\n    \"ownersName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"businessName\": \"<string>\",\n    \"address\": \"<string>\",\n    \"businessUrl\": \"<string>\"\n  },\n  \"businessType\": \"<object>\",\n  \"paymentType\": \"<object>\",\n  \"bKashDetails\": \"<object>\",\n  \"bankDetails\": \"<object>\",\n  \"idType\": \"<object>\",\n  \"nidFront\": \"<object>\",\n  \"nidBack\": \"<object>\",\n  \"passport\": \"<object>\",\n  \"birthCertificate\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6ff1333c-7f07-4e10-98c2-49fdf20f48a9",
+          "name": "Organization Get Org Status",
+          "request": {
+            "name": "Organization Get Org Status",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Organization",
+                "GetOrgStatus"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9cc7e6b9-0fbc-4449-ae61-aab223763713",
+              "name": "Retrives Organization status",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Organization",
+                    "GetOrgStatus"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4192a771-7162-4d32-9904-a6574961c757",
+              "name": "OrgId does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Organization",
+                    "GetOrgStatus"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "63f9cee1-6019-4f7a-9cf9-aa0dd21f21d7",
+              "name": "Not logged in",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Organization",
+                    "GetOrgStatus"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4e43ecfd-a0b2-40eb-84c3-cfee5d6f260d",
+          "name": "Organization Add Org Pickup Point",
+          "request": {
+            "name": "Organization Add Org Pickup Point",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Organization",
+                "AddOrgPickupPoint"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"deliveryAreaId\": \"<integer>\",\n  \"pickupPointName\": \"<string>\",\n  \"address\": \"<string>\",\n  \"phone\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f445dca7-bb38-4aa4-a2c7-78214e2f3d4c",
+              "name": "Creates a new Address and assigns it to an organization",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Organization",
+                    "AddOrgPickupPoint"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"deliveryAreaId\": \"<integer>\",\n  \"pickupPointName\": \"<string>\",\n  \"address\": \"<string>\",\n  \"phone\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "6502",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6035ac4d-f013-4cb5-99e7-7a5790e2bc13",
+              "name": "Not logged in",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Organization",
+                    "AddOrgPickupPoint"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"deliveryAreaId\": \"<integer>\",\n  \"pickupPointName\": \"<string>\",\n  \"address\": \"<string>\",\n  \"phone\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ca2ee083-5753-4616-82f1-fcc0672b045b",
+              "name": "Insert Address operation failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Organization",
+                    "AddOrgPickupPoint"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"deliveryAreaId\": \"<integer>\",\n  \"pickupPointName\": \"<string>\",\n  \"address\": \"<string>\",\n  \"phone\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b162d4ce-e17b-4c58-a8f4-59fa3d6df0b1",
+          "name": "Organization Get Org Pickup Points",
+          "request": {
+            "name": "Organization Get Org Pickup Points",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Organization",
+                "GetOrgPickupPoints"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a1ff96db-42c8-409b-8453-53da51622198",
+              "name": "Fetches addresses of an organization",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Organization",
+                    "GetOrgPickupPoints"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "6502",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "554dd383-92ea-4c42-9f58-f25a7b68155a",
+              "name": "Not logged in",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Organization",
+                    "GetOrgPickupPoints"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "600c3ab2-96dc-4782-856d-b014f25c2453",
+          "name": "Organization Get Org Pickup Point By Tracking Ref",
+          "request": {
+            "name": "Organization Get Org Pickup Point By Tracking Ref",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "Organization",
+                "GetOrgPickupPointByTrackingRef"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "trackingRef",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "73c04403-d473-4a91-9a59-b4cfdc4e9d04",
+              "name": "Fetches address by tracking ref",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Organization",
+                    "GetOrgPickupPointByTrackingRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "6502",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "32a922d3-2c68-4322-979c-f324e2043e10",
+              "name": "Not logged in",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Organization",
+                    "GetOrgPickupPointByTrackingRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0e0e710c-521c-4c81-b24a-d320d7a23d9f",
+              "name": "No address found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "Organization",
+                    "GetOrgPickupPointByTrackingRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "trackingRef",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://eggtransport.chaldal.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "36284d3d-5695-49bb-8abc-bdeaeae04e84",
+    "name": "My Title Accounts Organization API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}
