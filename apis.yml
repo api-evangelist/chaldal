@@ -40,6 +40,15 @@ tags:
 - Delivery
 - Logistics
 - Third Party Logistics
+- E-Commerce
+- Supply Chain
+- Bangladesh
+tags_raw:
+- Company
+- Grocery
+- Delivery
+- Logistics
+- Third Party Logistics
 - Ecommerce
 - Supply Chain
 - Bangladesh
@@ -50,6 +59,8 @@ apis:
   humanURL: https://gogobangla.com/static/api-docs/
   baseURL: https://eggtransport.chaldal.com/api
   tags:
+  - Account
+  tags_raw:
   - Accounts
   properties:
   - type: OpenAPI
