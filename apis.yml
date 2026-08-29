@@ -232,6 +232,9 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: CapabilityMap
+  url: capabilities/chaldal-capability-edges.yml
+  name: Chaldal Business Capability Map
 - type: AgentSkill
   url: skills/chaldal-consolidate-consignment.md
 - type: MCPServer
