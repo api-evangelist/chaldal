@@ -1,10 +1,9 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: My Title Accounts Task API
+  title: My Title Task API
   version: 1.0.0
-host: eggtransport.chaldal.com
-schemes:
-- https
+servers:
+- url: https://eggtransport.chaldal.com
 tags:
 - name: Task
 paths:
@@ -13,286 +12,374 @@ paths:
       tags:
       - Task
       operationId: Task_GetQrCodeBinary
-      produces:
-      - text/plain
-      - text/csv
-      - application/json
-      - text/json
       parameters:
-      - type: string
-        name: trackingRef
+      - name: trackingRef
         in: query
-        x-nullable: true
-      - type: integer
-        name: side
+        schema:
+          type: string
+      - name: side
         in: query
-        format: int32
-        x-nullable: false
+        schema:
+          type: integer
+          format: int32
       responses:
         '200':
-          x-nullable: false
           description: Binary PNG Image
-          schema:
-            type: string
-            format: byte
+          content:
+            text/plain:
+              schema:
+                type: string
+                format: byte
+            text/csv:
+              schema:
+                type: string
+                format: byte
+            application/json:
+              schema:
+                type: string
+                format: byte
+            text/json:
+              schema:
+                type: string
+                format: byte
         '401':
           description: Not logged in
         '404':
           description: Invalid TrackingRef
         '400':
           description: Invalid Dimensions
+      summary: Task get qr code binary
+      x-summary-source: derived
   /api/Task/GetTaskStatus:
     get:
       tags:
       - Task
       operationId: Task_GetTaskStatus
-      produces:
-      - text/plain
-      - text/csv
-      - application/json
-      - text/json
       parameters:
-      - type: string
-        name: trackingRef
+      - name: trackingRef
         in: query
-        x-nullable: true
+        schema:
+          type: string
       responses:
         '200':
-          x-nullable: false
           description: Simplified Task Status
-          schema:
-            type: string
+          content:
+            text/plain:
+              schema:
+                type: string
+            text/csv:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
         '404':
           description: Invalid TrackingRef
+      summary: Task get task status
+      x-summary-source: derived
   /api/Task/GetTasks:
     post:
       tags:
       - Task
       operationId: Task_GetTasks
-      consumes:
-      - application/json-patch+json
-      - application/json
-      - text/json
-      - application/*+json
-      produces:
-      - text/plain
-      - text/csv
-      - application/json
-      - text/json
-      parameters:
-      - name: trackingRefs
-        in: body
-        required: true
-        schema:
-          type: array
-          items:
-            type: string
-        x-nullable: false
       responses:
         '200':
-          x-nullable: false
           description: Tasks By Tracking Ref
-          schema:
-            $ref: '#/definitions/FSharpMapOfStringAndTaskDto'
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/FSharpMapOfStringAndTaskDto'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/FSharpMapOfStringAndTaskDto'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FSharpMapOfStringAndTaskDto'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/FSharpMapOfStringAndTaskDto'
         '401':
           description: Not logged in
         '403':
           description: No access to task
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type: array
+              items:
+                type: string
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+          text/json:
+            schema:
+              type: array
+              items:
+                type: string
+          application/*+json:
+            schema:
+              type: array
+              items:
+                type: string
+        required: true
+      summary: Task get tasks
+      x-summary-source: derived
   /api/Task/GetTasksStatuses:
     post:
       tags:
       - Task
       operationId: Task_GetTasksStatuses
-      produces:
-      - text/plain
-      - text/csv
-      - application/json
-      - text/json
       parameters:
-      - type: string
-        name: trackingRefsCsv
+      - name: trackingRefsCsv
         in: query
-        x-nullable: true
+        schema:
+          type: string
       responses:
         '200':
-          x-nullable: false
           description: Task status by tracking ref
-          schema:
-            $ref: '#/definitions/FSharpMapOfStringAndString'
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/FSharpMapOfStringAndString'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/FSharpMapOfStringAndString'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FSharpMapOfStringAndString'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/FSharpMapOfStringAndString'
         '400':
           description: No tracking refs specified
+      summary: Task get tasks statuses
+      x-summary-source: derived
   /api/Task/CreateThirdPartyDeliveryTask:
     post:
       tags:
       - Task
       operationId: Task_CreateThirdPartyDeliveryTask
-      consumes:
-      - application/json-patch+json
-      - application/json
-      - text/json
-      - application/*+json
-      produces:
-      - text/plain
-      - text/csv
-      - application/json
-      - text/json
-      parameters:
-      - name: dto
-        in: body
-        required: true
-        schema:
-          $ref: '#/definitions/TaskCreateDto'
-        x-nullable: false
       responses:
         '200':
-          x-nullable: false
           description: Task Tracking Ref
-          schema:
-            type: string
+          content:
+            text/plain:
+              schema:
+                type: string
+            text/csv:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
         '400':
           description: ''
         '401':
           description: Not logged in
         '403':
           description: Not authorized to Create shipments for Org
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/TaskCreateDto'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskCreateDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/TaskCreateDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/TaskCreateDto'
+        required: true
+      summary: Task create third party delivery task
+      x-summary-source: derived
   /api/Task/CreateThirdPartyPickUpTask:
     post:
       tags:
       - Task
       operationId: Task_CreateThirdPartyPickUpTask
-      consumes:
-      - application/json-patch+json
-      - application/json
-      - text/json
-      - application/*+json
-      produces:
-      - text/plain
-      - text/csv
-      - application/json
-      - text/json
-      parameters:
-      - name: dto
-        in: body
-        required: true
-        schema:
-          $ref: '#/definitions/TaskCreateDto'
-        x-nullable: false
       responses:
         '200':
-          x-nullable: false
           description: Task Tracking Ref
-          schema:
-            type: string
+          content:
+            text/plain:
+              schema:
+                type: string
+            text/csv:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
         '400':
           description: ''
         '401':
           description: Not logged in
         '403':
           description: Not authorized to Create shipments for Org
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/TaskCreateDto'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskCreateDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/TaskCreateDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/TaskCreateDto'
+        required: true
+      summary: Task create third party pick up task
+      x-summary-source: derived
   /api/Task/CreateThirdPartyExchangeTask:
     post:
       tags:
       - Task
       operationId: Task_CreateThirdPartyExchangeTask
-      consumes:
-      - application/json-patch+json
-      - application/json
-      - text/json
-      - application/*+json
-      produces:
-      - text/plain
-      - text/csv
-      - application/json
-      - text/json
-      parameters:
-      - name: dto
-        in: body
-        required: true
-        schema:
-          $ref: '#/definitions/ExchangeTaskCreateDto'
-        x-nullable: false
       responses:
         '200':
-          x-nullable: false
           description: Task Tracking Refs
-          schema:
-            type: string
+          content:
+            text/plain:
+              schema:
+                type: string
+            text/csv:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
         '400':
           description: ''
         '401':
           description: Not logged in
         '403':
           description: Not authorized to Create shipments for Org
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ExchangeTaskCreateDto'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExchangeTaskCreateDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ExchangeTaskCreateDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ExchangeTaskCreateDto'
+        required: true
+      summary: Task create third party exchange task
+      x-summary-source: derived
   /api/Task/SearchTasksForMyOrg:
     get:
       tags:
       - Task
       operationId: Task_SearchTasksForMyOrg
-      produces:
-      - text/plain
-      - text/csv
-      - application/json
-      - text/json
       parameters:
-      - type: string
-        name: searchText
+      - name: searchText
         in: query
-        x-nullable: true
-      - type: string
-        name: taskType
+        schema:
+          type: string
+      - name: taskType
         in: query
-        x-nullable: true
-      - type: string
-        name: fromDate
+        schema:
+          type: string
+      - name: fromDate
         in: query
-        x-nullable: true
-      - type: string
-        name: toDate
+        schema:
+          type: string
+      - name: toDate
         in: query
-        x-nullable: true
-      - type: string
-        name: highLevelStatus
+        schema:
+          type: string
+      - name: highLevelStatus
         in: query
-        x-nullable: true
-      - type: integer
-        name: pageNum
+        schema:
+          type: string
+      - name: pageNum
         in: query
-        x-nullable: false
-      - type: integer
-        name: pageSize
+        schema:
+          type: integer
+      - name: pageSize
         in: query
-        x-nullable: false
+        schema:
+          type: integer
       responses:
         '200':
-          x-nullable: false
           description: Paginated Results
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/TaskDto'
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaskDto'
+            text/csv:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaskDto'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaskDto'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaskDto'
         '401':
           description: Not logged in
+      summary: Task search tasks for my org
+      x-summary-source: derived
   /api/Task/OrgCancelTask:
     post:
       tags:
       - Task
       operationId: Task_OrgCancelTask
-      produces:
-      - text/plain
-      - text/csv
-      - application/json
-      - text/json
       parameters:
-      - type: string
-        name: trackingRef
+      - name: trackingRef
         in: query
-        x-nullable: true
+        schema:
+          type: string
       responses:
         '200':
-          x-nullable: false
           description: Cancelled Task
-          schema:
-            $ref: '#/definitions/TaskDto'
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/TaskDto'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/TaskDto'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskDto'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TaskDto'
         '404':
           description: Invalid TrackingRef
         '412':
@@ -305,148 +392,184 @@ paths:
           description: Not allowed to perform this action
         '409':
           description: Concurrent modification
+      summary: Task org cancel task
+      x-summary-source: derived
   /api/Task/ValidateTaskImportCsv:
     post:
       tags:
       - Task
       operationId: Task_ValidateTaskImportCsv
-      consumes:
-      - application/json-patch+json
-      - application/json
-      - text/json
-      - application/*+json
-      produces:
-      - text/plain
-      - text/csv
-      - application/json
-      - text/json
-      parameters:
-      - name: csv
-        in: body
-        required: true
-        schema:
-          type: string
-        x-nullable: false
       responses:
         '200':
-          x-nullable: false
           description: '`ValidatedRow`s'
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/ValidatedRow'
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ValidatedRow'
+            text/csv:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ValidatedRow'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ValidatedRow'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ValidatedRow'
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type: string
+          application/json:
+            schema:
+              type: string
+          text/json:
+            schema:
+              type: string
+          application/*+json:
+            schema:
+              type: string
+        required: true
+      summary: Task validate task import csv
+      x-summary-source: derived
   /api/Task/ImportTasksToMyOrg:
     post:
       tags:
       - Task
       operationId: Task_ImportTasksToMyOrg
-      consumes:
-      - application/json-patch+json
-      - application/json
-      - text/json
-      - application/*+json
-      parameters:
-      - name: bulk
-        in: body
-        required: true
-        schema:
-          $ref: '#/definitions/BulkTaskUploadDto'
-        x-nullable: false
       responses:
         '204':
           description: Success
         '400':
-          x-nullable: false
           description: When CSV has validation errors (if CSV is parsable, ValidatedRows are returned)
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/ValidatedRow'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ValidatedRow'
         '401':
           description: When unauthenticated
         '403':
           description: When not authorized
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/BulkTaskUploadDto'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BulkTaskUploadDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BulkTaskUploadDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/BulkTaskUploadDto'
+        required: true
+      summary: Task import tasks to my org
+      x-summary-source: derived
   /api/Task/GetUnconsolidatedTasksForMyOrg:
     get:
       tags:
       - Task
       operationId: Task_GetUnconsolidatedTasksForMyOrg
-      produces:
-      - text/plain
-      - text/csv
-      - application/json
-      - text/json
       parameters:
-      - type: integer
-        name: pageNum
+      - name: pageNum
         in: query
-        x-nullable: false
-      - type: integer
-        name: pageSize
+        schema:
+          type: integer
+      - name: pageSize
         in: query
-        x-nullable: false
+        schema:
+          type: integer
       responses:
         '200':
-          x-nullable: false
           description: Paginated Tasks
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/TaskDto'
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaskDto'
+            text/csv:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaskDto'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaskDto'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaskDto'
         '401':
           description: Not logged in
         '403':
           description: Not authorized
+      summary: Task get unconsolidated tasks for my org
+      x-summary-source: derived
   /api/Task/GetTasksWithFailureAlertsForMyOrg:
     get:
       tags:
       - Task
       operationId: Task_GetTasksWithFailureAlertsForMyOrg
-      produces:
-      - text/plain
-      - text/csv
-      - application/json
-      - text/json
       parameters:
-      - type: integer
-        name: pageNum
+      - name: pageNum
         in: query
-        x-nullable: false
-      - type: integer
-        name: pageSize
+        schema:
+          type: integer
+      - name: pageSize
         in: query
-        x-nullable: false
+        schema:
+          type: integer
       responses:
         '200':
-          x-nullable: false
           description: Paginated List of FailureAlertDtos
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/FailureAlertDto'
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FailureAlertDto'
+            text/csv:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FailureAlertDto'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FailureAlertDto'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FailureAlertDto'
         '401':
           description: Not logged in
         '403':
           description: Not authorized
+      summary: Task get tasks with failure alerts for my org
+      x-summary-source: derived
   /api/Task/ConsolidateTasksForMyOrg:
     post:
       tags:
       - Task
       operationId: Task_ConsolidateTasksForMyOrg
-      consumes:
-      - application/json-patch+json
-      - application/json
-      - text/json
-      - application/*+json
-      parameters:
-      - name: trackingRefs
-        in: body
-        required: true
-        schema:
-          type: array
-          items:
-            type: string
-        x-nullable: false
       responses:
         '401':
           description: Not logged in
@@ -456,25 +579,36 @@ paths:
           description: If one or more tracking refs is invalid
         '204':
           description: Ok
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type: array
+              items:
+                type: string
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+          text/json:
+            schema:
+              type: array
+              items:
+                type: string
+          application/*+json:
+            schema:
+              type: array
+              items:
+                type: string
+        required: true
+      summary: Task consolidate tasks for my org
+      x-summary-source: derived
   /api/Task/CancelTasksForMyOrg:
     post:
       tags:
       - Task
       operationId: Task_CancelTasksForMyOrg
-      consumes:
-      - application/json-patch+json
-      - application/json
-      - text/json
-      - application/*+json
-      parameters:
-      - name: trackingRefs
-        in: body
-        required: true
-        schema:
-          type: array
-          items:
-            type: string
-        x-nullable: false
       responses:
         '401':
           description: Not logged in
@@ -484,96 +618,141 @@ paths:
           description: If one or more tracking refs is invalid
         '204':
           description: Ok
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type: array
+              items:
+                type: string
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+          text/json:
+            schema:
+              type: array
+              items:
+                type: string
+          application/*+json:
+            schema:
+              type: array
+              items:
+                type: string
+        required: true
+      summary: Task cancel tasks for my org
+      x-summary-source: derived
   /api/Task/GetConsignmentsForMyOrg:
     get:
       tags:
       - Task
       operationId: Task_GetConsignmentsForMyOrg
-      produces:
-      - text/plain
-      - text/csv
-      - application/json
-      - text/json
       responses:
         '200':
-          x-nullable: false
           description: List of pending Consignments
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/ConsignmentDto'
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ConsignmentDto'
+            text/csv:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ConsignmentDto'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ConsignmentDto'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ConsignmentDto'
         '401':
           description: Not logged in
         '403':
           description: Not authorized
+      summary: Task get consignments for my org
+      x-summary-source: derived
   /api/Task/GetConsolidatedTasksForConsignmentInMyOrg:
     get:
       tags:
       - Task
       operationId: Task_GetConsolidatedTasksForConsignmentInMyOrg
-      produces:
-      - text/plain
-      - text/csv
-      - application/json
-      - text/json
       parameters:
-      - type: string
-        name: consignmentId
+      - name: consignmentId
         in: query
-        format: guid
-        x-nullable: false
-      - type: integer
-        name: pageNum
+        schema:
+          type: string
+          format: guid
+      - name: pageNum
         in: query
-        x-nullable: false
-      - type: integer
-        name: pageSize
+        schema:
+          type: integer
+      - name: pageSize
         in: query
-        x-nullable: false
+        schema:
+          type: integer
       responses:
         '200':
-          x-nullable: false
           description: Paginated Tasks in Consignment
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/TaskDto'
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaskDto'
+            text/csv:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaskDto'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaskDto'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaskDto'
         '401':
           description: Not logged in
         '403':
           description: Not authorized
+      summary: Task get consolidated tasks for consignment in my org
+      x-summary-source: derived
   /api/Task/UpdateInstructionsForFailureAlertInMyOrg:
     post:
       tags:
       - Task
       operationId: Task_UpdateInstructionsForFailureAlertInMyOrg
-      consumes:
-      - application/json-patch+json
-      - application/json
-      - text/json
-      - application/*+json
-      produces:
-      - text/plain
-      - text/csv
-      - application/json
-      - text/json
       parameters:
-      - type: string
-        name: trackingRef
+      - name: trackingRef
         in: query
-        x-nullable: true
-      - name: instructions
-        in: body
-        required: true
         schema:
           type: string
-        x-nullable: false
       responses:
         '200':
-          x-nullable: false
           description: Updated Task
-          schema:
-            $ref: '#/definitions/TaskDto'
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/TaskDto'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/TaskDto'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskDto'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TaskDto'
         '404':
           description: Invalid TrackingRef
         '412':
@@ -586,422 +765,456 @@ paths:
           description: Not allowed to perform this action
         '409':
           description: Concurrent modification
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type: string
+          application/json:
+            schema:
+              type: string
+          text/json:
+            schema:
+              type: string
+          application/*+json:
+            schema:
+              type: string
+        required: true
+      summary: Task update instructions for failure alert in my org
+      x-summary-source: derived
   /api/Task/GetLabelsPdf:
     get:
       tags:
       - Task
       operationId: Task_GetLabelsPdf
       parameters:
-      - type: string
-        name: trackingRefsCsv
+      - name: trackingRefsCsv
         in: query
-        x-nullable: true
+        schema:
+          type: string
       responses:
         '200':
-          x-nullable: false
           description: PDF Bytes
-          schema:
-            type: string
-            format: byte
+          content:
+            application/json:
+              schema:
+                type: string
+                format: byte
         '404':
           description: Invalid TrackingRef
         '400':
           description: Invalid request params
+      summary: Task get labels pdf
+      x-summary-source: derived
   /api/Task/GetTaskAuditTrail:
     get:
       tags:
       - Task
       operationId: Task_GetTaskAuditTrail
-      produces:
-      - text/plain
-      - text/csv
-      - application/json
-      - text/json
       parameters:
-      - type: string
-        name: trackingRef
+      - name: trackingRef
         in: query
-        x-nullable: true
+        schema:
+          type: string
       responses:
         '200':
-          x-nullable: false
           description: Audit Trail
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/TaskAuditTrail'
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaskAuditTrail'
+            text/csv:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaskAuditTrail'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaskAuditTrail'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaskAuditTrail'
         '404':
           description: Invalid TrackingRef
         '401':
           description: Not logged in
         '403':
           description: No access
-definitions:
-  TaskCreateDto:
-    type: object
-    required:
-    - refId
-    - physique
-    - address
-    - cashToCollect
-    - stockValue
-    - note
-    properties:
-      refId:
-        type: string
-        minLength: 1
-      physique:
-        $ref: '#/definitions/PhysiqueDto'
-      address:
-        $ref: '#/definitions/AddressInputDto'
-      slotStart:
-        $ref: '#/definitions/FSharpOptionOfDateTimeOffset'
-      slotEnd:
-        $ref: '#/definitions/FSharpOptionOfDateTimeOffset'
-      cashToCollect:
-        type: number
-        format: decimal
-      stockValue:
-        type: number
-        format: decimal
-      note:
-        type: string
-        minLength: 1
-      merchantPickupPointAddressId:
-        $ref: '#/definitions/AddressId'
-  TaskDto:
-    type: object
-    required:
-    - cashToCollect
-    - stockValue
-    properties:
-      trackingRef:
-        type: string
-      merchantRef:
-        type: string
-      physique:
-        $ref: '#/definitions/PhysiqueDto'
-      addressInfo:
-        $ref: '#/definitions/AddressInfoDto'
-      slotStart:
-        $ref: '#/definitions/FSharpOptionOfDateTimeOffset'
-      slotEnd:
-        $ref: '#/definitions/FSharpOptionOfDateTimeOffset'
-      cashToCollect:
-        type: number
-        format: decimal
-      stockValue:
-        type: number
-        format: decimal
-      weight:
-        type: string
-      status:
-        type: string
-      taskType:
-        type: string
-      merchantHub:
-        $ref: '#/definitions/FSharpOptionOfString'
-      notes:
-        type: array
-        items:
-          $ref: '#/definitions/TaskNoteDto'
-  TaskAuditTrail:
-    type: object
-    required:
-    - lastActionOn
-    - stateTransitionedOn
-    properties:
-      tripStatus:
-        type: string
-      lastActionOn:
-        type: string
-        format: date-time
-      stateTransitionedOn:
-        type: string
-        format: date-time
-      failedOrRejectReason:
-        $ref: '#/definitions/FSharpOptionOfString'
-  IComparerOfString:
-    type: object
-    x-abstract: true
-  AddressId:
-    type: object
-  DeliveryAreaDto:
-    type: object
-    properties:
-      id:
-        $ref: '#/definitions/DeliveryAreaIdDto'
-      name:
-        type: string
-  FSharpOptionOfString:
-    type: object
-  ValidatedRow:
-    type: object
-    properties:
-      merchantRef:
-        $ref: '#/definitions/ValidationResultOfString'
-      name:
-        $ref: '#/definitions/ValidationResultOfString'
-      address:
-        $ref: '#/definitions/ValidationResultOfString'
-      phone:
-        $ref: '#/definitions/ValidationResultOfString'
-      amountToCollect:
-        $ref: '#/definitions/ValidationResultOfUnsignedDecimal'
-      stockValue:
-        $ref: '#/definitions/ValidationResultOfUnsignedDecimal'
-      note:
-        $ref: '#/definitions/ValidationResultOfString'
-  TupleOfStringAndTaskDto:
-    type: object
-    required:
-    - item1
-    - item2
-    properties:
-      item1:
-        type: string
-      item2:
-        $ref: '#/definitions/TaskDto'
-  ExchangeTaskCreateDto:
-    type: object
-    required:
-    - refId
-    - deliveryPhysique
-    - pickUpPhysique
-    - address
-    - cashToCollect
-    - deliveryStockValue
-    - pickUpStockValue
-    - note
-    properties:
-      refId:
-        type: string
-        minLength: 1
-      deliveryPhysique:
-        $ref: '#/definitions/PhysiqueDto'
-      pickUpPhysique:
-        $ref: '#/definitions/PhysiqueDto'
-      address:
-        $ref: '#/definitions/AddressInputDto'
-      slotStart:
-        $ref: '#/definitions/FSharpOptionOfDateTimeOffset'
-      slotEnd:
-        $ref: '#/definitions/FSharpOptionOfDateTimeOffset'
-      cashToCollect:
-        type: number
-        format: decimal
-      deliveryStockValue:
-        type: number
-        format: decimal
-      pickUpStockValue:
-        type: number
-        format: decimal
-      note:
-        type: string
-        minLength: 1
-      merchantPickupPointAddressId:
-        $ref: '#/definitions/AddressId'
-  ConfidenceLevelDto:
-    type: object
-  FSharpMapOfStringAndString:
-    type: object
-    required:
-    - IsEmpty
-    - Count
-    properties:
-      comparer@686:
-        $ref: '#/definitions/IComparerOfString'
-      tree@690:
-        $ref: '#/definitions/MapTreeOfStringAndString'
-      serializedData:
-        type: array
-        items:
-          $ref: '#/definitions/KeyValuePairOfStringAndString'
-      Comparer:
-        $ref: '#/definitions/IComparerOfString'
-      Tree:
-        $ref: '#/definitions/MapTreeOfStringAndString'
-      IsEmpty:
-        type: boolean
-      Item:
-        type: string
-      Count:
-        type: integer
-        format: int32
-      Keys:
-        type: array
-        items:
+      summary: Task get task audit trail
+      x-summary-source: derived
+components:
+  schemas:
+    BulkTaskUploadDto:
+      type: object
+      required:
+      - merchantPickupPointAddressId
+      properties:
+        csv:
           type: string
-      Values:
-        type: array
-        items:
+        merchantPickupPointAddressId:
+          type: integer
+          format: int32
+    ValidationResultOfUnsignedDecimal:
+      type: object
+      x-abstract: true
+    TaskDto:
+      type: object
+      required:
+      - cashToCollect
+      - stockValue
+      properties:
+        trackingRef:
           type: string
-      MinKeyValue:
-        $ref: '#/definitions/TupleOfStringAndString'
-      MaxKeyValue:
-        $ref: '#/definitions/TupleOfStringAndString'
-  FSharpOptionOfDateTimeOffset:
-    type: object
-  AddressInputDto:
-    type: object
-    x-abstract: true
-  FSharpOptionOfGeoLocationDto:
-    type: object
-  AddressIdDto:
-    type: object
-  DeliveryAreaIdDto:
-    type: object
-  TupleOfStringAndString:
-    type: object
-    required:
-    - item1
-    - item2
-    properties:
-      item1:
-        type: string
-      item2:
-        type: string
-  FailureAlertDto:
-    type: object
-    properties:
-      task:
-        $ref: '#/definitions/TaskDto'
-      message:
-        type: string
-  MapTreeOfStringAndString:
-    type: object
-  PhysiqueDto:
-    type: object
-    x-abstract: true
-  FSharpMapOfStringAndTaskDto:
-    type: object
-    required:
-    - IsEmpty
-    - Count
-    properties:
-      comparer@686:
-        $ref: '#/definitions/IComparerOfString'
-      tree@690:
-        $ref: '#/definitions/MapTreeOfStringAndTaskDto'
-      serializedData:
-        type: array
-        items:
-          $ref: '#/definitions/KeyValuePairOfStringAndTaskDto'
-      Comparer:
-        $ref: '#/definitions/IComparerOfString'
-      Tree:
-        $ref: '#/definitions/MapTreeOfStringAndTaskDto'
-      IsEmpty:
-        type: boolean
-      Item:
-        $ref: '#/definitions/TaskDto'
-      Count:
-        type: integer
-        format: int32
-      Keys:
-        type: array
-        items:
+        merchantRef:
           type: string
-      Values:
-        type: array
-        items:
-          $ref: '#/definitions/TaskDto'
-      MinKeyValue:
-        $ref: '#/definitions/TupleOfStringAndTaskDto'
-      MaxKeyValue:
-        $ref: '#/definitions/TupleOfStringAndTaskDto'
-  ConsignmentDto:
-    type: object
-    required:
-    - id
-    - requestTime
-    properties:
-      id:
-        type: string
-        format: guid
-      requestTime:
-        type: string
-        format: date-time
-      trackingRefToStatus:
-        $ref: '#/definitions/FSharpMapOfStringAndString'
-  TaskNoteDto:
-    type: object
-    required:
-    - noteId
-    - createdOn
-    - createdBy
-    properties:
-      noteId:
-        type: string
-        format: guid
-      createdOn:
-        type: string
-        format: date-time
-      createdBy:
-        type: string
-        format: guid
-      note:
-        type: string
-  ValidationResultOfString:
-    type: object
-    x-abstract: true
-  KeyValuePairOfStringAndString:
-    type: object
-    required:
-    - key
-    - value
-    properties:
-      key:
-        type: string
-      value:
-        type: string
-  MapTreeOfStringAndTaskDto:
-    type: object
-  ValidationResultOfUnsignedDecimal:
-    type: object
-    x-abstract: true
-  KeyValuePairOfStringAndTaskDto:
-    type: object
-    required:
-    - key
-    - value
-    properties:
-      key:
-        type: string
-      value:
-        $ref: '#/definitions/TaskDto'
-  AddressInfoDto:
-    type: object
-    required:
-    - identity
-    properties:
-      address:
-        $ref: '#/definitions/AddressIdDto'
-      identity:
-        type: string
-        format: guid
-      fullName:
-        type: string
-      streetAddress:
-        type: string
-      phoneNumber:
-        type: string
-      deliveryArea:
-        $ref: '#/definitions/DeliveryAreaDto'
-      customerHub:
-        type: string
-      geoLocation:
-        $ref: '#/definitions/FSharpOptionOfGeoLocationDto'
-      confidenceLevel:
-        $ref: '#/definitions/ConfidenceLevelDto'
-  BulkTaskUploadDto:
-    type: object
-    required:
-    - merchantPickupPointAddressId
-    properties:
-      csv:
-        type: string
-      merchantPickupPointAddressId:
-        type: integer
-        format: int32
+        physique:
+          $ref: '#/components/schemas/PhysiqueDto'
+        addressInfo:
+          $ref: '#/components/schemas/AddressInfoDto'
+        slotStart:
+          $ref: '#/components/schemas/FSharpOptionOfDateTimeOffset'
+        slotEnd:
+          $ref: '#/components/schemas/FSharpOptionOfDateTimeOffset'
+        cashToCollect:
+          type: number
+          format: decimal
+        stockValue:
+          type: number
+          format: decimal
+        weight:
+          type: string
+        status:
+          type: string
+        taskType:
+          type: string
+        merchantHub:
+          $ref: '#/components/schemas/FSharpOptionOfString'
+        notes:
+          type: array
+          items:
+            $ref: '#/components/schemas/TaskNoteDto'
+    ConfidenceLevelDto:
+      type: object
+    TaskAuditTrail:
+      type: object
+      required:
+      - lastActionOn
+      - stateTransitionedOn
+      properties:
+        tripStatus:
+          type: string
+        lastActionOn:
+          type: string
+          format: date-time
+        stateTransitionedOn:
+          type: string
+          format: date-time
+        failedOrRejectReason:
+          $ref: '#/components/schemas/FSharpOptionOfString'
+    PhysiqueDto:
+      type: object
+      x-abstract: true
+    ValidatedRow:
+      type: object
+      properties:
+        merchantRef:
+          $ref: '#/components/schemas/ValidationResultOfString'
+        name:
+          $ref: '#/components/schemas/ValidationResultOfString'
+        address:
+          $ref: '#/components/schemas/ValidationResultOfString'
+        phone:
+          $ref: '#/components/schemas/ValidationResultOfString'
+        amountToCollect:
+          $ref: '#/components/schemas/ValidationResultOfUnsignedDecimal'
+        stockValue:
+          $ref: '#/components/schemas/ValidationResultOfUnsignedDecimal'
+        note:
+          $ref: '#/components/schemas/ValidationResultOfString'
+    TaskCreateDto:
+      type: object
+      required:
+      - refId
+      - physique
+      - address
+      - cashToCollect
+      - stockValue
+      - note
+      properties:
+        refId:
+          type: string
+          minLength: 1
+        physique:
+          $ref: '#/components/schemas/PhysiqueDto'
+        address:
+          $ref: '#/components/schemas/AddressInputDto'
+        slotStart:
+          $ref: '#/components/schemas/FSharpOptionOfDateTimeOffset'
+        slotEnd:
+          $ref: '#/components/schemas/FSharpOptionOfDateTimeOffset'
+        cashToCollect:
+          type: number
+          format: decimal
+        stockValue:
+          type: number
+          format: decimal
+        note:
+          type: string
+          minLength: 1
+        merchantPickupPointAddressId:
+          $ref: '#/components/schemas/AddressId'
+    TaskNoteDto:
+      type: object
+      required:
+      - noteId
+      - createdOn
+      - createdBy
+      properties:
+        noteId:
+          type: string
+          format: guid
+        createdOn:
+          type: string
+          format: date-time
+        createdBy:
+          type: string
+          format: guid
+        note:
+          type: string
+    AddressId:
+      type: object
+    TupleOfStringAndTaskDto:
+      type: object
+      required:
+      - item1
+      - item2
+      properties:
+        item1:
+          type: string
+        item2:
+          $ref: '#/components/schemas/TaskDto'
+    FailureAlertDto:
+      type: object
+      properties:
+        task:
+          $ref: '#/components/schemas/TaskDto'
+        message:
+          type: string
+    AddressInfoDto:
+      type: object
+      required:
+      - identity
+      properties:
+        address:
+          $ref: '#/components/schemas/AddressIdDto'
+        identity:
+          type: string
+          format: guid
+        fullName:
+          type: string
+        streetAddress:
+          type: string
+        phoneNumber:
+          type: string
+        deliveryArea:
+          $ref: '#/components/schemas/DeliveryAreaDto'
+        customerHub:
+          type: string
+        geoLocation:
+          $ref: '#/components/schemas/FSharpOptionOfGeoLocationDto'
+        confidenceLevel:
+          $ref: '#/components/schemas/ConfidenceLevelDto'
+    AddressIdDto:
+      type: object
+    ExchangeTaskCreateDto:
+      type: object
+      required:
+      - refId
+      - deliveryPhysique
+      - pickUpPhysique
+      - address
+      - cashToCollect
+      - deliveryStockValue
+      - pickUpStockValue
+      - note
+      properties:
+        refId:
+          type: string
+          minLength: 1
+        deliveryPhysique:
+          $ref: '#/components/schemas/PhysiqueDto'
+        pickUpPhysique:
+          $ref: '#/components/schemas/PhysiqueDto'
+        address:
+          $ref: '#/components/schemas/AddressInputDto'
+        slotStart:
+          $ref: '#/components/schemas/FSharpOptionOfDateTimeOffset'
+        slotEnd:
+          $ref: '#/components/schemas/FSharpOptionOfDateTimeOffset'
+        cashToCollect:
+          type: number
+          format: decimal
+        deliveryStockValue:
+          type: number
+          format: decimal
+        pickUpStockValue:
+          type: number
+          format: decimal
+        note:
+          type: string
+          minLength: 1
+        merchantPickupPointAddressId:
+          $ref: '#/components/schemas/AddressId'
+    ValidationResultOfString:
+      type: object
+      x-abstract: true
+    MapTreeOfStringAndString:
+      type: object
+    ConsignmentDto:
+      type: object
+      required:
+      - id
+      - requestTime
+      properties:
+        id:
+          type: string
+          format: guid
+        requestTime:
+          type: string
+          format: date-time
+        trackingRefToStatus:
+          $ref: '#/components/schemas/FSharpMapOfStringAndString'
+    KeyValuePairOfStringAndTaskDto:
+      type: object
+      required:
+      - key
+      - value
+      properties:
+        key:
+          type: string
+        value:
+          $ref: '#/components/schemas/TaskDto'
+    AddressInputDto:
+      type: object
+      x-abstract: true
+    FSharpMapOfStringAndString:
+      type: object
+      required:
+      - IsEmpty
+      - Count
+      properties:
+        comparer@686:
+          $ref: '#/components/schemas/IComparerOfString'
+        tree@690:
+          $ref: '#/components/schemas/MapTreeOfStringAndString'
+        serializedData:
+          type: array
+          items:
+            $ref: '#/components/schemas/KeyValuePairOfStringAndString'
+        Comparer:
+          $ref: '#/components/schemas/IComparerOfString'
+        Tree:
+          $ref: '#/components/schemas/MapTreeOfStringAndString'
+        IsEmpty:
+          type: boolean
+        Item:
+          type: string
+        Count:
+          type: integer
+          format: int32
+        Keys:
+          type: array
+          items:
+            type: string
+        Values:
+          type: array
+          items:
+            type: string
+        MinKeyValue:
+          $ref: '#/components/schemas/TupleOfStringAndString'
+        MaxKeyValue:
+          $ref: '#/components/schemas/TupleOfStringAndString'
+    DeliveryAreaDto:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/DeliveryAreaIdDto'
+        name:
+          type: string
+    KeyValuePairOfStringAndString:
+      type: object
+      required:
+      - key
+      - value
+      properties:
+        key:
+          type: string
+        value:
+          type: string
+    FSharpOptionOfString:
+      type: object
+    TupleOfStringAndString:
+      type: object
+      required:
+      - item1
+      - item2
+      properties:
+        item1:
+          type: string
+        item2:
+          type: string
+    IComparerOfString:
+      type: object
+      x-abstract: true
+    DeliveryAreaIdDto:
+      type: object
+    MapTreeOfStringAndTaskDto:
+      type: object
+    FSharpOptionOfGeoLocationDto:
+      type: object
+    FSharpMapOfStringAndTaskDto:
+      type: object
+      required:
+      - IsEmpty
+      - Count
+      properties:
+        comparer@686:
+          $ref: '#/components/schemas/IComparerOfString'
+        tree@690:
+          $ref: '#/components/schemas/MapTreeOfStringAndTaskDto'
+        serializedData:
+          type: array
+          items:
+            $ref: '#/components/schemas/KeyValuePairOfStringAndTaskDto'
+        Comparer:
+          $ref: '#/components/schemas/IComparerOfString'
+        Tree:
+          $ref: '#/components/schemas/MapTreeOfStringAndTaskDto'
+        IsEmpty:
+          type: boolean
+        Item:
+          $ref: '#/components/schemas/TaskDto'
+        Count:
+          type: integer
+          format: int32
+        Keys:
+          type: array
+          items:
+            type: string
+        Values:
+          type: array
+          items:
+            $ref: '#/components/schemas/TaskDto'
+        MinKeyValue:
+          $ref: '#/components/schemas/TupleOfStringAndTaskDto'
+        MaxKeyValue:
+          $ref: '#/components/schemas/TupleOfStringAndTaskDto'
+    FSharpOptionOfDateTimeOffset:
+      type: object
 x-generator: NSwag v13.10.8.0 (NJsonSchema v10.3.11.0 (Newtonsoft.Json v13.0.0.0))

@@ -1,11 +1,7 @@
 {
   "provider": "chaldal",
   "sources": [
-    "chaldal-accounts-api-openapi.yml",
-    "chaldal-heartbeat-api-openapi.yml",
-    "chaldal-identity-api-openapi.yml",
-    "chaldal-organization-api-openapi.yml",
-    "chaldal-task-api-openapi.yml"
+    "_original/chaldal-eggtransport-openapi-original.json"
   ],
   "outputs": [
     "chaldal-accounts-api-openapi.yml",
@@ -17,6 +13,21 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "chaldal-eggtransport-openapi-original.json: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "chaldal-eggtransport-openapi-original.json: declared missing tag: Accounts",
+    "chaldal-eggtransport-openapi-original.json: declared missing tag: Heartbeat",
+    "chaldal-eggtransport-openapi-original.json: declared missing tag: Identity",
+    "chaldal-eggtransport-openapi-original.json: declared missing tag: Organization",
+    "chaldal-eggtransport-openapi-original.json: declared missing tag: Task",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "chaldal-accounts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "chaldal-heartbeat-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "chaldal-identity-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "chaldal-organization-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "chaldal-task-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
