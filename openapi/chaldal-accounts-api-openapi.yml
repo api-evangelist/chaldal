@@ -223,158 +223,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/TaskNoteDto'
-    AccountPeriodSummaryDto:
-      type: object
-      required:
-      - earliestTxnDate
-      - moneyBalance
-      - stockBalance
-      - holdBalance
-      - availableBalance
-      - periodOpeningBalance
-      - periodClosingBalance
-      properties:
-        earliestTxnDate:
-          type: string
-          format: date-time
-        moneyBalance:
-          type: number
-          format: decimal
-        stockBalance:
-          type: number
-          format: decimal
-        holdBalance:
-          type: number
-          format: decimal
-        availableBalance:
-          type: number
-          format: decimal
-        periodOpeningBalance:
-          type: number
-          format: decimal
-        periodClosingBalance:
-          type: number
-          format: decimal
-    BillDto:
-      type: object
-      required:
-      - billId
-      - createdOn
-      - total
-      - lastActionOn
-      properties:
-        billId:
-          type: integer
-        createdOn:
-          type: string
-          format: date-time
-        status:
-          type: string
-        settlementMemo:
-          $ref: '#/components/schemas/FSharpOptionOfString'
-        settlementImageUri:
-          $ref: '#/components/schemas/FSharpOptionOfString'
-        total:
-          type: number
-          format: decimal
-        billItems:
-          type: array
-          items:
-            $ref: '#/components/schemas/BillItemDto'
-        lastActionOn:
-          type: string
-          format: date-time
-    BillItemDto:
-      type: object
-      required:
-      - deliveryCharge
-      - cashCollected
-      - serviceCharge
-      - stockValueCompensated
-      properties:
-        description:
-          type: string
-        task:
-          $ref: '#/components/schemas/TaskDto'
-        deliveryCharge:
-          type: number
-          format: decimal
-        cashCollected:
-          type: number
-          format: decimal
-        serviceCharge:
-          type: number
-          format: decimal
-        stockValueCompensated:
-          type: number
-          format: decimal
-        customerHub:
-          type: string
-        deliveryArea:
-          type: string
-    FSharpOptionOfString:
-      type: object
-    AccountDto:
-      type: object
-      properties:
-        accountPeriodSummaryDto:
-          $ref: '#/components/schemas/AccountPeriodSummaryDto'
-        transactions:
-          type: array
-          items:
-            $ref: '#/components/schemas/TxnDto'
-    PhysiqueDto:
-      type: object
-      x-abstract: true
-    DeliveryAreaIdDto:
-      type: object
-    FSharpOptionOfGeoLocationDto:
-      type: object
     ConfidenceLevelDto:
       type: object
-    AddressIdDto:
-      type: object
-    FSharpOptionOfDateTimeOffset:
-      type: object
-    TxnDto:
-      type: object
-      required:
-      - 'on'
-      - amount
-      - stockValue
-      - moneyBalance
-      - stockBalance
-      - sequenceNum
-      properties:
-        'on':
-          type: string
-          format: date-time
-        amount:
-          type: number
-          format: decimal
-        stockValue:
-          type: number
-          format: decimal
-        moneyBalance:
-          type: number
-          format: decimal
-        stockBalance:
-          type: number
-          format: decimal
-        sequenceNum:
-          type: integer
-          format: int32
-        memo:
-          type: string
-        category:
-          type: string
-    DeliveryAreaDto:
-      type: object
-      properties:
-        id:
-          $ref: '#/components/schemas/DeliveryAreaIdDto'
-        name:
-          type: string
     TaskNoteDto:
       type: object
       required:
@@ -417,4 +267,154 @@ components:
           $ref: '#/components/schemas/FSharpOptionOfGeoLocationDto'
         confidenceLevel:
           $ref: '#/components/schemas/ConfidenceLevelDto'
+    AccountPeriodSummaryDto:
+      type: object
+      required:
+      - earliestTxnDate
+      - moneyBalance
+      - stockBalance
+      - holdBalance
+      - availableBalance
+      - periodOpeningBalance
+      - periodClosingBalance
+      properties:
+        earliestTxnDate:
+          type: string
+          format: date-time
+        moneyBalance:
+          type: number
+          format: decimal
+        stockBalance:
+          type: number
+          format: decimal
+        holdBalance:
+          type: number
+          format: decimal
+        availableBalance:
+          type: number
+          format: decimal
+        periodOpeningBalance:
+          type: number
+          format: decimal
+        periodClosingBalance:
+          type: number
+          format: decimal
+    PhysiqueDto:
+      type: object
+      x-abstract: true
+    DeliveryAreaIdDto:
+      type: object
+    AccountDto:
+      type: object
+      properties:
+        accountPeriodSummaryDto:
+          $ref: '#/components/schemas/AccountPeriodSummaryDto'
+        transactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/TxnDto'
+    BillItemDto:
+      type: object
+      required:
+      - deliveryCharge
+      - cashCollected
+      - serviceCharge
+      - stockValueCompensated
+      properties:
+        description:
+          type: string
+        task:
+          $ref: '#/components/schemas/TaskDto'
+        deliveryCharge:
+          type: number
+          format: decimal
+        cashCollected:
+          type: number
+          format: decimal
+        serviceCharge:
+          type: number
+          format: decimal
+        stockValueCompensated:
+          type: number
+          format: decimal
+        customerHub:
+          type: string
+        deliveryArea:
+          type: string
+    FSharpOptionOfDateTimeOffset:
+      type: object
+    FSharpOptionOfGeoLocationDto:
+      type: object
+    AddressIdDto:
+      type: object
+    TxnDto:
+      type: object
+      required:
+      - 'on'
+      - amount
+      - stockValue
+      - moneyBalance
+      - stockBalance
+      - sequenceNum
+      properties:
+        'on':
+          type: string
+          format: date-time
+        amount:
+          type: number
+          format: decimal
+        stockValue:
+          type: number
+          format: decimal
+        moneyBalance:
+          type: number
+          format: decimal
+        stockBalance:
+          type: number
+          format: decimal
+        sequenceNum:
+          type: integer
+          format: int32
+        memo:
+          type: string
+        category:
+          type: string
+    DeliveryAreaDto:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/DeliveryAreaIdDto'
+        name:
+          type: string
+    FSharpOptionOfString:
+      type: object
+    BillDto:
+      type: object
+      required:
+      - billId
+      - createdOn
+      - total
+      - lastActionOn
+      properties:
+        billId:
+          type: integer
+        createdOn:
+          type: string
+          format: date-time
+        status:
+          type: string
+        settlementMemo:
+          $ref: '#/components/schemas/FSharpOptionOfString'
+        settlementImageUri:
+          $ref: '#/components/schemas/FSharpOptionOfString'
+        total:
+          type: number
+          format: decimal
+        billItems:
+          type: array
+          items:
+            $ref: '#/components/schemas/BillItemDto'
+        lastActionOn:
+          type: string
+          format: date-time
 x-generator: NSwag v13.10.8.0 (NJsonSchema v10.3.11.0 (Newtonsoft.Json v13.0.0.0))

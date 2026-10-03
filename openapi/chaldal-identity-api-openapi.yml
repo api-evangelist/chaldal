@@ -145,32 +145,10 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    DeliveryAreaId:
-      type: object
-    DeliveryAreaIdDto:
-      type: object
-    FSharpOptionOfGeoLocationDto:
-      type: object
     ConfidenceLevelDto:
       type: object
-    AddressIdDto:
+    DeliveryAreaId:
       type: object
-    DeliveryAreaDto:
-      type: object
-      properties:
-        id:
-          $ref: '#/components/schemas/DeliveryAreaIdDto'
-        name:
-          type: string
-    FSharpOptionOfTupleOfIdentityProfileAndIEnumerableOfAddressInfoDto:
-      type: object
-    DeliveryArea:
-      type: object
-      properties:
-        id:
-          $ref: '#/components/schemas/DeliveryAreaId'
-        name:
-          type: string
     AddressInfoDto:
       type: object
       required:
@@ -195,4 +173,26 @@ components:
           $ref: '#/components/schemas/FSharpOptionOfGeoLocationDto'
         confidenceLevel:
           $ref: '#/components/schemas/ConfidenceLevelDto'
+    DeliveryAreaIdDto:
+      type: object
+    AddressIdDto:
+      type: object
+    FSharpOptionOfTupleOfIdentityProfileAndIEnumerableOfAddressInfoDto:
+      type: object
+    DeliveryArea:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/DeliveryAreaId'
+        name:
+          type: string
+    DeliveryAreaDto:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/DeliveryAreaIdDto'
+        name:
+          type: string
+    FSharpOptionOfGeoLocationDto:
+      type: object
 x-generator: NSwag v13.10.8.0 (NJsonSchema v10.3.11.0 (Newtonsoft.Json v13.0.0.0))
