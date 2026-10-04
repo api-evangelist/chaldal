@@ -193,7 +193,13 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    BusinessTypeDto:
+    FSharpOptionOfBankDetailsDto:
+      type: object
+    FSharpOptionOfString:
+      type: object
+    FSharpOptionOfOrgVerificationStatusDto:
+      type: object
+    FSharpOptionOfBkashDetailsDto:
       type: object
     OrgPickupPointDto:
       type: object
@@ -209,10 +215,6 @@ components:
           format: int32
         phone:
           type: string
-    PaymentTypeDto:
-      type: object
-    MerchantIDTypeDto:
-      type: object
     BusinessDetailsDto:
       type: object
       required:
@@ -233,9 +235,7 @@ components:
           format: int32
         businessUrl:
           type: string
-    FSharpOptionOfOrgVerificationStatusDto:
-      type: object
-    FSharpOptionOfBkashDetailsDto:
+    BusinessTypeDto:
       type: object
     OrganizationDto:
       type: object
@@ -260,8 +260,8 @@ components:
           $ref: '#/components/schemas/FSharpOptionOfString'
         birthCertificate:
           $ref: '#/components/schemas/FSharpOptionOfString'
-    FSharpOptionOfBankDetailsDto:
+    PaymentTypeDto:
       type: object
-    FSharpOptionOfString:
+    MerchantIDTypeDto:
       type: object
 x-generator: NSwag v13.10.8.0 (NJsonSchema v10.3.11.0 (Newtonsoft.Json v13.0.0.0))
