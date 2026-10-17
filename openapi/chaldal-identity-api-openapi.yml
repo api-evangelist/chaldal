@@ -147,17 +147,23 @@ components:
   schemas:
     FSharpOptionOfGeoLocationDto:
       type: object
+    DeliveryArea:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/DeliveryAreaId'
+        name:
+          type: string
+    DeliveryAreaIdDto:
+      type: object
     AddressIdDto:
       type: object
     DeliveryAreaId:
       type: object
-    DeliveryAreaDto:
+    FSharpOptionOfTupleOfIdentityProfileAndIEnumerableOfAddressInfoDto:
       type: object
-      properties:
-        id:
-          $ref: '#/components/schemas/DeliveryAreaIdDto'
-        name:
-          type: string
+    ConfidenceLevelDto:
+      type: object
     AddressInfoDto:
       type: object
       required:
@@ -182,17 +188,11 @@ components:
           $ref: '#/components/schemas/FSharpOptionOfGeoLocationDto'
         confidenceLevel:
           $ref: '#/components/schemas/ConfidenceLevelDto'
-    FSharpOptionOfTupleOfIdentityProfileAndIEnumerableOfAddressInfoDto:
-      type: object
-    DeliveryAreaIdDto:
-      type: object
-    DeliveryArea:
+    DeliveryAreaDto:
       type: object
       properties:
         id:
-          $ref: '#/components/schemas/DeliveryAreaId'
+          $ref: '#/components/schemas/DeliveryAreaIdDto'
         name:
           type: string
-    ConfidenceLevelDto:
-      type: object
 x-generator: NSwag v13.10.8.0 (NJsonSchema v10.3.11.0 (Newtonsoft.Json v13.0.0.0))

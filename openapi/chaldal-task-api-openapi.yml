@@ -850,84 +850,64 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    ValidationResultOfUnsignedDecimal:
+    ConsignmentDto:
       type: object
-      x-abstract: true
+      required:
+      - id
+      - requestTime
+      properties:
+        id:
+          type: string
+          format: guid
+        requestTime:
+          type: string
+          format: date-time
+        trackingRefToStatus:
+          $ref: '#/components/schemas/FSharpMapOfStringAndString'
+    DeliveryAreaIdDto:
+      type: object
     MapTreeOfStringAndTaskDto:
       type: object
-    FSharpMapOfStringAndTaskDto:
+    ValidatedRow:
       type: object
-      required:
-      - IsEmpty
-      - Count
       properties:
-        comparer@686:
-          $ref: '#/components/schemas/IComparerOfString'
-        tree@690:
-          $ref: '#/components/schemas/MapTreeOfStringAndTaskDto'
-        serializedData:
-          type: array
-          items:
-            $ref: '#/components/schemas/KeyValuePairOfStringAndTaskDto'
-        Comparer:
-          $ref: '#/components/schemas/IComparerOfString'
-        Tree:
-          $ref: '#/components/schemas/MapTreeOfStringAndTaskDto'
-        IsEmpty:
-          type: boolean
-        Item:
-          $ref: '#/components/schemas/TaskDto'
-        Count:
-          type: integer
-          format: int32
-        Keys:
-          type: array
-          items:
-            type: string
-        Values:
-          type: array
-          items:
-            $ref: '#/components/schemas/TaskDto'
-        MinKeyValue:
-          $ref: '#/components/schemas/TupleOfStringAndTaskDto'
-        MaxKeyValue:
-          $ref: '#/components/schemas/TupleOfStringAndTaskDto'
-    TaskDto:
-      type: object
-      required:
-      - cashToCollect
-      - stockValue
-      properties:
-        trackingRef:
-          type: string
         merchantRef:
-          type: string
-        physique:
-          $ref: '#/components/schemas/PhysiqueDto'
-        addressInfo:
-          $ref: '#/components/schemas/AddressInfoDto'
-        slotStart:
-          $ref: '#/components/schemas/FSharpOptionOfDateTimeOffset'
-        slotEnd:
-          $ref: '#/components/schemas/FSharpOptionOfDateTimeOffset'
-        cashToCollect:
-          type: number
-          format: decimal
+          $ref: '#/components/schemas/ValidationResultOfString'
+        name:
+          $ref: '#/components/schemas/ValidationResultOfString'
+        address:
+          $ref: '#/components/schemas/ValidationResultOfString'
+        phone:
+          $ref: '#/components/schemas/ValidationResultOfString'
+        amountToCollect:
+          $ref: '#/components/schemas/ValidationResultOfUnsignedDecimal'
         stockValue:
-          type: number
-          format: decimal
-        weight:
+          $ref: '#/components/schemas/ValidationResultOfUnsignedDecimal'
+        note:
+          $ref: '#/components/schemas/ValidationResultOfString'
+    AddressInputDto:
+      type: object
+      x-abstract: true
+    ValidationResultOfString:
+      type: object
+      x-abstract: true
+    DeliveryAreaDto:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/DeliveryAreaIdDto'
+        name:
           type: string
-        status:
+    KeyValuePairOfStringAndTaskDto:
+      type: object
+      required:
+      - key
+      - value
+      properties:
+        key:
           type: string
-        taskType:
-          type: string
-        merchantHub:
-          $ref: '#/components/schemas/FSharpOptionOfString'
-        notes:
-          type: array
-          items:
-            $ref: '#/components/schemas/TaskNoteDto'
+        value:
+          $ref: '#/components/schemas/TaskDto'
     FSharpMapOfStringAndString:
       type: object
       required:
@@ -965,88 +945,39 @@ components:
           $ref: '#/components/schemas/TupleOfStringAndString'
         MaxKeyValue:
           $ref: '#/components/schemas/TupleOfStringAndString'
-    DeliveryAreaIdDto:
-      type: object
-    PhysiqueDto:
+    ValidationResultOfUnsignedDecimal:
       type: object
       x-abstract: true
+    AddressInfoDto:
+      type: object
+      required:
+      - identity
+      properties:
+        address:
+          $ref: '#/components/schemas/AddressIdDto'
+        identity:
+          type: string
+          format: guid
+        fullName:
+          type: string
+        streetAddress:
+          type: string
+        phoneNumber:
+          type: string
+        deliveryArea:
+          $ref: '#/components/schemas/DeliveryAreaDto'
+        customerHub:
+          type: string
+        geoLocation:
+          $ref: '#/components/schemas/FSharpOptionOfGeoLocationDto'
+        confidenceLevel:
+          $ref: '#/components/schemas/ConfidenceLevelDto'
     FailureAlertDto:
       type: object
       properties:
         task:
           $ref: '#/components/schemas/TaskDto'
         message:
-          type: string
-    FSharpOptionOfGeoLocationDto:
-      type: object
-    AddressInputDto:
-      type: object
-      x-abstract: true
-    AddressIdDto:
-      type: object
-    AddressId:
-      type: object
-    BulkTaskUploadDto:
-      type: object
-      required:
-      - merchantPickupPointAddressId
-      properties:
-        csv:
-          type: string
-        merchantPickupPointAddressId:
-          type: integer
-          format: int32
-    FSharpOptionOfDateTimeOffset:
-      type: object
-    TaskNoteDto:
-      type: object
-      required:
-      - noteId
-      - createdOn
-      - createdBy
-      properties:
-        noteId:
-          type: string
-          format: guid
-        createdOn:
-          type: string
-          format: date-time
-        createdBy:
-          type: string
-          format: guid
-        note:
-          type: string
-    TupleOfStringAndString:
-      type: object
-      required:
-      - item1
-      - item2
-      properties:
-        item1:
-          type: string
-        item2:
-          type: string
-    MapTreeOfStringAndString:
-      type: object
-    KeyValuePairOfStringAndString:
-      type: object
-      required:
-      - key
-      - value
-      properties:
-        key:
-          type: string
-        value:
-          type: string
-    IComparerOfString:
-      type: object
-      x-abstract: true
-    DeliveryAreaDto:
-      type: object
-      properties:
-        id:
-          $ref: '#/components/schemas/DeliveryAreaIdDto'
-        name:
           type: string
     TaskAuditTrail:
       type: object
@@ -1064,36 +995,10 @@ components:
           format: date-time
         failedOrRejectReason:
           $ref: '#/components/schemas/FSharpOptionOfString'
-    ValidationResultOfString:
+    FSharpOptionOfGeoLocationDto:
       type: object
-      x-abstract: true
-    ValidatedRow:
+    MapTreeOfStringAndString:
       type: object
-      properties:
-        merchantRef:
-          $ref: '#/components/schemas/ValidationResultOfString'
-        name:
-          $ref: '#/components/schemas/ValidationResultOfString'
-        address:
-          $ref: '#/components/schemas/ValidationResultOfString'
-        phone:
-          $ref: '#/components/schemas/ValidationResultOfString'
-        amountToCollect:
-          $ref: '#/components/schemas/ValidationResultOfUnsignedDecimal'
-        stockValue:
-          $ref: '#/components/schemas/ValidationResultOfUnsignedDecimal'
-        note:
-          $ref: '#/components/schemas/ValidationResultOfString'
-    TupleOfStringAndTaskDto:
-      type: object
-      required:
-      - item1
-      - item2
-      properties:
-        item1:
-          type: string
-        item2:
-          $ref: '#/components/schemas/TaskDto'
     TaskCreateDto:
       type: object
       required:
@@ -1126,16 +1031,6 @@ components:
           minLength: 1
         merchantPickupPointAddressId:
           $ref: '#/components/schemas/AddressId'
-    KeyValuePairOfStringAndTaskDto:
-      type: object
-      required:
-      - key
-      - value
-      properties:
-        key:
-          type: string
-        value:
-          $ref: '#/components/schemas/TaskDto'
     ExchangeTaskCreateDto:
       type: object
       required:
@@ -1175,46 +1070,151 @@ components:
           minLength: 1
         merchantPickupPointAddressId:
           $ref: '#/components/schemas/AddressId'
-    FSharpOptionOfString:
+    PhysiqueDto:
       type: object
-    ConsignmentDto:
-      type: object
-      required:
-      - id
-      - requestTime
-      properties:
-        id:
-          type: string
-          format: guid
-        requestTime:
-          type: string
-          format: date-time
-        trackingRefToStatus:
-          $ref: '#/components/schemas/FSharpMapOfStringAndString'
-    AddressInfoDto:
-      type: object
-      required:
-      - identity
-      properties:
-        address:
-          $ref: '#/components/schemas/AddressIdDto'
-        identity:
-          type: string
-          format: guid
-        fullName:
-          type: string
-        streetAddress:
-          type: string
-        phoneNumber:
-          type: string
-        deliveryArea:
-          $ref: '#/components/schemas/DeliveryAreaDto'
-        customerHub:
-          type: string
-        geoLocation:
-          $ref: '#/components/schemas/FSharpOptionOfGeoLocationDto'
-        confidenceLevel:
-          $ref: '#/components/schemas/ConfidenceLevelDto'
+      x-abstract: true
     ConfidenceLevelDto:
       type: object
+    KeyValuePairOfStringAndString:
+      type: object
+      required:
+      - key
+      - value
+      properties:
+        key:
+          type: string
+        value:
+          type: string
+    TupleOfStringAndString:
+      type: object
+      required:
+      - item1
+      - item2
+      properties:
+        item1:
+          type: string
+        item2:
+          type: string
+    FSharpOptionOfString:
+      type: object
+    TaskDto:
+      type: object
+      required:
+      - cashToCollect
+      - stockValue
+      properties:
+        trackingRef:
+          type: string
+        merchantRef:
+          type: string
+        physique:
+          $ref: '#/components/schemas/PhysiqueDto'
+        addressInfo:
+          $ref: '#/components/schemas/AddressInfoDto'
+        slotStart:
+          $ref: '#/components/schemas/FSharpOptionOfDateTimeOffset'
+        slotEnd:
+          $ref: '#/components/schemas/FSharpOptionOfDateTimeOffset'
+        cashToCollect:
+          type: number
+          format: decimal
+        stockValue:
+          type: number
+          format: decimal
+        weight:
+          type: string
+        status:
+          type: string
+        taskType:
+          type: string
+        merchantHub:
+          $ref: '#/components/schemas/FSharpOptionOfString'
+        notes:
+          type: array
+          items:
+            $ref: '#/components/schemas/TaskNoteDto'
+    AddressId:
+      type: object
+    FSharpOptionOfDateTimeOffset:
+      type: object
+    TaskNoteDto:
+      type: object
+      required:
+      - noteId
+      - createdOn
+      - createdBy
+      properties:
+        noteId:
+          type: string
+          format: guid
+        createdOn:
+          type: string
+          format: date-time
+        createdBy:
+          type: string
+          format: guid
+        note:
+          type: string
+    FSharpMapOfStringAndTaskDto:
+      type: object
+      required:
+      - IsEmpty
+      - Count
+      properties:
+        comparer@686:
+          $ref: '#/components/schemas/IComparerOfString'
+        tree@690:
+          $ref: '#/components/schemas/MapTreeOfStringAndTaskDto'
+        serializedData:
+          type: array
+          items:
+            $ref: '#/components/schemas/KeyValuePairOfStringAndTaskDto'
+        Comparer:
+          $ref: '#/components/schemas/IComparerOfString'
+        Tree:
+          $ref: '#/components/schemas/MapTreeOfStringAndTaskDto'
+        IsEmpty:
+          type: boolean
+        Item:
+          $ref: '#/components/schemas/TaskDto'
+        Count:
+          type: integer
+          format: int32
+        Keys:
+          type: array
+          items:
+            type: string
+        Values:
+          type: array
+          items:
+            $ref: '#/components/schemas/TaskDto'
+        MinKeyValue:
+          $ref: '#/components/schemas/TupleOfStringAndTaskDto'
+        MaxKeyValue:
+          $ref: '#/components/schemas/TupleOfStringAndTaskDto'
+    AddressIdDto:
+      type: object
+    IComparerOfString:
+      type: object
+      x-abstract: true
+    BulkTaskUploadDto:
+      type: object
+      required:
+      - merchantPickupPointAddressId
+      properties:
+        csv:
+          type: string
+        merchantPickupPointAddressId:
+          type: integer
+          format: int32
+    TupleOfStringAndTaskDto:
+      type: object
+      required:
+      - item1
+      - item2
+      properties:
+        item1:
+          type: string
+        item2:
+          $ref: '#/components/schemas/TaskDto'
 x-generator: NSwag v13.10.8.0 (NJsonSchema v10.3.11.0 (Newtonsoft.Json v13.0.0.0))

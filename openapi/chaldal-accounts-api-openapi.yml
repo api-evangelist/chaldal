@@ -187,69 +187,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    FSharpOptionOfGeoLocationDto:
-      type: object
-    FSharpOptionOfString:
-      type: object
-    AddressIdDto:
-      type: object
-    BillItemDto:
-      type: object
-      required:
-      - deliveryCharge
-      - cashCollected
-      - serviceCharge
-      - stockValueCompensated
-      properties:
-        description:
-          type: string
-        task:
-          $ref: '#/components/schemas/TaskDto'
-        deliveryCharge:
-          type: number
-          format: decimal
-        cashCollected:
-          type: number
-          format: decimal
-        serviceCharge:
-          type: number
-          format: decimal
-        stockValueCompensated:
-          type: number
-          format: decimal
-        customerHub:
-          type: string
-        deliveryArea:
-          type: string
-    BillDto:
-      type: object
-      required:
-      - billId
-      - createdOn
-      - total
-      - lastActionOn
-      properties:
-        billId:
-          type: integer
-        createdOn:
-          type: string
-          format: date-time
-        status:
-          type: string
-        settlementMemo:
-          $ref: '#/components/schemas/FSharpOptionOfString'
-        settlementImageUri:
-          $ref: '#/components/schemas/FSharpOptionOfString'
-        total:
-          type: number
-          format: decimal
-        billItems:
-          type: array
-          items:
-            $ref: '#/components/schemas/BillItemDto'
-        lastActionOn:
-          type: string
-          format: date-time
     AccountDto:
       type: object
       properties:
@@ -259,6 +196,42 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/TxnDto'
+    FSharpOptionOfString:
+      type: object
+    FSharpOptionOfGeoLocationDto:
+      type: object
+    TxnDto:
+      type: object
+      required:
+      - 'on'
+      - amount
+      - stockValue
+      - moneyBalance
+      - stockBalance
+      - sequenceNum
+      properties:
+        'on':
+          type: string
+          format: date-time
+        amount:
+          type: number
+          format: decimal
+        stockValue:
+          type: number
+          format: decimal
+        moneyBalance:
+          type: number
+          format: decimal
+        stockBalance:
+          type: number
+          format: decimal
+        sequenceNum:
+          type: integer
+          format: int32
+        memo:
+          type: string
+        category:
+          type: string
     TaskDto:
       type: object
       required:
@@ -297,6 +270,37 @@ components:
             $ref: '#/components/schemas/TaskNoteDto'
     FSharpOptionOfDateTimeOffset:
       type: object
+    BillDto:
+      type: object
+      required:
+      - billId
+      - createdOn
+      - total
+      - lastActionOn
+      properties:
+        billId:
+          type: integer
+        createdOn:
+          type: string
+          format: date-time
+        status:
+          type: string
+        settlementMemo:
+          $ref: '#/components/schemas/FSharpOptionOfString'
+        settlementImageUri:
+          $ref: '#/components/schemas/FSharpOptionOfString'
+        total:
+          type: number
+          format: decimal
+        billItems:
+          type: array
+          items:
+            $ref: '#/components/schemas/BillItemDto'
+        lastActionOn:
+          type: string
+          format: date-time
+    DeliveryAreaIdDto:
+      type: object
     TaskNoteDto:
       type: object
       required:
@@ -315,13 +319,41 @@ components:
           format: guid
         note:
           type: string
-    DeliveryAreaDto:
+    BillItemDto:
       type: object
+      required:
+      - deliveryCharge
+      - cashCollected
+      - serviceCharge
+      - stockValueCompensated
       properties:
-        id:
-          $ref: '#/components/schemas/DeliveryAreaIdDto'
-        name:
+        description:
           type: string
+        task:
+          $ref: '#/components/schemas/TaskDto'
+        deliveryCharge:
+          type: number
+          format: decimal
+        cashCollected:
+          type: number
+          format: decimal
+        serviceCharge:
+          type: number
+          format: decimal
+        stockValueCompensated:
+          type: number
+          format: decimal
+        customerHub:
+          type: string
+        deliveryArea:
+          type: string
+    AddressIdDto:
+      type: object
+    PhysiqueDto:
+      type: object
+      x-abstract: true
+    ConfidenceLevelDto:
+      type: object
     AddressInfoDto:
       type: object
       required:
@@ -346,45 +378,13 @@ components:
           $ref: '#/components/schemas/FSharpOptionOfGeoLocationDto'
         confidenceLevel:
           $ref: '#/components/schemas/ConfidenceLevelDto'
-    TxnDto:
+    DeliveryAreaDto:
       type: object
-      required:
-      - 'on'
-      - amount
-      - stockValue
-      - moneyBalance
-      - stockBalance
-      - sequenceNum
       properties:
-        'on':
+        id:
+          $ref: '#/components/schemas/DeliveryAreaIdDto'
+        name:
           type: string
-          format: date-time
-        amount:
-          type: number
-          format: decimal
-        stockValue:
-          type: number
-          format: decimal
-        moneyBalance:
-          type: number
-          format: decimal
-        stockBalance:
-          type: number
-          format: decimal
-        sequenceNum:
-          type: integer
-          format: int32
-        memo:
-          type: string
-        category:
-          type: string
-    DeliveryAreaIdDto:
-      type: object
-    PhysiqueDto:
-      type: object
-      x-abstract: true
-    ConfidenceLevelDto:
-      type: object
     AccountPeriodSummaryDto:
       type: object
       required:
